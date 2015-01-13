@@ -8,7 +8,7 @@ tagline:
 
 --- | Tuesday | Thursday
 --- | --- | --- 
-Week 1 (1/20, 1/22) |
+Week 1 (1/20, 1/22) | wits and wagers, course introduction | intro regression lecture, 
 
 <!--
 #### Class 1 (Jan 21): Course Introduction 
