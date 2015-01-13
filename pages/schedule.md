@@ -4,6 +4,7 @@ title: Class schedules
 tagline: 
 ---
 
+*This is the working schedule for the course.*
 
 --- | Tuesday | Thursday
 --- | --- | --- 
