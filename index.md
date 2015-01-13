@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Biostat Methods 2
-tagline: Spring, 2014
+title: Statistical Modeling and Data Visualization
+tagline: 
 ---
 
 
@@ -16,14 +16,14 @@ The aim of this course is to provide fundamental statistical concepts and tools 
 
 **Instructor**: [Nicholas Reich](http://people.umass.edu/nick)
 
-**Office hours**: Wed 9&ndash;10am
+**Office hours**: TBD
 
 **Prerequisites**: <br> 
-&nbsp; &nbsp; Biostatistics Methods 1, or equivalent. Otherwise, permission of instructor required. <br>
+&nbsp; &nbsp; PUBHLTH 540, or equivalent intro statistics course. Some R experience, such as [PUBHLTH 590D](http://nickreich.github.io/statComp2014/).<br>
 &nbsp; &nbsp; Working knowledge of basic matrix methods and calculus will be helpful. <br>
 &nbsp; &nbsp; Familiarity with the [R statistical programming language](http://www.r-project.org) is expected.
 
-**Lectures**: Tu/Th, 11:15am&ndash;12:30pm, LGRC A203
+**Lectures**: Tu/Th, 11:15am&ndash;12:30pm, LGRC 204
 
 **Required books** <br>
 &nbsp; &nbsp; M Kutner, C Nachtsheim, J Neter. (2004). _[Applied Linear Regression Models](http://www.amazon.com/Applied-Linear-Regression-Models--Student/dp/0073014664/)_ 4th Edition.
@@ -35,20 +35,7 @@ The aim of this course is to provide fundamental statistical concepts and tools 
 
 **Links to course resources**
 
-&nbsp; &nbsp; *[Detailed class schedules](pages/schedule.html)*
-
-&nbsp; &nbsp; *[Lecture Notes](pages/notes.html)*
-
 &nbsp; &nbsp; *[Piazza](https://piazza.com/umass/spring2014/pubhlth690nr/home)*
-
-&nbsp; &nbsp; *[Grades](pages/grades.html)*
-
-&nbsp; &nbsp; *Problem sets*<br>
-&nbsp; &nbsp; &nbsp; &nbsp; [Problem Set 1](pages/ps1.html) due 2/25/2014<br>
-&nbsp; &nbsp; &nbsp; &nbsp; [Problem Set 2](pages/ps2.html) due 3/7/2014<br>
-&nbsp; &nbsp; &nbsp; &nbsp; [Problem Set 3](pages/ps3.html) due 4/4/2014
-
-&nbsp; &nbsp; *[Project](pages/project.html)*
 
 &nbsp; &nbsp; *Datasets*<br>
 &nbsp; &nbsp; &nbsp; &nbsp; Some datasets may be found in the datsets folder of the Google Drive folder for this course. <br>
@@ -59,5 +46,4 @@ The aim of this course is to provide fundamental statistical concepts and tools 
 ---
 
 Source on [github](http://github.com)<br>
-&nbsp; &nbsp; The [source for the website](https://github.com/nickreich/methods2/tree/gh-pages) <br>
-&nbsp; &nbsp; The [source for other material](https://github.com/nickreich/methods2/tree/master)
+&nbsp; &nbsp; The [source for the website](https://github.com/nickreich/stat-modeling-2015/tree/gh-pages) 

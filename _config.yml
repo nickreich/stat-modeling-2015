@@ -9,7 +9,7 @@ highlighter: 'pygments'
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Biostat Methods 2
+title : Biostat Methods 2 @ UMass-Amherst
 author :
   name : Nicholas Reich
   email : nick@umass.edu
