@@ -1,5 +1,6 @@
 # History files
 .Rhistory
+*.DS_Store
 
 # Example code in package build process
 *-Ex.R
@@ -11,3 +12,12 @@
 *.Rproj
 .Rproj.user/
 .Rproj.user
+
+## beamer files
+*.snm
+*.nav
+*.log
+*.toc
+*.vrb
+*-concordance.tex
+*.synctex.gz
