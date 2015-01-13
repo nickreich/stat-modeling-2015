@@ -1,15 +1,15 @@
 ---
 layout: page
 title: Class schedules
-tagline: Spring, 2014
+tagline: 
 ---
 
-<!--_Shortcuts to classes_
 
-January   [21](#c1)  [23](#c2)  [28](#c3)  [30](#c4) <br>
-February  [4](#c5)  [6](#c6)  [11](#c7)  [13](#c8) [20](#c9)  [25](#c10)  [27](#c11)-->
+--- | Tuesday | Thursday
+--- | --- | --- 
+Week 1 (1/20, 1/22) |
 
-
+<!--
 #### Class 1 (Jan 21): Course Introduction 
 _Activities_
 
@@ -273,5 +273,5 @@ _Homework_
 
 * Mon Apr 14: Draft of individual data analysis due (hand in PDF in your group's project folder on Google Drive)
 
-
+-->
 
