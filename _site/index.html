@@ -16,8 +16,8 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="http://nickreich.github.io/methods2/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
-    <link href="http://nickreich.github.io/methods2/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="http://nickreich.github.io/stat-modeling-2015/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="http://nickreich.github.io/stat-modeling-2015/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
 
     <!-- Le fav and touch icons -->
 
@@ -31,11 +31,18 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container-narrow">
-          <a class="brand" href="/">Statistical Modeling and Data Visualization, Methods 2</a>
+          <a class="brand" href="/">Biostat Methods 2</a>
+          <ul class="nav">
+              <li><a href="/pages/about.html">about</a></li>
+              <li><a href="/pages/pubs.html">publications</a></li>
+              <li><a href="/pages/talks.html">talks</a></li>
+              <li><a href="/pages/software.html">software</a></li>
+              <li><a href="/pages/teaching.html">teaching</a></li>
+              <li><a href="/pages/tutorials.html">tutorials</a></li>
+          </ul>
         </div>
       </div>
     </div>
-
     <div class="container-narrow">
 
       <div class="content">
@@ -46,25 +53,33 @@
 
 <div class="row-fluid">
   <div class="span12">
-    <h4 id="course_summary">Course summary</h4>
+    <h4 id="course-summary">Course summary</h4>
+<p>The aim of this course is to provide fundamental statistical concepts and tools relevant to the practice of summarizing, analyzing, and visualizing data. This course will build your knowledge of the fundamental principles of biostatistical inference. The course will focus on linear regression and generalized linear regression models. We will use a variety of examples and exercises from scientific, medical, and public health research.</p>
 
-<p>The aim of this course is to provide fundamental statistical concepts and tools relevant to the practice of summarizing, analyzing, and visualizing data. This course will build your knowledge of the fundamental principles of biostatistical inference. The course will focus on linear regression and generalized linear regression models. We will use a variety of examples and exercises from medical and public health research.</p>
 <hr />
-<h4 id="course_details">Course Details</h4>
 
-<p><strong>Course number</strong>: PUBHLTH 690NR</p>
+<h4 id="course-details">Course Details</h4>
+
+<p><strong>Course number</strong>: PUBHLTH 690NR </p>
 
 <p><strong>Instructor</strong>: <a href="http://people.umass.edu/nick">Nicholas Reich</a></p>
 
 <p><strong>Office hours</strong>: Wed 9–10am</p>
 
-<p><strong>Prerequisites</strong>: <br />     Biostatistics Methods 1, or equivalent. Otherwise, permission of instructor required. <br />     Working knowledge of basic matrix methods and calculus will be helpful. <br />     Familiarity with the <a href="http://www.r-project.org">R statistical programming language</a> is expected.</p>
+<p><strong>Prerequisites</strong>: <br /> 
+    Biostatistics Methods 1, or equivalent. Otherwise, permission of instructor required. <br />
+    Working knowledge of basic matrix methods and calculus will be helpful. <br />
+    Familiarity with the <a href="http://www.r-project.org">R statistical programming language</a> is expected.</p>
 
 <p><strong>Lectures</strong>: Tu/Th, 11:15am–12:30pm, LGRC A203</p>
 
-<p><strong>Required books</strong> <br />     Kutner, M., Nachtsheim, C., Neter, J., and Li, W. (2004). Applied Linear Regression Models, 4th Edition.</p>
+<p><strong>Required books</strong> <br />
+    M Kutner, C Nachtsheim, J Neter. (2004). <em><a href="http://www.amazon.com/Applied-Linear-Regression-Models--Student/dp/0073014664/">Applied Linear Regression Models</a></em> 4th Edition.</p>
 
-<p><strong>Recommended books</strong> <br />     D Diez, C Barr, and M Cetinkaya-Rundel. (2012). <em><a href="http://www.openintro.org/stat/index.php">OpenIntro Statistics</a></em> 2nd Edition. <br />     Y Xie, <em><a href="http://www.amazon.com/exec/obidos/ASIN/1482203537/7210-20">Dynamic documents with R and knitr</a></em><br />     H Wickham, ggplot2</p>
+<p><strong>Recommended books</strong> <br />
+    D Diez, C Barr, and M Cetinkaya-Rundel. (2012) <em><a href="http://www.openintro.org/stat/index.php">OpenIntro Statistics</a></em> 2nd Edition. <br />
+    Y Xie. (2013) <em><a href="http://www.amazon.com/exec/obidos/ASIN/1482203537/7210-20">Dynamic documents with R and knitr</a></em><br />
+    H Wickham. (2009) <em><a href="http://www.amazon.com/ggplot2-Elegant-Graphics-Data-Analysis/dp/0387981403/">ggplot2: Elegant Graphics for Data Analysis</a></em></p>
 
 <p><strong>Links to course resources</strong></p>
 
@@ -76,13 +91,24 @@
 
 <p>    <em><a href="pages/grades.html">Grades</a></em></p>
 
-<p>    <em>Problem sets</em><br />         <a href="pages/ps1.html">Problem Set 1</a> due 2/25/2014<br />         <a href="pages/ps2.html">Problem Set 2</a> due 3/6/2014<br />         Problem Set 3</p>
+<p>    <em>Problem sets</em><br />
+        <a href="pages/ps1.html">Problem Set 1</a> due 2/25/2014<br />
+        <a href="pages/ps2.html">Problem Set 2</a> due 3/7/2014<br />
+        <a href="pages/ps3.html">Problem Set 3</a> due 4/4/2014</p>
 
 <p>    <em><a href="pages/project.html">Project</a></em></p>
 
-<p>    <em>Datasets</em><br />         Some datasets may be found in the datsets folder of the Google Drive folder for this course. <br />         Datasets from the KNN textbook exercises can be downloaded <a href="https://netfiles.umn.edu/users/nacht001/www/nachtsheim/index.html">here</a>. <br />         Other datasets are available from <a href="http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets">the Vanderbilt data website</a>.</p>
+<p>    <em>Datasets</em><br />
+        Some datasets may be found in the datsets folder of the Google Drive folder for this course. <br />
+        Datasets from the KNN textbook exercises can be downloaded <a href="https://netfiles.umn.edu/users/nacht001/www/nachtsheim/index.html">here</a>. <br />
+        Other datasets are available from <a href="http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets">the Vanderbilt data website</a> or <a href="http://archive.ics.uci.edu/ml/">UCI Machine Learning Repository</a>. </p>
+
 <hr />
-<p>Source on <a href="http://github.com">github</a><br />     The <a href="https://github.com/nickreich/methods2/tree/gh-pages">source for the website</a> <br />     The <a href="https://github.com/nickreich/methods2/tree/master">source for other material</a></p>
+
+<p>Source on <a href="http://github.com">github</a><br />
+    The <a href="https://github.com/nickreich/methods2/tree/gh-pages">source for the website</a> <br />
+    The <a href="https://github.com/nickreich/methods2/tree/master">source for other material</a></p>
+
   </div>
 </div>
 

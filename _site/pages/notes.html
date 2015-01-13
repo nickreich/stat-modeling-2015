@@ -16,8 +16,8 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="http://nickreich.github.io/methods2/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
-    <link href="http://nickreich.github.io/methods2/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="http://nickreich.github.io/stat-modeling-2015/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="http://nickreich.github.io/stat-modeling-2015/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
 
     <!-- Le fav and touch icons -->
 
@@ -31,11 +31,18 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container-narrow">
-          <a class="brand" href="/">Statistical Modeling and Data Visualization, Methods 2</a>
+          <a class="brand" href="/">Biostat Methods 2</a>
+          <ul class="nav">
+              <li><a href="/pages/about.html">about</a></li>
+              <li><a href="/pages/pubs.html">publications</a></li>
+              <li><a href="/pages/talks.html">talks</a></li>
+              <li><a href="/pages/software.html">software</a></li>
+              <li><a href="/pages/teaching.html">teaching</a></li>
+              <li><a href="/pages/tutorials.html">tutorials</a></li>
+          </ul>
         </div>
       </div>
     </div>
-
     <div class="container-narrow">
 
       <div class="content">
@@ -48,25 +55,37 @@
   <div class="span12">
     <p>[S=Slides | A=Annotated Slides | R=R Code]</p>
 
+<p>Source files for all notes are available from the <a href="https://github.com/nickreich/methods2">master branch of the GitHub repository for this course</a>.</p>
+
 <ul>
-<li>Class 1: Course Introduction</li>
-
-<li>Class 2: Introduction to Regression [ <a href="../assets/lectures/class2_IntroRegression.pdf">S</a> | <a href="../assets/lectures/class2_IntroRegression_annotated.pdf">A</a> ]</li>
-
-<li>Class 3: Geometry of regression and least squares [ <a href="../assets/lectures/class3_SLRBasics.pdf">S</a> | <a href="../assets/lectures/class3_SLRBasics_annotated.pdf">A</a> ]</li>
-
-<li>Class 4: Hands-on SLR practice</li>
-
-<li>Class 5: R^2, ANOVA [ <a href="../assets/lectures/class5_SLRwrapup.pdf">S</a> | <a href="../assets/lectures/class5_SLRwrapup_annotated.pdf">A</a> ]</li>
-
-<li>Class 6: Version Control [ <a href="../assets/lectures/class6_versionControl.pdf">S</a> ]</li>
-
-<li>Class 7: Introduction to Multiple Linear Regression [ <a href="../assets/lectures/class7_MLRintro.pdf">S</a> | <a href="../assets/lectures/class7_MLRintro_annotated.pdf">A</a> | <a href="../assets/lectures/lungDataModeling.R">R</a> ]</li>
-
-<li>Class 8: [cancelled, snow day]</li>
-
-<li>Class 9: MLR Notation and Estimation [ <a href="../assets/lectures/class8_MLRFormulation.pdf">S</a> ]</li>
+  <li>Class 1: Course Introduction</li>
+  <li>Class 2: Introduction to Regression [  <a href="../assets/lectures/class2_IntroRegression.pdf">S</a> | <a href="../assets/lectures/class2_IntroRegression_annotated.pdf">A</a> ]</li>
+  <li>Class 3: Geometry of regression and least squares [  <a href="../assets/lectures/class3_SLRBasics.pdf">S</a> | <a href="../assets/lectures/class3_SLRBasics_annotated.pdf">A</a> ]</li>
+  <li>Class 4: Hands-on SLR practice </li>
+  <li>Class 5: R^2, ANOVA [  <a href="../assets/lectures/class5_SLRwrapup.pdf">S</a> | <a href="../assets/lectures/class5_SLRwrapup_annotated.pdf">A</a> ]</li>
+  <li>Class 6: Version Control [  <a href="../assets/lectures/class6_versionControl.pdf">S</a> ]</li>
+  <li>Class 7: Introduction to Multiple Linear Regression [  <a href="../assets/lectures/class7_MLRintro.pdf">S</a> | <a href="../assets/lectures/class7_MLRintro_annotated.pdf">A</a> | <a href="../assets/lectures/lungDataModeling.R">R</a> ]</li>
+  <li>Class 8: [cancelled, snow day]</li>
+  <li>Class 9: MLR: Notation and Estimation [  <a href="../assets/lectures/class9_MLRFormulation.pdf">S</a> ]</li>
+  <li>Class 10: MLR: Hat Matrix, Identifiability, Collinearity [  <a href="../assets/lectures/class10_MLRDetails.pdf">S</a> | <a href="../assets/lectures/class10_MLRDetails_Annotated.pdf">A</a> ]</li>
+  <li>Class 11: MLR: Categorical variables [  <a href="../assets/lectures/class11_MLRCategorical.pdf">S</a> | <a href="../assets/lectures/class11_MLRCategorical_Annotated.pdf">A</a> ]</li>
+  <li>Class 12: MLR: Inference [  <a href="../assets/lectures/class12_MLRInference.pdf">S</a> | <a href="../assets/lectures/class12_MLRInference_Annotated.pdf">A</a> ]</li>
+  <li>Class 13: MLR: Inference [  <a href="../assets/lectures/class13_GlobalTests.pdf">S</a> | <a href="../assets/lectures/class13_GlobalTests_Annotated.pdf">A</a>  | <a href="../assets/lectures/class13_globalTests.Rmd">R</a> | <a href="../assets/lectures/class13_globalTests.html">lab</a> ] </li>
+  <li>Class 14: MLR: Simulation and Resampling Inference [  <a href="../assets/lectures/class14_MLRbootstrap.pdf">S</a> | <a href="../assets/lectures/class14_MLRbootstrap_Annotated.pdf">A</a>  | <a href="../assets/lectures/class14_permutationLab.Rmd">R</a> | <a href="../assets/lectures/class14_permutationLab.html">lab</a> ] </li>
+  <li>Class 15: MLR: Regression Diagnostics and Residual Plots [ <a href="../assets/lectures/class15_residualPlots.R">R</a> ] </li>
+  <li>[spring break]</li>
+  <li>Class 16: MLR: More on diagnostics, confidence intervals [  <a href="../assets/lectures/class16_MLRDiagnostics.pdf">S</a> | <a href="../assets/lectures/class16_MLRDiagnostics_Annotated.pdf">A</a>  ] </li>
+  <li>Class 17: MLR: Model selection [  <a href="../assets/lectures/class17_MLRSelections.pdf">S</a> | <a href="../assets/lectures/class17_MLRSelections_Annotated.pdf">A</a> | <a href="../assets/lectures/fev_analysis.R">R</a> ] </li>
+  <li>Class 18: Interaction models and variable transformation  [  <a href="../assets/lectures/class18_MLRInteractions.pdf">S</a> | <a href="../assets/lectures/class18_MLRInteractions_Annotated.pdf">A</a>  ] </li>
+  <li>Class 19: Spline models [  <a href="../assets/lectures/class19_Splines.pdf">S</a> | <a href="../assets/lectures/class19_Splines_Annotated.pdf">A</a>  ] </li>
+  <li>Class 20: Generalized Linear Models and Logistic Regression [  <a href="../assets/lectures/class20_GLMlogistic.pdf">S</a> | <a href="../assets/lectures/class20_GLMlogistic_Annotated.pdf">A</a>  ] </li>
+  <li>Class 21: Logistic Regression competition [ <a href="../assets/lectures/titanic.html">lab</a> ]</li>
+  <li>Class 22: Longitudinal Data Analysis [  <a href="../assets/lectures/class22_LDA.pdf">S</a> | <a href="../assets/lectures/class22_LDA_Annotated.pdf">A</a>  ] </li>
+  <li>Class 23: Longitudinal Data Analysis (continued)</li>
+  <li>Class 24: Project prep</li>
+  <li>Classes 25-26: Project presentations</li>
 </ul>
+
   </div>
 </div>
 

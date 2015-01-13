@@ -16,8 +16,8 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="http://nickreich.github.io/methods2/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
-    <link href="http://nickreich.github.io/methods2/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="http://nickreich.github.io/stat-modeling-2015/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="http://nickreich.github.io/stat-modeling-2015/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
 
     <!-- Le fav and touch icons -->
 
@@ -31,11 +31,18 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container-narrow">
-          <a class="brand" href="/">Statistical Modeling and Data Visualization, Methods 2</a>
+          <a class="brand" href="/">Biostat Methods 2</a>
+          <ul class="nav">
+              <li><a href="/pages/about.html">about</a></li>
+              <li><a href="/pages/pubs.html">publications</a></li>
+              <li><a href="/pages/talks.html">talks</a></li>
+              <li><a href="/pages/software.html">software</a></li>
+              <li><a href="/pages/teaching.html">teaching</a></li>
+              <li><a href="/pages/tutorials.html">tutorials</a></li>
+          </ul>
         </div>
       </div>
     </div>
-
     <div class="container-narrow">
 
       <div class="content">
@@ -48,55 +55,45 @@
   <div class="span12">
     <p>Create a reproducible document (using knitr) that summarizes the data analysis write-up that you have been working on. This assignment should include the elements that were assigned in classes 2, 3, 5, 7, and 11.</p>
 
-<h4 id="from_class_2">From Class 2</h4>
+<h4 id="from-class-2">From Class 2</h4>
+<p>Choose a dataset from <a href="http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets">these datasets</a> or the ones in the class Google Drive. If your dataset has a lot of variables, focus on a subset of them – less than 6 or so – for the purposes of this exercise. Your write-up should answer the following questions:
+* What is the background/context for this data? 
+* How many observations are there?
+* What is the unit of observation?
+* Is there any missing data? If so, are there patterns to the missingness?
+* What are the key variables and what do their distributions look like?
+* Is there a pair of variables that might work well for a Simple Linear Regression? (You don’t necessarily need to run one, but you could.)
+* Are there any obvious outliers in the data?</p>
 
-<p>Choose a dataset from <a href="http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets">these datasets</a> or the ones in the class Google Drive. If your dataset has a lot of variables, focus on a subset of them – less than 6 or so – for the purposes of this exercise. Your write-up should answer the following questions:</p>
-
+<h4 id="from-class-3">From Class 3</h4>
 <ul>
-<li>What is the background/context for this data?</li>
-
-<li>How many observations are there?</li>
-
-<li>What is the unit of observation?</li>
-
-<li>Is there any missing data? If so, are there patterns to the missingness?</li>
-
-<li>What are the key variables and what do their distributions look like?</li>
-
-<li>Is there a pair of variables that might work well for a Simple Linear Regression? (You don’t necessarily need to run one, but you could.)</li>
-
-<li>Are there any obvious outliers in the data?</li>
+  <li>Add one or two simple linear regressions to your dataset write-up. </li>
 </ul>
 
-<h4 id="from_class_3">From Class 3</h4>
-
+<h4 id="from-class-5">From Class 5</h4>
 <ul>
-<li>Add one or two simple linear regressions to your dataset write-up.</li>
+  <li>Create a <code>slr()</code> R function that takes x and y vectors and outputs a list with two objects: (1) a fitted <code>lm</code> object and (2) by-hand betas (calculated by likelihood or formulae). Try to write this as a function, but if you have trouble, then just write it as a few lines of R code and create an object as described.</li>
+  <li>Use this new <code>slr()</code> function/code to refit the SLR models in your dataset writeup. Compare the results and make sure they are returning the same thing. </li>
 </ul>
 
-<h4 id="from_class_5">From Class 5</h4>
-
+<h4 id="from-class-7">From Class 7</h4>
 <ul>
-<li>Create a <code>slr()</code> R function that takes x and y vectors and outputs a list with two objects: (1) a fitted <code>lm</code> object and (2) by-hand betas (calculated by likelihood or formulae). Try to write this as a function, but if you have trouble, then just write it as a few lines of R code and create an object as described.</li>
-
-<li>Use this new <code>slr()</code> function/code to refit the SLR models in your dataset writeup. Compare the results and make sure they are returning the same thing.</li>
+  <li>Add a fitted MLR to your dataset write-up. State the model, in equation form. Describe it in words. Interpret your fitted coefficients.</li>
 </ul>
 
-<h4 id="from_class_7">From Class 7</h4>
-
+<h4 id="from-class-11">From Class 11</h4>
 <ul>
-<li>Add a fitted MLR to your dataset write-up. State the model, in equation form. Describe it in words. Interpret your fitted coefficients.</li>
+  <li>Fit a few reasonable MLR models.  Write down the model equations for each model you fit.</li>
+  <li>Include at least one MLR model with a categorical predictor (if you only have continuous variables, you can use the <code>cut()</code> function to factorize your variable). </li>
+  <li>Interpret key coefficients from each MLR model that you fit. </li>
 </ul>
 
-<h4 id="from_class_11">From Class 11</h4>
-
+<h4 id="from-class-12">From Class 12</h4>
 <ul>
-<li>Fit a few reasonable MLR models. Write down the model equations for each model you fit.</li>
-
-<li>Include at least one MLR model with a categorical predictor (if you only have continuous variables, you can use the <code>cut()</code> function to factorize your variable).</li>
-
-<li>Interpret key coefficients from each MLR model that you fit.</li>
+  <li>Add one global F test (with interpretation) to your data analysis.</li>
+  <li></li>
 </ul>
+
   </div>
 </div>
 
