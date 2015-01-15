@@ -3,6 +3,11 @@
   margin: 0 auto;
   max-width: 700px; }
 
+.navbar-inner {
+    text-align:left;
+}
+
+
 .container-narrow > hr {
   margin: 30px 0; }
 
