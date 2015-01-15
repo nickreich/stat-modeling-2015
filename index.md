@@ -8,8 +8,8 @@ tagline:
 #### Course summary
 The aim of this course is to provide fundamental statistical concepts and tools relevant to the practice of summarizing, analyzing, and visualizing data. This course will build your knowledge of the fundamental principles of biostatistical inference. The course will focus on linear regression and generalized linear regression models. We will use a variety of examples and exercises from scientific, medical, and public health research.
 
+<img src="assets/slide-includes/logo-interaction-image.jpg" width="400"/>
 
-![interaction plot](assets/slide-includes/logo-interaction-image.jpg =400x)
 
 ---
 
