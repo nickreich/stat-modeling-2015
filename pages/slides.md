@@ -8,8 +8,10 @@ tagline:
 
 Source files for all notes are available from the [master branch of the GitHub repository for this course](https://github.com/nickreich/stat-modeling-2015).
 
+<!--
+
  * Class 1: Course Introduction
-<!-- * Class 2: Introduction to Regression \[  [S](../assets/lectures/class2_IntroRegression.pdf) \| [A](../assets/lectures/class2_IntroRegression_annotated.pdf) \]
+ * Class 2: Introduction to Regression \[  [S](../assets/lectures/class2_IntroRegression.pdf) \| [A](../assets/lectures/class2_IntroRegression_annotated.pdf) \]
  * Class 3: Geometry of regression and least squares \[  [S](../assets/lectures/class3_SLRBasics.pdf) \| [A](../assets/lectures/class3_SLRBasics_annotated.pdf) \]
  * Class 4: Hands-on SLR practice 
  * Class 5: R^2, ANOVA \[  [S](../assets/lectures/class5_SLRwrapup.pdf) \| [A](../assets/lectures/class5_SLRwrapup_annotated.pdf) \]
@@ -34,4 +36,5 @@ Source files for all notes are available from the [master branch of the GitHub r
  * Class 23: Longitudinal Data Analysis (continued)
  * Class 24: Project prep
  * Classes 25-26: Project presentations
+
 -->
