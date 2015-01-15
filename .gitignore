@@ -21,3 +21,6 @@
 *.vrb
 *-concordance.tex
 *.synctex.gz
+
+## specific files
+_site/
