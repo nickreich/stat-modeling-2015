@@ -4,9 +4,11 @@ title: Lecture notes
 tagline: 
 ---
 
+Some lectures from the course will be available as [video lectures](https://umass.echo360.com/ess/portal/section/6c47935b-4969-45f0-8498-904023f6eb3f). The source code and PDF files associated with the lectures will be posted below after they are presented in class. Source files for all slides are available from the [master branch of the GitHub repository for this course](https://github.com/nickreich/stat-modeling-2015).
+
+
 \[S=Slides \| A=Annotated Slides \| R=R Code\]
 
-Source files for all notes are available from the [master branch of the GitHub repository for this course](https://github.com/nickreich/stat-modeling-2015).
 
 <!--
 

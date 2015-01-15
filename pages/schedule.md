@@ -6,10 +6,11 @@ tagline:
 
 *This is the working schedule for the course.*
 
---- | Tuesday | Thursday
---- | --- | --- 
-Week 1 (1/20, 1/22) | wits and wagers, course introduction | intro regression lecture, 
-Week 1 (1/27, 1/29) | lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum,  | intro regression lecture, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum
+Week    | Tuesday | Thursday
+------- | ------- | ------- 
+ 1  | Wits and Wagers, course introduction, what regression can and can't do | course technology overview (knitr/RMarkdown, ggplot2, git), Lecture: SLR intro
+ 2  | WW, data visualization: theory and practice, ggplot2 lab | Lecture: least squares and geometry of regression, OpenIntro Lab 7
+ 3  | WW, Lecture: SLR wrapup, lab: analyze NHANES dataset | Lecture: MLR Intro  
 
 <!--
 #### Class 1 (Jan 21): Course Introduction 
