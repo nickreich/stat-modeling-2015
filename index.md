@@ -6,7 +6,7 @@ tagline:
 
 
 #### Course summary
-The aim of this course is to provide fundamental statistical concepts and tools relevant to the practice of summarizing, analyzing, and visualizing data. This course will build your knowledge of the fundamental principles of biostatistical inference. The course will focus on linear regression and generalized linear regression models. We will use a variety of examples and exercises from scientific, medical, and public health research.
+The aim of this course is to provide fundamental statistical concepts and tools relevant to the practice of summarizing, analyzing, and visualizing data. This course will build your knowledge of the fundamental principles of biostatistical inference.  We will focus on linear regression and generalized linear regression models using a variety of examples and exercises from medical and public health research. 
 
 <img src="assets/slide-includes/logo-interaction-image.jpg" width="400"/>
 
@@ -19,26 +19,32 @@ The aim of this course is to provide fundamental statistical concepts and tools 
 
 **Instructor**: [Nicholas Reich](http://people.umass.edu/nick)
 
-**Office hours**: TBD
+**Office hours**: Wed 9:30-10:30 or by appointment
 
 **Prerequisites**: <br> 
-&nbsp; &nbsp; PUBHLTH 540, or equivalent intro statistics course. Some R experience, such as [PUBHLTH 590D](http://nickreich.github.io/statComp2014/).<br>
-&nbsp; &nbsp; Working knowledge of basic matrix methods and calculus will be helpful. <br>
-&nbsp; &nbsp; Familiarity with the [R statistical programming language](http://www.r-project.org) is expected.
+&nbsp; &nbsp; A first course in statistics or biostatistics.<br>
+&nbsp; &nbsp; Familiarity with the [R statistical programming language](http://www.r-project.org). <br>
+&nbsp; &nbsp; Working knowledge of basic matrix methods and calculus (optional, but recommended).
 
 **Lectures**: Tu/Th, 11:15am&ndash;12:30pm, LGRC 204
 
 **Required books** <br>
-&nbsp; &nbsp; M Kutner, C Nachtsheim, J Neter. (2004). _[Applied Linear Regression Models](http://www.amazon.com/Applied-Linear-Regression-Models--Student/dp/0073014664/)_ 4th Edition.
+Faraway JJ. 2002. \emph{\href{http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf}{Practical Regression and Anova using R}}.
+  
+James G, Witten D, Hastie T, and Tibshirani R. 2014. \emph{\href{http://www-bcf.usc.edu/~gareth/ISL/}{An Introduction to Statistical Learning}}.
+  
+Diez D, Barr C, and \c{C}etinkaya-Rundel M. 2012. \emph{\href{http://www.openintro.org/stat/index.php}{OpenIntro Statistics, 2nd Ed.}}.
 
 **Recommended books** <br>
-&nbsp; &nbsp; D Diez, C Barr, and M Cetinkaya-Rundel. (2012) _[OpenIntro Statistics](http://www.openintro.org/stat/index.php)_ 2nd Edition. <br>
-&nbsp; &nbsp; Y Xie. (2013) _[Dynamic documents with R and knitr](http://www.amazon.com/exec/obidos/ASIN/1482203537/7210-20)_<br>
-&nbsp; &nbsp; H Wickham. (2009) _[ggplot2: Elegant Graphics for Data Analysis](http://www.amazon.com/ggplot2-Elegant-Graphics-Data-Analysis/dp/0387981403/)_
+Weisberg S. 2005. \emph{Applied Linear Regression, 3rd Edition}. 
+
+Kutner M, Nachtsheim C, Neter J, and Li W. 2004. \emph{Applied Linear Regression Models}, \emph{4th Edition}. %?McGraw-Hill/Irwin.
+
+Hosmer DW and Lemeshow S. (2000). \emph{Applied Logistic Regression}. \emph{2nd Edition}. %Wiley.
+
+
 
 **Links to course resources**
-
-&nbsp; &nbsp; *[Piazza](https://piazza.com/umass/spring2014/pubhlth690nr/home)*
 
 &nbsp; &nbsp; *Datasets*<br>
 &nbsp; &nbsp; &nbsp; &nbsp; Some datasets may be found in the datsets folder of the Google Drive folder for this course. <br>
