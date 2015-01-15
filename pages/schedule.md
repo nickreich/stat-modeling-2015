@@ -9,6 +9,7 @@ tagline:
 --- | Tuesday | Thursday
 --- | --- | --- 
 Week 1 (1/20, 1/22) | wits and wagers, course introduction | intro regression lecture, 
+Week 1 (1/27, 1/29) | lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum,  | intro regression lecture, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum
 
 <!--
 #### Class 1 (Jan 21): Course Introduction 
