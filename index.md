@@ -28,10 +28,10 @@ The aim of this course is to provide fundamental statistical concepts and tools 
 
 **Lectures**: Tu/Th, 11:15am&ndash;12:30pm, LGRC 204
 
-**Required books** <br>
+**Required books** (all freely available online) <br>
 &nbsp; &nbsp; Faraway JJ. 2002. [Practical Regression and Anova using R](http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf). <br>
 &nbsp; &nbsp; James G, Witten D, Hastie T, and Tibshirani R. 2014. [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/). <br>
-&nbsp; &nbsp; Diez D, Barr C, and \c{C}etinkaya-Rundel M. 2012. [OpenIntro Statistics, 2nd Ed.](http://www.openintro.org/stat/index.php)
+&nbsp; &nbsp; Diez D, Barr C, and &Ccedil;etinkaya-Rundel M. 2012. [OpenIntro Statistics, 2nd Ed.](http://www.openintro.org/stat/index.php)
 
 **Recommended books** <br>
 &nbsp; &nbsp; Weisberg S. 2005. *Applied Linear Regression, 3rd Edition*. <br>
