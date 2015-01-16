@@ -29,30 +29,16 @@ The aim of this course is to provide fundamental statistical concepts and tools 
 **Lectures**: Tu/Th, 11:15am&ndash;12:30pm, LGRC 204
 
 **Required books** <br>
-Faraway JJ. 2002. \emph{\href{http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf}{Practical Regression and Anova using R}}.
-  
-James G, Witten D, Hastie T, and Tibshirani R. 2014. \emph{\href{http://www-bcf.usc.edu/~gareth/ISL/}{An Introduction to Statistical Learning}}.
-  
-Diez D, Barr C, and \c{C}etinkaya-Rundel M. 2012. \emph{\href{http://www.openintro.org/stat/index.php}{OpenIntro Statistics, 2nd Ed.}}.
+&nbsp; &nbsp; Faraway JJ. 2002. [Practical Regression and Anova using R](http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf). <br>
+&nbsp; &nbsp; James G, Witten D, Hastie T, and Tibshirani R. 2014. [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/). <br>
+&nbsp; &nbsp; Diez D, Barr C, and \c{C}etinkaya-Rundel M. 2012. [OpenIntro Statistics, 2nd Ed.](http://www.openintro.org/stat/index.php)
 
 **Recommended books** <br>
-Weisberg S. 2005. \emph{Applied Linear Regression, 3rd Edition}. 
-
-Kutner M, Nachtsheim C, Neter J, and Li W. 2004. \emph{Applied Linear Regression Models}, \emph{4th Edition}. %?McGraw-Hill/Irwin.
-
-Hosmer DW and Lemeshow S. (2000). \emph{Applied Logistic Regression}. \emph{2nd Edition}. %Wiley.
-
-
-
-**Links to course resources**
-
-&nbsp; &nbsp; *Datasets*<br>
-&nbsp; &nbsp; &nbsp; &nbsp; Some datasets may be found in the datsets folder of the Google Drive folder for this course. <br>
-&nbsp; &nbsp; &nbsp; &nbsp; Datasets from the KNN textbook exercises can be downloaded [here](https://netfiles.umn.edu/users/nacht001/www/nachtsheim/index.html). <br>
-&nbsp; &nbsp; &nbsp; &nbsp; Other datasets are available from [the Vanderbilt data website](http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets) or [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/). 
+&nbsp; &nbsp; Weisberg S. 2005. *Applied Linear Regression, 3rd Edition*. <br>
+&nbsp; &nbsp; Kutner M, Nachtsheim C, Neter J, and Li W. 2004. *Applied Linear Regression Models, 4th Edition*. <br>
+&nbsp; &nbsp; Hosmer DW and Lemeshow S. 2000. *Applied Logistic Regression, 2nd Edition*.
 
 
 ---
 
-Source on [github](http://github.com)<br>
-&nbsp; &nbsp; The [source for the website](https://github.com/nickreich/stat-modeling-2015/tree/gh-pages) 
+The [source for the website](https://github.com/nickreich/stat-modeling-2015/tree/gh-pages) 
