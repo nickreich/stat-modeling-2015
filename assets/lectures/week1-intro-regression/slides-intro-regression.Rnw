@@ -6,7 +6,7 @@
 \documentclass[table]{beamer}
 
 
-\input{../slide-includes/standard-knitr-beamer-preamble}
+\input{../../slide-includes/standard-knitr-beamer-preamble}
 
 %	The following variables are assumed by the standard preamble:
 %	Global variable containing module name:
@@ -26,7 +26,7 @@
 \newcommand{\Course}{}
 
 
-\input{../slide-includes/shortcuts}
+\input{../../slide-includes/shortcuts}
 
 \hypersetup{colorlinks,linkcolor=,urlcolor=MainColor}
 
@@ -45,12 +45,157 @@
 %		beamer preamble. 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{What is regression?}
+
+An informal overview
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{State-level SAT score data (1994-95)}
+
+<<sat1, echo=FALSE, message=FALSE, fig.height=5>>=
+library(mosaicData)
+data(SAT)
+SAT$fracgrp = cut(SAT$frac, breaks=c(0, 22, 49, 81), 
+                  labels=c("low", "medium", "high"))
+qplot(salary, sat, data=SAT) + xlab("est. average public school teacher salary") + ylab("average total SAT score")
+@
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{State-level SAT score data (1994-95)}
+
+<<sat2, echo=FALSE, message=FALSE, fig.height=5>>=
+qplot(salary, sat, data=SAT, geom=c("point", "smooth"), method="lm", se=FALSE) + 
+    xlab("est. average public school teacher salary") + 
+    ylab("average total SAT score")
+@
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{State-level SAT score data (1994-95)}
+
+<<sat3, echo=FALSE, message=FALSE, fig.height=5>>=
+qplot(salary, frac, data=SAT)+
+    xlab("est. average public school teacher salary") + 
+    ylab("percentage of all eligible students taking the SAT")
+@
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{State-level SAT score data (1994-95)}
+
+<<sat4, echo=FALSE, message=FALSE, fig.height=5>>=
+qplot(salary, frac, color=fracgrp, data=SAT)+
+    xlab("est. average public school teacher salary") + 
+    ylab("percentage of all eligible students taking the SAT") +
+    geom_hline(yintercept=c(22, 49), linetype=2, color="grey") +
+    guides(color=guide_legend(title=NULL))
+@
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{State-level SAT score data (1994-95)}
+
+<<sat4a, echo=FALSE, message=FALSE, fig.height=5>>=
+qplot(salary, sat, color=fracgrp, data=SAT) + 
+    xlab("est. average public school teacher salary") + 
+    ylab("average total SAT score")+
+    guides(color=guide_legend(title=NULL))
+@
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{State-level SAT score data (1994-95)}
+
+<<sat5, echo=FALSE, message=FALSE, fig.height=5>>=
+qplot(salary, sat, color=fracgrp, facets=.~fracgrp, data=SAT) + 
+    xlab("est. average public school teacher salary") + 
+    ylab("average total SAT score")+
+    guides(color=guide_legend(title=NULL))
+@
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{State-level SAT score data (1994-95)}
+
+<<sat6, echo=FALSE, message=FALSE, fig.height=5>>=
+qplot(salary, sat, color=fracgrp, data=SAT, geom=c("point", "smooth"), method="lm", se=FALSE) + 
+    xlab("est. average public school teacher salary") + 
+    ylab("average total SAT score")+
+    guides(color=guide_legend(title=NULL))
+@
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{State-level SAT score data (1994-95)}
+
+<<sat7, echo=FALSE, message=FALSE, fig.height=5>>=
+ggplot(SAT, aes(x=salary, y=sat)) +
+    geom_text(aes(color=fracgrp, label=state), size=4, show_guide=FALSE)+
+    geom_smooth(aes(color=fracgrp), method="lm", se=FALSE) +
+    geom_smooth(method="lm", se=FALSE, color="black") + 
+    xlab("est. average public school teacher salary") + 
+    ylab("average total SAT score") +
+    guides(color=guide_legend(title=NULL))
+@
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{State-level SAT score data (1994-95)}
+
+What can we conclude from all of this? (BTW, this is an example of \href{http://en.wikipedia.org/wiki/Simpson%27s_paradox}{"Simpson's Paradox"}.)
+
+\end{frame}
+
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{What is regression?}
+
+[Now, more formally...]
+
+\vspace{2em}
+
 
 "...to understand as far as possible with the available data how the conditional distribution of the response $y$ varies across subpopulations  determined by the possible values of the predictor or predictors." -- Cook and Weisberg (1999)
 
@@ -83,7 +228,7 @@ Good overview \href{http://en.wikipedia.org/wiki/Regression_analysis}{on Wikiped
 \begin{frame}{Circle of Life}
 
 \begin{figure}[t]
-    \includegraphics[width=.8\textwidth]{../slide-includes/CircleOfLife.pdf}  
+    \includegraphics[width=.8\textwidth]{../../slide-includes/CircleOfLife.pdf}  
 \end{figure}
 
 \end{frame} 
