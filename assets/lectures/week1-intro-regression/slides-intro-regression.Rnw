@@ -49,7 +49,7 @@
 
 \begin{frame}{What is regression?}
 
-An informal overview
+An informal introduction...
 
 \end{frame}
 
@@ -67,7 +67,11 @@ library(mosaicData)
 data(SAT)
 SAT$fracgrp = cut(SAT$frac, breaks=c(0, 22, 49, 81), 
                   labels=c("low", "medium", "high"))
-qplot(salary, sat, data=SAT) + xlab("est. average public school teacher salary") + ylab("average total SAT score")
+ggplot(SAT) + 
+    geom_text(aes(x=salary, y=sat, label=state), size=4, show_guide=FALSE) +
+    xlab("est. average public school teacher salary") + 
+    ylab("average total SAT score")
+
 @
 
 
@@ -75,6 +79,21 @@ qplot(salary, sat, data=SAT) + xlab("est. average public school teacher salary")
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{State-level SAT score data (1994-95)}
+
+<<sat1a, echo=FALSE, message=FALSE, fig.height=5>>=
+qplot(salary, sat, data=SAT) + xlab("est. average public school teacher salary") + ylab("average total SAT score")
+
+@
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \begin{frame}[fragile]{State-level SAT score data (1994-95)}
 
@@ -186,6 +205,25 @@ What can we conclude from all of this? (BTW, this is an example of \href{http://
 \end{frame}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Beware of correlation!}
+
+\begin{figure}[t]
+    \includegraphics[width=.8\textwidth]{us-spending-on-science-space-and-technology_suicides-by-hanging-strangulation-and-suffocation}  
+\end{figure}
+
+\end{frame}
+
+\begin{frame}[fragile]{Beware of correlation!}
+
+\begin{figure}[t]
+    \includegraphics[width=.8\textwidth]{number-people-who-drowned-by-falling-into-a-swimming-pool_number-of-films-niclas-cage-appeared-in}  
+\end{figure}
+
+\footnote{Hat tip to \href{http://www.tylervigen.com}{www.tylervigen.com}}
+\end{frame}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -225,6 +263,33 @@ Good overview \href{http://en.wikipedia.org/wiki/Regression_analysis}{on Wikiped
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{Example data: heights of mothers and daughters}
+ Heights of $n=1375$ mothers in the UK under the age of 65 and one of their adult daughters over the age of 18 (collected and organized during the period 1893--1898 by the famous statistician Karl Pearson)
+ 
+ 
+ 
+<<showHeights, message=FALSE>>=
+require(alr3)
+data(heights)
+head(heights)
+@
+
+\end{frame}
+
+\begin{frame}[fragile]{Example data: heights of mothers and daughters}
+ 
+<<plotHeights1, message=FALSE, fig.height=4, tidy=FALSE>>=
+require(ggplot2)
+qplot(Mheight, Dheight, data=heights, col="red", 
+      alpha=.5) + theme(legend.position="none")
+@
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{Circle of Life}
 
 \begin{figure}[t]
@@ -232,6 +297,8 @@ Good overview \href{http://en.wikipedia.org/wiki/Regression_analysis}{on Wikiped
 \end{figure}
 
 \end{frame} 
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -251,21 +318,8 @@ Given some data $y, x_1, x_2, \ldots x_p$, we are interesting finding a likely v
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{Example data: heights of mothers and daughters}
- Heights of $n=1375$ mothers in the UK under the age of 65 and one of their adult daughters over the age of 18 (collected and organized during the period 1893--1898 by the famous statistician Karl Pearson)
  
- 
- 
-<<showHeights, message=FALSE>>=
-require(alr3)
-data(heights)
-head(heights)
-@
-
-\end{frame}
-
-\begin{frame}[fragile]{Example data: heights of mothers and daughters}
- 
-<<plotHeights, message=FALSE, fig.height=4, tidy=FALSE>>=
+<<plotHeights, message=FALSE, fig.height=5, tidy=FALSE, echo=FALSE>>=
 require(ggplot2)
 qplot(Mheight, Dheight, data=heights, col="red", 
       alpha=.5) + theme(legend.position="none")
@@ -330,7 +384,7 @@ A linear regression model is a particular type of parametric regression.
 
 \begin{block}{Typical assumptions for a SLR model}
 \bi
-        \myitem A1: The model: e.g.  $y_i = f(x; \beta) +\epsilon_i= \beta_0 + \beta_1 x_1 + \epsilon_i$
+        \myitem A1: The model: e.g.  $y_i = f(x_i; \beta) +\epsilon_i= \beta_0 + \beta_1 x_{i,1} + \epsilon_i$
 	\myitem A2: Unbiased errors: $\mathbb E[\epsilon_i|x_i]  = \mathbb E[\epsilon_i] = 0$   
         \myitem A3: Uncorrelated errors: $cov(\epsilon_i, \epsilon_j)=0$ for $i\neq j$.
 	\myitem A4: Constant variance: $ Var[y_i|x_i] = \sigma^2$
