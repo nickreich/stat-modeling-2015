@@ -8,12 +8,18 @@ Homework assignments will be posted here, in general organized by due date.
 
 _Due Tuesday 1/27/2015_
 
-* Read through the syllabus
-* Take [CAOS test]()
-* Refresh/review creating data analysis reports using RMarkdown. 
-* If you don't know what ``tidy data'' is, [read about it](http://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html).
+* Read ISL Chapters 1 and 3.1.
+* Read Faraway Chapters 1 and 2.
+* Read through the syllabus.
+* Take CAOS test (link coming soon)
+* Hand in Problem 8 (part c is optional) from ISL Chapter 3 as a PDF file created using RMarkdown. You may use ggplot2 functions instead of base R graphics.
+* (Review) Brush up on creating data analysis reports using RMarkdown. 
+* (Review) If you don't know what ``tidy data'' is, [read about it](http://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html).
 
 
+
+
+<!--
 _Due Thursday 1/29/2015_
 
 * Create a short reproducible document (using knitr) that describes the basic structure of a dataset and summarizes some key features of the data using a few key tables and figures. Choose a dataset from [these datasets](http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets) or the ones in the class Google Drive. If your dataset has a lot of variables, focus on a subset of them -- less than 6 or so -- for the purposes of this exercise. Your write-up should answer the following questions:
@@ -27,7 +33,6 @@ _Due Thursday 1/29/2015_
   * Are there any obvious outliers in the data?
 
 
-<!--
 
 #### Class 1 (Jan 21): Course Introduction 
 
