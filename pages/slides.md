@@ -9,7 +9,7 @@ Some lectures from the course will be available as [video lectures](https://umas
 
 \[S=Slides \| A=Annotated Slides \| R=R Code\]
 
-* Class 1: Course Introduction \[  [S](../assets/lectures/week1-intro-regression/slides-intro-regression.pdf) \]
+* Class 1: Course Introduction \[  [S](../assets/lectures/week1-intro-regression/slides-intro-regression.pdf) |  [A](../assets/lectures/week1-intro-regression/slides-intro-regression-annotated.pdf) \]
 
 
 
