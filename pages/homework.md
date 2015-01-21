@@ -13,6 +13,7 @@ _Due Tuesday 1/27/2015_
 * Read through the syllabus.
 * Take [CAOS test](https://apps3.cehd.umn.edu/artist/user/scale_select.html) (Access code provided on Piazza)
 * Hand in Problem 8 (part c is optional) from ISL Chapter 3 as a PDF file created using RMarkdown. You may use ggplot2 functions instead of base R graphics.
+* Create a Google Drive folder named "[LastName]-[FirstName]-690NR" (e.g. "Reich-Nick-690NR") and share it with me (nick at umass dot edu). You will use this folder to hand in homework assignments.
 * (Review) Brush up on creating data analysis reports using RMarkdown. 
 * (Review) If you don't know what ``tidy data'' is, [read about it](http://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html).
 
