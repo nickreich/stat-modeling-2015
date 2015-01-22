@@ -9,7 +9,7 @@ Some lectures from the course will be available as [video lectures](https://umas
 
 \[S=Slides \| A=Annotated Slides \| R=R Code\]
 
-* Class 1: Introduction to Regression \[  [S](../assets/lectures/week1a-intro-regression/slides-intro-regression.pdf) |  [A](../assets/lectures/week1-intro-regression/slides-intro-regression-annotated.pdf) \]
+* Class 1: Introduction to Regression \[  [S](../assets/lectures/week1a-intro-regression/slides-intro-regression.pdf) \|  [A](../assets/lectures/week1-intro-regression/slides-intro-regression-annotated.pdf) \]
  * Class 2: Simple Linear Regression and Least Squares \[  [S](../assets/lectures/week1b-slr-basics/slides-slr-basics.pdf)  \]
 
 
