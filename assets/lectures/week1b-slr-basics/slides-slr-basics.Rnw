@@ -6,7 +6,7 @@
 \documentclass[table]{beamer}
 
 
-\input{../preambles/standard_knitr_beamer_preamble}
+\input{../../slide-includes/standard-knitr-beamer-preamble}
 
 %        The following variables are assumed by the standard preamble:
 %	Global variable containing module name:
@@ -26,7 +26,7 @@
 \newcommand{\Course}{}
 
 
-\input{../preambles/shortcuts}
+\input{../../slide-includes/shortcuts}
 
 \hypersetup{colorlinks,linkcolor=,urlcolor=MainColor}
 
@@ -181,6 +181,29 @@ cor(x,y) & = & \frac{cov(x,y)}{\sqrt{var(x)var(y)}}
 \end{frame}
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Least squares estimation}
+\bi
+	\myitem Observe data $(y_i, x_i)$ for subjects $1, \ldots, I$. Want to estimate $\beta_0, \beta_1$ in the model
+	$$ y_i = \beta_0 + \beta_1x_i + \epsilon_i; \mbox{ } \epsilon_i \stackrel{iid}{\sim} (0,\sigma^2)$$
+	\myitem Recall the assumptions:
+	\bi
+        \myitem A1: The model: e.g.  $y_i = f(x_i; \beta) +\epsilon_i= \beta_0 + \beta_1 x_{i,1} + \epsilon_i$
+        \myitem A2: Unbiased errors: $\mathbb E[\epsilon_i|x_i]  = \mathbb E[\epsilon_i] = 0$   
+        \myitem A3: Uncorrelated errors: $cov(\epsilon_i, \epsilon_j)=0$ for $i\neq j$.
+	    \myitem A4: Constant variance: $ Var[y_i|x_i] = \sigma^2$
+	    \myitem A5: Probability distribution: e.g. $\epsilon_i \stackrel{iid}{\sim} N(0, \sigma^2)$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  [not needed for LS, is needed for inference].
+        \myitem A6: Representative sampling: generalize to population.
+
+	\ei
+\ei
+
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]
@@ -212,29 +235,10 @@ qplot(x, y, data=dat1) + facet_wrap(~graph, scales="free")
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[t]{Least squares estimation}
-\bi
-	\myitem Observe data $(y_i, x_i)$ for subjects $1, \ldots, I$. Want to estimate $\beta_0, \beta_1$ in the model
-	$$ y_i = \beta_0 + \beta_1x_i + \epsilon_i; \mbox{ } \epsilon_i \stackrel{iid}{\sim} (0,\sigma^2)$$
-	\myitem Recall the assumptions:
-	\bi
-		\myitem A2: $E(\epsilon \mid x) = E(\epsilon) = 0$
-		\myitem A3: Uncorrelated errors
-        	\myitem A4: Constant variance
-		\myitem A5: Normal distribution not needed for least squares, but {\bf is} needed for inference.]
-	\ei
-\ei
-
-
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frame}{Circle of Life}
 
 \begin{figure}[t]
-    \includegraphics[width=.8\textwidth]{./Figs/CircleOfLife.pdf}  
+    \includegraphics[width=.8\textwidth]{../../slide-includes/CircleOfLife.pdf}  
 \end{figure}
 
 \end{frame} 
@@ -280,7 +284,7 @@ We obtain
 \begin{block}{Relationship between correlation and slope}
 \vspace{-.3in}
 \beqa
-\rho = \frac{cov(x, y)}{\sqrt{var(x)var(y)}}; \hspace{1cm} \hat{\beta}_1 = \frac{cov(x, y)}{var(x)}
+\rho = \frac{cov(x, y)}{\sqrt{var(x)var(y)}}; \hspace{1cm} {\beta}_1 = \frac{cov(x, y)}{var(x)}
 \eeqa
 \end{block}
 
@@ -317,11 +321,37 @@ $$\stackrel{min}{\beta_0, \beta_1} \sum_{i = 1}^{I} (y_i - (\beta_0 + \beta_1x_i
 
 \bi
 	\myitem Didn't have to choose to minimize squares -- could minimize absolute value, for instance.
-	\myitem Least squares estimates turn out to be a ``good idea" -- unbiased, BLUE.
+	\myitem Least squares estimates turn out to be a ``good idea" -- unbiased, BLUE (Best Linear Unbiased Estimator).
 	\myitem Later we'll see about maximum likelihood as well.
 \ei
 
 \end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Lab exercise: computing $\hat\beta$ on your own}
+
+\bi
+    \myitem Load the heights data from lecture 1.
+    \myitem Run a linear model using the R function {\tt lm()}, with daughter height as the outcome.
+    \myitem Compare the results of that regression with hand-calculated $\hat\beta_0$ and $\hat\beta_1$ coefficients.
+\ei
+
+<<sample-code, eval=FALSE>>=
+# sample code
+install.packages("alr3")
+library(alr3)
+data(heights)
+fm1 <- lm(Dheight ~ Mheight, data=heights)
+summary(fm1)
+@
+
+
+\end{frame}
+
 
 
 
