@@ -4,7 +4,7 @@ title: Homework
 tagline: 
 ---
 
-Homework assignments will be posted here, in general organized by due date.
+Homework assignments will be posted here, in general organized by due date. Unless otherwise specified, parts of homework assignments that need to be handed in should be handed in via your personal Google Drive folder that only you and the instructor have access to. 
 
 _Due Tuesday 1/27/2015_
 
