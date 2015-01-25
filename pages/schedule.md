@@ -9,7 +9,7 @@ tagline:
 Week    | Tuesday | Thursday
 ------- | ------- | ------- 
  1  | Wits and Wagers, course introduction, what regression can and can't do | course technology overview (knitr/RMarkdown, ggplot2, git), Lecture: SLR intro
- 2  | WW, data visualization: theory and practice, ggplot2 lab | Lecture: least squares and geometry of regression, OpenIntro Lab 7
+ 2  | WW, lecture: SLR intro (continued), lab: computing SLR estimates | Lecture: least squares and geometry of regression, OpenIntro Lab 7
  3  | WW, Lecture: SLR wrapup, lab: analyze NHANES dataset | Lecture: MLR Intro  
 
 <!--
