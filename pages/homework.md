@@ -6,6 +6,17 @@ tagline:
 
 Homework assignments will be posted here, in general organized by due date. Unless otherwise specified, parts of homework assignments that need to be handed in should be handed in via your personal Google Drive folder that only you and the instructor have access to. 
 
+_Due Tuesday 2/3/2015, 5pm_
+
+* Create a short reproducible document (using knitr) that describes the basic structure of a dataset and summarizes some key features of the data using a few key tables and figures. Choose a dataset from [these datasets](http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets),  the ones in the class Google Drive, or some other dataset that interests you. Be sure to pick a dataset that has a continuous variable that you can use as an outcome variable in a linear regression model. Your write-up should address the following points:
+  * What is the background/context for this data? 
+  * Data management: How many observations are there? Is the data tidy? What is the unit of observation? 
+  * Data validation: Is there any missing data? If so, are there patterns to the missingness? Are there any obvious outliers in the data?
+  * Choose 4 to 10 key variables from your dataset (including the outcome variable). Include a codebook-style table that lists for each chosen variable the names, definitions, type of variable (i.e. categorical, continuous, binary), and the number of missing observations. Choose at least two of these variables and provide figures that show their univariate distributions. Describe the plotted distributions in words.
+  * Run simple linear regressions with two different predictor variables. Interpret the results. Plot a scatterplot of each regression and include the fitted line on the graph. Rescale your predictor variables if necessary to obtain a meaningful interpretation of beta0.
+*  Using R, create an example of Simpson's paradox using simulated data, where you have a continuous outcome variable, one continuous x variable, and one categorical x variable. It is not necessary to fit regression models to show the paradox, but you should use several graphics to illustrate the slopes, as was shown in the slides for class 1.
+
+
 _Due Tuesday 1/27/2015_
 
 * Read ISL Chapters 1 and 3.1.
@@ -19,16 +30,6 @@ _Due Tuesday 1/27/2015_
 
 
 <!--
-_Due Tuesday 2/3/2015_
-
-* Create a short reproducible document (using knitr) that describes the basic structure of a dataset and summarizes some key features of the data using a few key tables and figures. Choose a dataset from [these datasets](http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets) or the ones in the class Google Drive. Choose a dataset that has a continuous variable that you can use as an outcome variable in a linear regression model. Your write-up should address the following points:
-  * What is the background/context for this data? 
-  * Data management: How many observations are there? Is the data tidy? What is the unit of observation? 
-  * Data validation: Is there any missing data? If so, are there patterns to the missingness? Are there any obvious outliers in the data?
-  * Choose 4 to 10 key variables from your dataset (including the outcome variable). Include a codebook-style table that lists for each chosen variable the names, definitions, type of variable (i.e. categorical, continuous, binary), and the number of missing observations. Choose at least two of these variables and provide figures that show their univariate distributions. Describe the plotted distributions in words.
-  * Run simple linear regressions with two different predictor variables. Interpret the results. Plot a scatterplot of each regression and include the fitted line on the graph. Rescale your predictor variables if necessary to obtain a meaningful interpretation of b_0.
-*  Using R, create an example of Simpson's paradox using simulated data, where you have a continuous outcome variable, one continuous x variable, and one categorical x variable. It is not necessary to fit regression models to show the paradox, but you should use several graphics to illustrate the slopes, as was shown in the slides for class 1.
-
 
 
 
