@@ -8,7 +8,7 @@ Homework assignments will be posted here, in general organized by due date. Unle
 
 _Due Tuesday 2/3/2015, 5pm_
 
-* Create a short reproducible document (using knitr) that describes the basic structure of a dataset and summarizes some key features of the data using a few key tables and figures. Choose a dataset from [these datasets](http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets),  the ones in the class Google Drive, or some other dataset that interests you. Be sure to pick a dataset that has a continuous variable that you can use as an outcome variable in a linear regression model. Your write-up should address the following points:
+* Create a short reproducible document (using knitr) that describes the basic structure of a dataset and summarizes some key features of the data using a few key tables and figures. Choose a dataset from [these datasets](data.html),  the ones in the class Google Drive, or some other dataset that interests you. Be sure to pick a dataset that has a continuous variable that you can use as an outcome variable in a linear regression model. Your write-up should address the following points:
   * What is the background/context for this data? 
   * Data management: How many observations are there? Is the data tidy? What is the unit of observation? 
   * Data validation: Is there any missing data? If so, are there patterns to the missingness? Are there any obvious outliers in the data?
