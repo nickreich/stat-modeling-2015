@@ -6,7 +6,8 @@ tagline:
 
 Homework assignments will be posted here, in general organized by due date. Unless otherwise specified, parts of homework assignments that need to be handed in should be handed in via your personal Google Drive folder that only you and the instructor have access to. 
 
-_Due Tuesday 2/3/2015, 5pm_ (PDF and Rmd files handed in via Google Drive) 
+_Due Tuesday 2/3/2015, 5pm_ 
+(PDF and Rmd files to be handed in via Google Drive) 
 
 * Create a short reproducible document (using knitr) that describes the basic structure of a dataset and summarizes some key features of the data using a few key tables and figures. Choose a dataset from [these datasets](datasets.html),  the ones in the class Google Drive, or some other dataset that interests you. Be sure to pick a dataset that has a continuous variable that you can use as an outcome variable in a linear regression model. Your write-up should address the following points:
   * What is the background/context for this data? 
