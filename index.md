@@ -34,6 +34,7 @@ The aim of this course is to provide fundamental statistical concepts and tools 
 &nbsp; &nbsp; Diez D, Barr C, and &Ccedil;etinkaya-Rundel M. 2012. [OpenIntro Statistics, 2nd Ed.](http://www.openintro.org/stat/index.php)
 
 **Recommended books** <br>
+&nbsp; &nbsp; Hefferon J. 2014. [Linear Algebra](http://joshua.smcvt.edu/linearalgebra/) (free textboox) <br>
 &nbsp; &nbsp; Weisberg S. 2005. *Applied Linear Regression, 3rd Edition*. <br>
 &nbsp; &nbsp; Kutner M, Nachtsheim C, Neter J, and Li W. 2004. *Applied Linear Regression Models, 4th Edition*. <br>
 &nbsp; &nbsp; Hosmer DW and Lemeshow S. 2000. *Applied Logistic Regression, 2nd Edition*.

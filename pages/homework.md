@@ -4,34 +4,35 @@ title: Homework
 tagline: 
 ---
 
-Homework assignments will be posted here, in general organized by due date.
+Homework assignments will be posted here, in general organized by due date. Unless otherwise specified, parts of homework assignments that need to be handed in should be handed in via your personal Google Drive folder that only you and the instructor have access to. 
+
+**Collaboration on homework is expected and encouraged, although you must write up your own assignment. No copying or cutting and pasting.**
+
+_Due Tuesday 2/3/2015, 5pm_ 
+(PDF and Rmd files to be handed in via Google Drive) 
+
+* (20 points) Create a short reproducible document (using knitr) that describes the basic structure of a dataset and summarizes some key features of the data using a few key tables and figures. Choose a dataset from [these datasets](datasets.html),  the ones in the class Google Drive, or some other dataset that interests you. Be sure to pick a dataset that has a continuous variable that you can use as an outcome variable in a linear regression model. Your write-up should address the following points:
+  * What is the background/context for this data? 
+  * Data management: How many observations are there? Is the data tidy? What is the unit of observation? 
+  * Data validation: Is there any missing data? If so, are there patterns to the missingness? Are there any obvious outliers in the data?
+  * Choose 4 to 10 key variables from your dataset (including the outcome variable). Include a codebook-style table that lists for each chosen variable the names, definitions, type of variable (i.e. categorical, continuous, binary), and the number of missing observations. Choose at least two of these variables and provide figures that show their univariate distributions. Describe the plotted distributions in words.
+  * Run simple linear regressions with two different predictor variables. Interpret the results. Plot a scatterplot of each regression and include the fitted line on the graph. Rescale your predictor variables if necessary to obtain a meaningful interpretation of beta0.
+* (10 points) Using R, create an example of Simpson's paradox using simulated data, where you have a continuous outcome variable, one continuous x variable, and one categorical x variable. It is not necessary to fit regression models to show the paradox, but you should use several graphics to illustrate the slopes, as was shown in the slides for class 1. You should simulate your data using probability distributions with the R functions such as `rnorm()`, `runif()`, `rpois()`, etc... Every time your .Rmd file is re-knit, you should end up with different data, but the story should be the same. 
+
 
 _Due Tuesday 1/27/2015_
 
 * Read ISL Chapters 1 and 3.1.
 * Read Faraway Chapters 1 and 2.
 * Read through the syllabus.
-* Take [CAOS test](https://apps3.cehd.umn.edu/artist/user/scale_select.html) (Access code provided on Piazza)
-* Hand in Problem 8 (part c is optional) from ISL Chapter 3 as a PDF file created using RMarkdown. You may use ggplot2 functions instead of base R graphics.
-* Create a Google Drive folder named "[LastName]-[FirstName]-690NR" (e.g. "Reich-Nick-690NR") and share it with me (nick at umass dot edu). You will use this folder to hand in homework assignments.
+* (5 points for completing the test) Take [CAOS test](https://apps3.cehd.umn.edu/artist/user/scale_select.html) (Access code provided on Piazza)
+* (10 points) Hand in Problem 8 (part c is optional) from ISL Chapter 3 as a PDF file created using RMarkdown. You may use ggplot2 functions instead of base R graphics.
+* (5 points) Create a Google Drive folder named "[LastName]-[FirstName]-690NR" (e.g. "Reich-Nick-690NR") and share it with me (nick at umass dot edu). You will use this folder to hand in homework assignments.
 * (Review) Brush up on creating data analysis reports using RMarkdown. 
 * (Review) If you don't know what ``tidy data'' is, [read about it](http://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html).
 
 
-
-
 <!--
-_Due Thursday 1/29/2015_
-
-* Create a short reproducible document (using knitr) that describes the basic structure of a dataset and summarizes some key features of the data using a few key tables and figures. Choose a dataset from [these datasets](http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets) or the ones in the class Google Drive. If your dataset has a lot of variables, focus on a subset of them -- less than 6 or so -- for the purposes of this exercise. Your write-up should answer the following questions:
-  * What is the background/context for this data? 
-  * How many observations are there?
-  * Is the data tidy?
-  * What is the unit of observation?
-  * Is there any missing data? If so, are there patterns to the missingness?
-  * What are the key variables and what do their distributions look like?
-  * Is there a pair of variables that might work well for a Simple Linear Regression? (You don't necessarily need to run one, but you could.)
-  * Are there any obvious outliers in the data?
 
 
 
