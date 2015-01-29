@@ -6,7 +6,7 @@ tagline:
 
 Homework assignments will be posted here, in general organized by due date. Unless otherwise specified, parts of homework assignments that need to be handed in should be handed in via your personal Google Drive folder that only you and the instructor have access to. 
 
-*Collaboration on homework is expected and encouraged, although you must write up your own assignment. No copying or cutting and pasting.*
+**Collaboration on homework is expected and encouraged, although you must write up your own assignment. No copying or cutting and pasting.**
 
 _Due Tuesday 2/3/2015, 5pm_ 
 (PDF and Rmd files to be handed in via Google Drive) 
