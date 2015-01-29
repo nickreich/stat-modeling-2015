@@ -14,7 +14,7 @@ knit_hooks$set(source = function(x, options) {
 
 \license{This is a product of \href{http://statsteachr.org}{statsTeachR} that is released under a \href{http://creativecommons.org/licenses/by-sa/3.0}{Creative Commons Attribution-ShareAlike 3.0 Unported}. This lab was adapted for \href{http://statsteachr.org}{statsTeachR} by Sara Nu\~nez, Nicholas Reich and Andrea Foulkes from an \href{http://www.openintro.org/stat/}{OpenIntro Statistics} lab written by Andrew Bray and Mine \c{C}etinkaya-Rundel.}
 
-\section*{Lab 7: Introduction to linear regression}
+\section*{Lab 1: Introduction to linear regression}
 
 \subsection*{Cigarettes and carbon monoxide emissions}
 
