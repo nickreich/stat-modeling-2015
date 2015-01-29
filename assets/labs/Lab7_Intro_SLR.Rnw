@@ -55,14 +55,15 @@ Looking at your plot from the previous exercise, describe the relationship betwe
 Just as we used the mean and standard deviation to summarize a single variable, we can summarize the relationship between these two variables by finding the line that best follows their association.  Use the following interactive function to select the line that you think does the best job of going through the cloud of points.
 \newline
 \newline
-\textbf{Note:} You need to access this function using \hlkwd{source()}. The \emph{plot\_ss.R} file that contains the code for this function can be found in the lab source folder in module OpenIntro3. To access it, change the directory path to where \emph{plot\_ss.R} is saved on your device. If you saved the module to your desktop, for example, all you would need to change is \emph{nunezsa} to your username in the following source code. 
-
+\textbf{Note:} You need to access this function by sourcing a function on GitHub using the following commands:
 <<plotss-atbats-runs, eval=FALSE>>=
-source("/Users/nunezsa/Desktop/OpenIntro3/source/labs/plot_ss.R")
+u <- "https://raw.githubusercontent.com/nickreich/stat-modeling-2015/gh-pages/assets/labs/plot_ss.R"
+script <- getURL(u, ssl.verifypeer = FALSE)
+eval(parse(text = script))
 plot_ss(x = cigs$tar, y = cigs$CO)
 @
 
-After running this command, you'll be prompted to click two points on the plot to define a line.  Once you've done that, the line you specified will be shown in black and the residuals in red.  Note that there are 25 residuals, one for each of the 25 observations. Recall that the residuals are the difference between the observed values and the values predicted by the line:
+After running the last command above, you'll be prompted to click two points on the plot to define a line.  Once you've done that, the line you specified will be shown in black and the residuals in red.  Note that there are 25 residuals, one for each of the 25 observations. Recall that the residuals are the difference between the observed values and the values predicted by the line:
 
 \[ e_i = y_i - \hat{y}_i \]
 
@@ -98,6 +99,12 @@ Let's consider this output piece by piece.  First, the formula used to describe 
 
 One last piece of information we will discuss from the summary output is the Multiple R-squared, or more simply, $R^2$. The $R^2$ value represents the proportion of variability in the response variable that is explained by the explanatory variable. For this model, 91.68\% of the variability in carbon monoxide content is explained by the amount of tar in the cigarette.
 
+
+\begin{exercise}
+Calculate $\hat\beta_0$ and $\hat\beta_1$ from the model of \hlkwd{CO} as a function of \hlkwd{tar} by hand (i.e. using arithmetic/linear algebra and R as your calculator). Confirm that they match up with the values from the fitted model using \hlkwd{lm}.
+\end{exercise}
+
+
 \begin{exercise}
 What does the slope tell us in the context of the relationship between the amount of carbon monoxide emitted into the environment and the amount of tar in the cigarette?
 \end{exercise}
@@ -111,12 +118,12 @@ Fit a new model \hlkwd{m2} that uses \hlkwd{weight} to predict \hlkwd{CO}.  Usin
 Let's create a scatterplot of \hlkwd{CO} versus \hlkwd{tar} with the least squares line laid on top.
 
 <<reg-with-line, eval=FALSE>>=
-plot(cigs$CO ~ cigs$tar)
-
-abline(m1)
+qplot(tar, CO, data=cigs)
+qplot(tar, CO, data=cigs, geom=c("point", "smooth"), method="lm")
+qplot(tar, CO, data=cigs, geom=c("point", "smooth"), method="lm", se=FALSE)
 @
 
-The function \hlkwd{abline} plots a line based on its slope and intercept.  Here, we used a shortcut by providing the model \hlkwd{m1}, which contains both parameter estimates. This line can be used to predict $y$ at any value of $x$.  When predictions are made for values of $x$ that are beyond the range of the observed data, it is referred to as \emph{extrapolation} and is not usually recommended.  However, predictions made within the range of the data are more reliable.  They're also used to compute the residuals.
+The fitted line can be used to predict $y$ at any value of $x$.  When predictions are made for values of $x$ that are beyond the range of the observed data, it is referred to as \emph{extrapolation} and is not usually recommended.  However, predictions made within the range of the data are more reliable.  They're also used to compute the residuals.
 
 \begin{exercise}
 If you saw the least squares regression line and not the actual data, how much CO (mg) would you predict to be emitted from a cigarette with 15 mg of tar? Is this an overestimate or an underestimate, and by how much? In other words, what is the residual for this prediction?
@@ -127,12 +134,10 @@ If you saw the least squares regression line and not the actual data, how much C
 To assess whether the linear model is reliable, we need to check for  (1) linearity, (2) nearly normal residuals, and (3) constant variability.
 
 \begin{enumerate}
-\item Linearity: You already checked if the relationship between CO content and amount of tar is linear using a scatterplot. We should also verify this condition with a plot of the residuals vs. \hlkwd{tar}.  Recall that any code following a \hlcom{\#} is intended to be a comment that helps understand the code but is ignored by R.
+\item Linearity: You already checked if the relationship between CO content and amount of tar is linear using a scatterplot. We should also verify this condition with a plot of the residuals vs. \hlkwd{tar}.  
 
 <<residuals, eval=FALSE>>=
-plot(m1$residuals ~ cigs$tar)
-
-abline(h = 0, lty = 3)  # adds a horizontal dashed line at y = 0
+qplot(tar, m1$residuals, data=cigs) + geom_hline(yintercept=0, linetype=3)
 @
 
 \begin{exercise}
@@ -142,14 +147,13 @@ Is there any apparent pattern in the residuals plot? What does this indicate abo
 \item Nearly normal residuals: To check this condition, we can look at a histogram
 
 <<hist-res, eval=FALSE>>=
-hist(m1$residuals)
+qplot(m1$residuals)
 @
 
-or a normal probability plot of the residuals.
+or a normal probability plot of the residuals. Recall that any code following a \hlcom{\#} is intended to be a comment that helps understand the code but is ignored by R.
 
 <<qq-res, eval=FALSE>>=
 qqnorm(m1$residuals)
-
 qqline(m1$residuals)  # adds diagonal line to the normal prob plot
 @
 
