@@ -6,7 +6,7 @@ tagline:
 
 *This is the working schedule for the course.*
 
-Week | Dates |     | Tuesday | Thursday
+Week |  |     | Tuesday | Thursday
 ---- | ----- | --- | ------- | ------- 
  1  | Jan | 20&22 | Wits and Wagers, course introduction, what regression can and can't do | course technology overview (knitr/RMarkdown, ggplot2, git), Lecture: SLR intro
  2  |     | 27&29 | Snow day! | WW, lecture: SLR intro (continued), [Lab 1](../assets/labs/lab1-intro-slr.pdf)
