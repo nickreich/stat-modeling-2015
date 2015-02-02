@@ -13,6 +13,11 @@
 .Rproj.user/
 .Rproj.user
 
+## remove unneeded files associated with lectures
+assets/lectures/*/*.tex
+figure/
+cache/
+
 ## beamer files
 *.snm
 *.nav
