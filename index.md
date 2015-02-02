@@ -40,6 +40,17 @@ The aim of this course is to provide fundamental statistical concepts and tools 
 &nbsp; &nbsp; Hosmer DW and Lemeshow S. 2000. *Applied Logistic Regression, 2nd Edition*.
 
 
+**Topics covered**<br>
+&nbsp; &nbsp; Simple and multiple linear regression <br>
+&nbsp; &nbsp; Least squares estimation, interpretation and inference about linear regression <br>
+&nbsp; &nbsp; Goodness of fit, model diagnostics<br>
+&nbsp; &nbsp; Model selection<br>
+&nbsp; &nbsp; Inference using bootstrapping<br>
+&nbsp; &nbsp; Smooth splines<br>
+&nbsp; &nbsp; Logistic regression (introduction)<br>
+&nbsp; &nbsp; Longitudinal data analysis (introduction)<br>
+&nbsp; &nbsp; Poisson regression (introduction, time permitting)<br>
+
 ---
 
 The [source for the website](https://github.com/nickreich/stat-modeling-2015/tree/gh-pages) 
