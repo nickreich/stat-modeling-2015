@@ -6,39 +6,39 @@ tagline:
 
 *This is the working schedule for the course.*
 
-Week |       |     | Topic   | Resources
+Week |       |     | Topic   | In-class resources
 ---- | ----- | --- | ------- | ------- 
- 1   | Jan &nbsp; | 20, 22 &nbsp; | Simple Linear Regression &nbsp; | 
- 2   |     | 27, 29 &nbsp; | Simple Linear Regression (con't) |
- 3   | Feb | 3, 5   | Least squares, multiple linear regression |
- 4   |     | 10, 12 | MLR (con't)  | 
- 5   |     | 19     | |
- 6   |     | 24, 26 | | 
- 7   | Mar | 3, 5   | | 
- 8   |     | 10, 12 | | 
+ 1   | Jan &nbsp; | 20, 22 &nbsp; | Simple Linear Regression &nbsp; | [Lecture 1](../assets/lectures/week1a-intro-regression/slides-intro-regression.pdf)
+ 2   |     | 27, 29 &nbsp; | Simple Linear Regression (con't) | [Lecture 2](../assets/lectures/week1b-slr-basics/slides-slr-basics.pdf), [Lab 1](../assets/labs/lab1-intro-slr.pdf)
+ 3   | Feb | 3, 5   | Least squares, multiple linear regression &nbsp; |
+ 4   |     | 10, 12 | MLR: diagnostics, goodness of fit  | 
+ 5   |     | 19     | MLR: inference, multiple testing |
+ 6   |     | 24, 26 | MLR: model checking and diagnostics | 
+ 7   | Mar | 3, 5   | MLR: model selection | 
+ 8   |     | 10, 12 | MLR: modeling interactions | 
      |     | 17, 19 | Spring Break! |
- 9   |     | 24, 26 | | 
- 10  | Apr | 31, 2  | | 
- 11  |     | 7, 9   | | 
- 12  |     | 14, 19 | | 
- 13  |     | 21, 23 | | 
- 14  |     | 28     | | 
+ 9   |     | 24, 26 | Splines in regression | 
+ 10  | Apr | 31, 2  | Linear regression wrap-up | 
+ 11  |     | 7, 9   | Logistic regression | 
+ 12  |     | 14, 19 | Longitudinal data analysis | 
+ 13  |     | 21, 23 | Poisson regression | 
+ 14  |     | 28     | Course wrap-up | 
 
 
 
 
 <!-- Detailed schedules
  Week 1:
- Tuesday: Wits and Wagers, course introduction, lecture: what regression can and can't do 
- Thursday: course technology overview (knitr/RMarkdown, ggplot2, git), Lecture: SLR intro
+ Tuesday: Wits and Wagers, course introduction, lecture 1: what regression can and can't do 
+ Thursday: course technology overview (knitr/RMarkdown, ggplot2, git), Lecture 2: SLR intro
  
  Week 2:
  Tuesday: Snow day! 
- Thursday: WW, lecture: SLR intro (continued), [Lab 1](../assets/labs/lab1-intro-slr.pdf)
+ Thursday: WW, lecture 2: SLR intro (continued), lab 1
  
  Week 3: 
-Tuesday: quiz, WW, Lecture: least squares and geometry of regression 
-Thursday: Lecture: SLR wrapup, lab: analyze NHANES dataset 
+ Tuesday: quiz, WW, Lecture 3: least squares and geometry of regression 
+ Thursday: Lecture: SLR wrapup, lab: analyze NHANES dataset 
  
   -->
 
