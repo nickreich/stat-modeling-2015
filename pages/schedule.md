@@ -8,11 +8,11 @@ tagline:
 
 Week | Dates |     | Tuesday | Thursday
 ---- | ----- | --- | ------- | ------- 
- 1  | Jan | 20, 22 | Wits and Wagers, course introduction, what regression can and can't do | course technology overview (knitr/RMarkdown, ggplot2, git), Lecture: SLR intro
- 2  |     | 27, 29 | Snow day! | WW, lecture: SLR intro (continued), [Lab 1](../assets/labs/lab1-intro-slr.pdf)
- 3  | Feb | 3, 5   | WW, Lecture: least squares and geometry of regression | Lecture: SLR wrapup, lab: analyze NHANES dataset 
- 4  |     | 10, 12 | Lecture: MLR Intro  | 
- 5  |     | 17, 19 |  |
+ 1  | Jan | 20&22 | Wits and Wagers, course introduction, what regression can and can't do | course technology overview (knitr/RMarkdown, ggplot2, git), Lecture: SLR intro
+ 2  |     | 27&29 | Snow day! | WW, lecture: SLR intro (continued), [Lab 1](../assets/labs/lab1-intro-slr.pdf)
+ 3  | Feb | 3&5   | WW, Lecture: least squares and geometry of regression | Lecture: SLR wrapup, lab: analyze NHANES dataset 
+ 4  |     | 10&12 | Lecture: MLR Intro  | 
+ 5  |     | 17&19 |  |
  
 
 <!--
