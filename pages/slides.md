@@ -11,6 +11,7 @@ Some lectures from the course will be available as [video lectures](https://umas
 
 * Lecture 1: Introduction to Regression \[  [S](../assets/lectures/lecture1-intro-regression/lecture1-intro-regression.pdf) \|  [A](../assets/lectures/lecture1-intro-regression/lecture1-intro-regression-annotated.pdf) \]
 * Lecture 2: Simple Linear Regression and Least Squares \[  [S](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics.pdf) \| [A](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics-annotated.pdf)  \]
+* Lecture 3: Simple Linear Regression and ANOVA \[ [S](../assets/lectures/lecture3-slr-anova/lecture3-SLR-anova.pdf) \]
 
 
 

@@ -10,7 +10,7 @@ Week |       |     | Topic   | In-class resources
 ---- | ----- | --- | ------- | ------- 
  1   | Jan &nbsp; | 20, 22 &nbsp; | Simple Linear Regression &nbsp; | [Lecture 1](../assets/lectures/lecture1-intro-regression/leccture1-intro-regression.pdf)
  2   |     | 27, 29 &nbsp; | Simple Linear Regression (con't) | [Lecture 2](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics.pdf), [Lab 1](../assets/labs/lab1-intro-slr.pdf)
- 3   | Feb | 3, 5   | Least squares, multiple linear regression &nbsp; | [Lecture 3](../assets/lectures/lecture3-slr-anova/lecture3-slr-anova.pdf)
+ 3   | Feb | 3, 5   | Least squares, multiple linear regression &nbsp; | [Lecture 3](../assets/lectures/lecture3-slr-anova/lecture3-SLR-anova.pdf)
  4   |     | 10, 12 | MLR: diagnostics, goodness of fit  | 
  5   |     | 19     | MLR: inference, multiple testing |
  6   |     | 24, 26 | MLR: model checking and diagnostics | 
