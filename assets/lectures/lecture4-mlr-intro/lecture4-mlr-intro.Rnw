@@ -179,7 +179,7 @@ $\beta_0 = E(y | x_1 = 0, \ldots, x = 0)$
 
 \begin{frame}{Example with two predictors}
 
-Suppose we want to regress weight on height and sex.
+Suppose we want to regress weight on age and sex.
 \bi
 	\myitem Model is $y_i = \beta_0 + \beta_1 x_{i, age} + \beta_2 x_{i, sex} + \epsilon_i$
 	\myitem Age is continuous starting with age 0; sex is binary, coded so that $x_{i,sex} = 0$ for men and $x_{i,sex} = 1$ for women
