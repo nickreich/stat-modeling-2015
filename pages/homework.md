@@ -8,6 +8,10 @@ Homework assignments will be posted here, in general organized by due date. Unle
 
 **Collaboration on homework is expected and encouraged, although you must write up your own assignment. No copying or cutting and pasting.**
 
+_Due Tuesday 2/10/2015, 5pm_ 
+
+* (30 points) Complete [Lab 2](../assets/labs/lab2-intro-mlr.pdf). Hand in a PDF and Rmd file via Google Drive. 
+
 _Due Tuesday 2/3/2015, 5pm_ 
 (PDF and Rmd files to be handed in via Google Drive) 
 

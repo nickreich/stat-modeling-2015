@@ -1,0 +1,172 @@
+ \documentclass{article}
+
+\input{../slide-includes/statsTeachR-preamble-labs}
+
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+hook_source = knit_hooks$get('source') # the following correct tilde display
+knit_hooks$set(source = function(x, options) {
+  txt = hook_source(x, options)
+  gsub('~', '\\\\mytilde', txt)
+})
+@
+
+\license{This is a product of \href{http://statsteachr.org}{statsTeachR} that is released under a \href{http://creativecommons.org/licenses/by-sa/3.0}{Creative Commons Attribution-ShareAlike 3.0 Unported}. This lab was adapted for \href{http://statsteachr.org}{statsTeachR} by Sara Nu\~nez, Nicholas Reich and Andrea Foulkes from an \href{http://www.openintro.org/stat/}{OpenIntro Statistics} lab written by Andrew Bray and Mine \c{C}etinkaya-Rundel.}
+
+\section*{Lab 2: Multiple linear regression}
+
+\subsection*{Relationships of Body Dimensions}
+
+The data set we will utilize in this lab contains 21 body dimension measurements, age, weight, height, and gender of 507 individuals mostly in their twenties and thirties. All individuals exercise regularly and are considered physically active. The data was submitted to the Journal of Statistical Education by Grete Heinz and Louis J. Peterson, who took measurements at San Jose State University, the U.S. Naval Postgraduate School in Monterey, California, and dozens of California health and fitness clubs. The data set itself is available through the American Statiscial Association, and a description of the variables is provided here \web{http://www.amstat.org/publications/jse/datasets/body.txt}.
+
+First, we will load the data and give the columns their respective names, found at the link above.
+
+<<load-data,eval=FALSE, tidy=FALSE>>=
+require(RCurl)
+URL <- getURL("http://www.amstat.org/publications/jse/datasets/body.dat.txt", 
+              ssl.verifypeer=FALSE)
+body <- read.table(text=URL)
+names(body) <- c("biac.diam", "pelvic.bredth", "bitro.diam", "chest.dep", "chest.diam",
+                 "elbow.diam","wrist.diam", "knee.diam", "ankle.diam", "shoulder", "chest",
+                 "waist", "navel", "hip", "thigh", "bicep", "forearm", "knee", "calf",
+                 "ankle.min", "wrist.min", "age", "weight", "height", "gender" )
+@
+
+\subsection*{Data exploration}
+
+Let's start by just familiarizing ourselves with the dataset at hand.
+
+\begin{exercise}
+Refer to the link provided for the data description. What was this data originally collect for? What were the authors trying to investigate? 
+\end{exercise}
+
+There are 21 different body dimension measurements provided as well as height and weight. We should first explore some of the data to see what the distribution of some of these measurements look like.
+
+\begin{exercise}
+First let's look at the distribution of weight in this sample. Create a histogram or boxplot to visualize the center and spread of \hlkwd{weight}. Describe.
+\end{exercise}
+
+\begin{exercise}
+Choose 2 other variables (besides \hlkwd{weight}) you feel would be important measurements in predicting someone's weight. Look at their relationship using an appropriate visualization (scatterplot, side-by-side boxplots, or mosaic plot).
+\end{exercise}
+
+\begin{exercise}
+The \hlkwd{gender} variable is stored as a numeric variable where 1 means female and 0 means male. Overwrite it as a factor variable using the \hlkwd{factor()} function. Remember, you can find help on a function using the \hlkwd{?} syntax, such as 
+<<get-help, eval=FALSE>>=
+?factor
+@
+
+<<new-gender, eval=FALSE, echo=FALSE>>=
+body$gender <- factor(body$gender, levels=c(0,1), labels=c("female", "male"))
+@
+
+
+\end{exercise}
+
+\subsection*{Simple linear regression}
+
+It seems intuitive that most of these meaurements will be associated with a person's weight. Let's look at a few of these relationships using scatterplots (be sure to zoom in on the plots to see the relationships more clearly):
+
+<<scatter-plots,eval=FALSE>>=
+library(ggplot2)
+qplot(hip, weight, data=body)
+qplot(chest, weight, data=body)
+qplot(wrist.diam, weight, data=body)
+qplot(thigh, weight, data=body, color=gender)
+@
+
+\begin{exercise}
+Describe the 4 scatterplots. Do any of the plots seem to have more than one trend? If so, why do you think this is? Explore your hypothesis with another visualization of your choosing.
+\end{exercise}
+
+\begin{exercise}
+Let's see if the apparent trend in the plot of \hlkwd{weight} and \hlkwd{chest} is something more than natural variation.  Fit a linear model called \hlkwd{lm\_chest} to predict average weight by average chest girth and add the line to your plot using \hlkwd{abline(}\hlstd{lm\_chest}\hlkwd{)}, or a \hlkwd{geom\_smooth} in ggplot2.  Write out the equation for the linear model and interpret the slope.  Is chest girth a statistically significant predictor? Report the multiple R-squared value. Is this a positive or negative linear relationship?
+\end{exercise}
+
+\begin{exercise}
+Use residual plots to evaluate whether the conditions of least squares regression are reasonable.  Provide plots and comments for each one (see Lab 7 for a reminder of how to make these).
+\end{exercise}
+
+\subsection*{Multiple linear regression}
+
+As you probably noticed in plots made above, there are more than 1 possible predictors for a persons weight in this data set. Fortunately, we are not restrained to using only one predictor. We can add another predictor to the model and check its significance and re-check the model diagnostics. This process is intuitively exhausting, as there are often hundreds of possible combinations of variables that are significant on their own as a single predictor of weight. However, this is does not necessarily mean that they including all of them will make the strongest model.
+
+Let's start slow by adding one possible predictor to \hlkwd{lm\_chest}. In order to see if chest is still a significant predictor of weight after we've accounted for the height of the person, we can add the \hlkwd{height} term into the model.
+
+<<lm-chest-height, eval = FALSE>>=
+lm_chest_height <- lm(weight ~ chest + height, data = body)
+summary(lm_chest_height)
+@
+
+\begin{exercise}
+P-values and parameter estimates should only be trusted if the conditions for the regression are reasonable.  Verify that the conditions for this model are reasonable using diagnostic plots.
+\end{exercise}
+
+\begin{exercise}
+Is \hlkwd{chest} still a significant predictor of \hlkwd{weight}?  Has the addition of \hlkwd{height} to the model changed the parameter estimate for \hlkwd{chest}?
+\end{exercise}
+
+Let's try out a new model with a categorical variable. For starters, let's fit a model that uses \hlkwd{gender} and \hlkwd{thigh} to predict a person's weight.
+
+<<lm-gender-thigh,eval=FALSE>>=
+lm_gender_thigh <- lm(weight ~ gender + thigh, data=body)
+summary(lm_gender_thigh)
+@
+
+\begin{exercise}
+Are the two predictors in this model significant? Be sure to check the model diagnostics before considering the p-values.
+\end{exercise}
+
+Note that the estimate for \hlkwd{gender} is now called \hlkwd{gendermale}. You'll see this name change whenever you introduce a categorical variable.  The reason is that R recodes \hlkwd{gender} from having the values of \hlkwd{female} and \hlkwd{male} to being an indicator variable called \hlkwd{gendermale} that takes a value of $0$ for females and a value of $1$ for males. (Such variables are often referred to as ``dummy" variables.)
+
+As a result, for females, $\hat\beta_{gender}$ is multiplied by zero, leaving the intercept and slope in a familiar simple regression format.
+
+\begin{exercise}
+What is the equation of the line corresponding to males? For two individuals who have the same thigh measurement, which gender tends to weigh more?
+\end{exercise}
+
+The interpretation of the coefficients in multiple regression is slightly different from that of simple regression.  The estimate for \hlkwd{thigh} reflects how much more an individual is expected to weigh if they have a thigh measurement that is one unit higher \emph{while holding all other variables constant}.  In this case, that translates into considering only individuals of the same gender with \hlkwd{thigh} measurements that are one unit apart.
+
+\subsection*{The search for the best model}
+
+We will start with a ``full'' model that predicts weight based on the girths of the shoulder, chest, waist, navel, hip, thigh, bicep, forearm, knee and calf. 
+
+\begin{exercise}
+Which variable would you expect to have the highest p-value in this model? Why? \textit{Hint:} Think about which variable would you expect to not have any or little association with weight.
+\end{exercise}
+
+Let's run the model...
+
+<<lm_full, eval = FALSE, tidy = TRUE>>=
+lm_full <- lm(weight ~ shoulder + chest + waist + navel + hip + thigh + bicep + forearm + knee + calf, data = body)
+summary(lm_full)
+@
+
+\begin{exercise}
+Check your suspicions from the previous exercise. Include the model output in your response. How much of the total variability in weight is explained by all of the predictors included?
+\end{exercise}
+
+\begin{exercise}
+Interpret the coefficient associated with the hip variable, including reference to the actual units of observation of each variable.
+\end{exercise}
+
+\begin{exercise}
+Drop the variable with the highest p-value and re-fit the model. Did the coefficients and significance of the other explanatory variables change? (One of the things that makes multiple regression interesting is that coefficient estimates depend on the other variables that are included in the model.)
+\end{exercise}
+
+\begin{exercise}
+Using ``backward-selection'' and p-value as the selection criterion, determine the best model. You do not need to show all steps in your answer, just the output for the final model. Also, write out the linear model for predicting weight based on the final model you settle on.
+\end{exercise}
+
+
+\begin{exercise}
+Verify that the conditions for this model are reasonable using diagnostic plots.
+\end{exercise}
+
+\textbf{A cautionary note:} Backwards and forwards selection is often used to find a ``best" model fit, but should be used with hesitation. While it makes sense to some degree to eliminate or add variables based on their p-values, this does not consider every possible combination of variables. As we saw above, different combinations change the predictor parameters, and thus every possible combination should be considered. It is important to realize, however, that while many statisticians often think they can find the single most perfect model, \textit{no such model exists!} The key here is to find a model that makes sense, has significant variables, follows the model diagnostics, and is interpretable when necessary. 
+
+
+\end{document}
+
+

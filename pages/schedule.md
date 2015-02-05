@@ -6,23 +6,25 @@ tagline:
 
 *This is the working schedule for the course.*
 
-Week |       |     | Topic   | In-class resources
----- | ----- | --- | ------- | ------- 
- 1   | Jan &nbsp; | 20, 22 &nbsp; | Simple Linear Regression &nbsp; | [Lecture 1](../assets/lectures/lecture1-intro-regression/lecture1-intro-regression.pdf)
- 2   |     | 27, 29 &nbsp; | Simple Linear Regression (con't) | [Lecture 2](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics.pdf), [Lab 1](../assets/labs/lab1-intro-slr.pdf)
- 3   | Feb | 3, 5   | Least squares, multiple linear regression &nbsp; | [Lecture 3](../assets/lectures/lecture3-slr-anova/lecture3-SLR-anova.pdf)
- 4   |     | 10, 12 | MLR: diagnostics, goodness of fit  | 
- 5   |     | 19     | MLR: inference, multiple testing |
- 6   |     | 24, 26 | MLR: model checking and diagnostics | 
- 7   | Mar | 3, 5   | MLR: model selection | 
- 8   |     | 10, 12 | MLR: modeling interactions | 
-     |     | 17, 19 | Spring Break! |
- 9   |     | 24, 26 | Splines in regression | 
- 10  | Apr | 31, 2  | Linear regression wrap-up | 
- 11  |     | 7, 9   | Logistic regression | 
- 12  |     | 14, 19 | Longitudinal data analysis | 
- 13  |     | 21, 23 | Poisson regression | 
- 14  |     | 28     | Course wrap-up | 
+_ISL_ refers to the textbook _Introduction to Statistical Learning_, and _PR_ refers to the textbook _Practical Regression and Anova using R_.
+
+Week |       |     | Topic   | In-class resources | Reading
+---- | ----- | --- | ------- | ------------------ | -------
+ 1   | Jan  | 20, 22  | Simple Linear Regression &nbsp; | [Lecture 1](../assets/lectures/lecture1-intro-regression/lecture1-intro-regression.pdf) | _ISL_ Ch 1, 3.1; _PR_ Ch 1, 2.
+ 2   |     | 27, 29  &nbsp;| Simple Linear Regression (con't) | [Lecture 2](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics.pdf), [Lab 1](../assets/labs/lab1-intro-slr.pdf) | _ISL_ Ch 3.1; _PR_ Ch 2.
+ 3   | Feb | 3, 5   | Least squares, multiple linear regression | [Lecture 3](../assets/lectures/lecture3-slr-anova/lecture3-SLR-anova.pdf), [Lab 2](../assets/labs/lab2-intro-mlr.pdf) | _ISL_ Ch 3.2-3.3; _PR_ Ch 2.
+ 4   |     | 10, 12 | MLR: diagnostics, goodness of fit  | | _ISL_ Ch 3.2-3.3; _PR_ Ch 2.
+ 5   |     | 19     | MLR: inference, multiple testing | |
+ 6   |     | 24, 26 | MLR: model checking and diagnostics | |
+ 7   | Mar | 3, 5   | MLR: model selection |  |
+ 8   |     | 10, 12 | MLR: modeling interactions | |
+     |     | 17, 19 | Spring Break! | |
+ 9   |     | 24, 26 | Splines in regression | |
+ 10  | Apr | 31, 2  | Linear regression wrap-up | |
+ 11  |     | 7, 9   | Logistic regression | |
+ 12  |     | 14, 19 | Longitudinal data analysis | |
+ 13  |     | 21, 23 | Poisson regression | |
+ 14  |     | 28     | Course wrap-up | |
 
 
 
@@ -30,15 +32,23 @@ Week |       |     | Topic   | In-class resources
 <!-- Detailed schedules
  Week 1:
  Tuesday: Wits and Wagers, course introduction, lecture 1: what regression can and can't do 
- Thursday: course technology overview (knitr/RMarkdown, ggplot2, git), Lecture 2: SLR intro
+ Thursday: course technology overview (knitr/RMarkdown, ggplot2, git), Lecture 2: SLR- least squares and geometry of regression
  
  Week 2:
  Tuesday: Snow day! 
- Thursday: WW, lecture 2: SLR intro (continued), lab 1
+ Thursday: WW, lecture 2: SLR - least squares and geometry of regression, lab 1
  
  Week 3: 
- Tuesday: quiz, WW, Lecture 3: least squares and geometry of regression 
- Thursday: Lecture: SLR wrapup, lab: analyze NHANES dataset 
+ Tuesday: quiz, Lecture 3: SLR - ANOVA , WW
+ Thursday: Review HW problem on simpson's paradox, Lecture 4: MLR intro, MLR lab2
+ 
+ Week 4:
+Tuesday: brainstorm: what are inputs/outputs for backwards selection function?, 
+ 
+ exercise: run a simulation studying the method of backwards selection based on p-value (step 1: write a function to perform backwards selection, step 2: simulate data, step 3: run backwards selection on simulated data)
+ 
+ 
+ lab: analyze NHANES dataset 
  
   -->
 
