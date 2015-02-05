@@ -7,7 +7,7 @@ tagline:
 Some lectures from the course will be available as [video lectures](https://umass.echo360.com/ess/portal/section/6c47935b-4969-45f0-8498-904023f6eb3f). The source code and PDF files associated with the lectures will be posted below after they are presented in class. Source files for all slides are available from the [master branch of the GitHub repository for this course](https://github.com/nickreich/stat-modeling-2015).
 
 
-\[S=Slides \| A=Annotated Slides \| R=R Code\]
+\[S=Slides \| A=Annotated Slides \]
 
 * Lecture 1: Introduction to Regression \[  [S](../assets/lectures/lecture1-intro-regression/lecture1-intro-regression.pdf) \|  [A](../assets/lectures/lecture1-intro-regression/lecture1-intro-regression-annotated.pdf) \]
 * Lecture 2: Simple Linear Regression and Least Squares \[  [S](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics.pdf) \| [A](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics-annotated.pdf)  \]
