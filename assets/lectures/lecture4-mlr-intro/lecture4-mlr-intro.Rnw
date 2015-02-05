@@ -54,15 +54,18 @@
 
 \begin{frame}{Today's lecture}
 
-\bi
-        \myitem Multiple Linear Regression 
+\begin{block}{Multiple Linear Regression: basic concepts}
 	\bi
-		\myitem Assumptions
-		\myitem Interpretation
-		\myitem Notation
+		\myitem Motivation
+        \myitem Assumptions
+		\myitem Interpretation of $\beta$s
+        \myitem More on confounding (omitted variable bias)
+		\myitem Matrix notation for MLR
 		%\myitem Estimation
 	\ei
-\ei
+\end{block}
+
+Relevant reading: Faraway Chapter 2, {\em ISL} Chapter 3.2-3.3
 
 \end{frame}
 
@@ -117,6 +120,8 @@ Most applications involve more that one covariate -- if more than one thing can 
 	\myitem May not have enough data to estimate distribution in each category
 	\myitem Curse of dimensionality is a problem in a lot of non-parametric statistics
 \ei
+
+For more, see this \href{https://prpatil.shinyapps.io/cod_app/}{interactive Shiny app}.
 
 \end{frame}
 
@@ -188,11 +193,29 @@ Suppose we want to regress weight on height and sex.
 
 \begin{frame}[t]{Example with two predictors}
 
+Model: $y_i = \beta_0 + \beta_1 x_{i, age} + \beta_2 x_{i, sex} + \epsilon_i$
+
+\vspace{1cm}
+
 $\beta_1 = $
 
 \vspace{2.5cm}
 
 $\beta_2 = $
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Example with two predictors}
+
+\begin{figure}[h]
+  \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=.5\textwidth]{./Figs/Fig02.pdf}  &
+       \includegraphics[width=.5\textwidth]{./Figs/Fig03.pdf}  
+     \end{tabular}
+\end{figure}
 
 \end{frame}
 
@@ -333,7 +356,18 @@ $$\by = \bX\bbeta + \bepsilon$$
 
 \begin{frame}{Coming up next...}
 
-\begin{block}{Multiple linear regression models}
+\begin{block}{Today we covered}
+    \bi
+		\myitem Motivation
+        \myitem Assumptions
+		\myitem Interpretation of $\beta$s
+        \myitem More on confounding (omitted variable bias)
+		\myitem Matrix notation for MLR
+		%\myitem Estimation
+	\ei
+\end{block}
+
+\begin{block}{Next time...}
 \bi
         \item estimation (more least squares)
         \item more detailed model diagnostics
