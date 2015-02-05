@@ -272,7 +272,7 @@ Note: A Simpson's paradox can be explained by ommited variable bias.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Multiple linear regressoion}
+\begin{frame}{Multiple linear regression}
 
 \bi
         \myitem Let
