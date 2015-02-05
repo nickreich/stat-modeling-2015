@@ -11,11 +11,14 @@ Some lectures from the course will be available as [video lectures](https://umas
 
 * Lecture 1: Introduction to Regression \[  [S](../assets/lectures/lecture1-intro-regression/lecture1-intro-regression.pdf) \|  [A](../assets/lectures/lecture1-intro-regression/lecture1-intro-regression-annotated.pdf) \]
 * Lecture 2: Simple Linear Regression and Least Squares \[  [S](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics.pdf) \| [A](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics-annotated.pdf)  \]
-* Lecture 3: Simple Linear Regression and ANOVA \[ [S](../assets/lectures/lecture3-slr-anova/lecture3-SLR-anova.pdf) \]
+* Lecture 3: Simple Linear Regression and ANOVA \[ [S](../assets/lectures/lecture3-slr-anova/lecture3-SLR-anova.pdf) \|  [A](../assets/lectures/lecture3-slr-anova/lecture3-SLR-anova-annotated.pdf) \]
+* Lecture 4: Introduction to Multiple Linear Regression \[ [S](../assets/lectures/lecture4-mlr-intro/lecture4-mlr-intro.pdf) \|  A \]
 
 
 
 <!--
+(../assets/lectures/lecture4-mlr-intro/lecture4-mlr-intro-annotated.pdf)
+
  * Class 3: Geometry of regression and least squares \[  [S](../assets/lectures/class3_SLRBasics.pdf) \| [A](../assets/lectures/class3_SLRBasics_annotated.pdf) \]
  * Class 4: Hands-on SLR practice 
  * Class 5: R^2, ANOVA \[  [S](../assets/lectures/class5_SLRwrapup.pdf) \| [A](../assets/lectures/class5_SLRwrapup_annotated.pdf) \]
