@@ -59,7 +59,7 @@
 	\bi
 		\myitem Assumptions
 		\myitem Interpretation
-		%\myitem Notation
+		\myitem Notation
 		%\myitem Estimation
 	\ei
 \ei
@@ -197,12 +197,146 @@ $\beta_2 = $
 \end{frame}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Omitted variable bias}
+
+What happens if the true regression model is
+$$ y_i = \beta_0 + \beta_1 x_{i,1} + \beta_2 x_{i,2} + \epsilon_i$$
+but  we ignore $x_2$ and fit the simple linear regression
+$$ y_i = \beta^{*}_0 + \beta^{*}_1 x_{i,1} + \epsilon^{*}_i$$
+
+Does $\beta^{*}_1 = \beta_{1}$? 
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Omitted variable bias}
+
+\begin{block}{When should you be concerned?}
+If both of the following conditions are met, then  $\beta^{*}_1 = \beta_1$:
+\bi
+    \myitem The omitted variable is unrelated to the outcome
+    \myitem The omitted variable is uncorrelated with the retained variable
+\ei
+\end{block}
+
+Note: A Simpson's paradox can be explained by ommited variable bias.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Matrix notation}
+
+\bi
+        \myitem Observe data $(y_i, x_{i1}, \ldots, x_{ip})$ for subjects $1, \ldots, n$. Want to estimate $\beta_0, \beta_1, \ldots, \beta_p$ in the model
+	$$ y_i = \beta_0 + \beta_1x_{i1} + \ldots + \beta_1x_{ip} + \epsilon_i; \mbox{ } \epsilon_i \stackrel{iid}{\sim} (0,\sigma^2)$$
+	\myitem Notation is cumbersome. To fix this, let
+	\bi
+		\myitem $\bx_i = [1, x_{i1}, \ldots, x_{ip}]$
+		\myitem $\bbeta^{T} = [\beta_0, \beta_1, \ldots, \bbeta_{p}]$
+		\myitem Then $y_i = \bx_i \bbeta + \epsilon_i$
+	\ei
+\ei
+
+\end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Multiple linear regressoion}
+
+\bi
+        \myitem Let
+	\begin{displaymath}\tiny
+	\by = \left[
+		\begin{array}{c}
+		y_1 \\
+		\vdots \\
+		y_n \\
+		\end{array}
+    		\right],\quad
+	\bX = \left[
+		\begin{array}{cccc}
+		1 & x_{11} & \hdots & x_{1p} \\
+		\vdots & \vdots & x_{ij} & \vdots \\
+		1 & x_{n1} & \hdots & x_{np} \\
+		\end{array}
+		\right], \quad
+	\bbeta = \left[
+		\begin{array}{c}
+		\beta_0 \\
+		\vdots \\
+		\beta_p \\
+		\end{array}
+		\right], \quad
+         \bepsilon = \left[
+		\begin{array}{c}
+		\epsilon_1 \\
+		\vdots \\
+		\epsilon_n \\
+		\end{array}
+		\right]
+	\end{displaymath}
+	\bigskip
+	\myitem Then we can write the model in a more compact form:
+	$${\by}_{n \times 1} = {\bX}_{n \times (p+1)}{\bbeta}_{(p+1) \times 1} + {\bepsilon}_{n \times 1}$$
+	\myitem $\bX$ is called the \emph{design matrix}
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Matrix notation}
+
+$$\by = \bX\bbeta + \bepsilon$$
+
+\bi
+	\myitem $\epsilon$ is a random vector rather than a random variable
+	\bigskip
+	\myitem $E(\bepsilon) = 0$ and $Cov(\bepsilon) = \sigma^2I$
+	\bigskip
+	\myitem Note that $Cov$ means the ``variance-covariance matrix''
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Mean, variance and covariance of a random vector}
+
+\bi
+	\myitem Let $\by^{T} = [y_1,\ldots,y_n]$ be an $n$-component random vector. Then its mean and variance are defined as
+	\beqa
+		E(\by)^{T} &=& [E(y_1),\ldots,E(y_n)] \\
+		Var(\by) &=& E\left[(\by - E\by)(\by - E\by)^T\right] = E(\by\by^T) - (E\by)(E\by)^T
+    	\eeqa
+	\bigskip
+	\myitem Let $\by$ and $\bz$ be an $n$-component and an $m$-component random vector respectively. Then their covariance is an $n\times m$ matrix defined by
+	\beqa
+		Cov(\by,\bz) = E\big[(\by - E\by)(\bz - \bz)^T\big]
+	\eeqa
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \begin{frame}{Coming up next...}
 
 \begin{block}{Multiple linear regression models}
 \bi
-        \item notation
-        \item estimation
+        \item estimation (more least squares)
+        \item more detailed model diagnostics
         \item inference
 \ei
 \end{block}
