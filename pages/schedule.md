@@ -40,7 +40,7 @@ Week |       |     | Topic   | In-class resources | Reading
  
  Week 3: 
  Tuesday: quiz, Lecture 3: SLR - ANOVA , WW
- Thursday: Review HW problem on simpson's paradox, Lecture 4: MLR intro, MLR lab2
+ Thursday: Review HW problems 1: simpson's paradox, 2: including inline results in RMarkdown, Lecture 4: MLR intro, MLR lab2
  
  Week 4:
 Tuesday: brainstorm: what are inputs/outputs for backwards selection function?, 
