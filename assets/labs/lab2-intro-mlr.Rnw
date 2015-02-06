@@ -26,8 +26,8 @@ First, we will load the data and give the columns their respective names, found 
 require(RCurl)
 URL <- getURL("http://www.amstat.org/publications/jse/datasets/body.dat.txt", 
               ssl.verifypeer=FALSE)
-body <- read.table(text=URL)
-names(body) <- c("biac.diam", "pelvic.bredth", "bitro.diam", "chest.dep", "chest.diam",
+body_dat <- read.table(text=URL)
+names(body_dat) <- c("biac.diam", "pelvic.bredth", "bitro.diam", "chest.dep", "chest.diam",
                  "elbow.diam","wrist.diam", "knee.diam", "ankle.diam", "shoulder", "chest",
                  "waist", "navel", "hip", "thigh", "bicep", "forearm", "knee", "calf",
                  "ankle.min", "wrist.min", "age", "weight", "height", "gender" )
@@ -58,7 +58,7 @@ The \hlkwd{gender} variable is stored as a numeric variable where 1 means female
 @
 
 <<new-gender, eval=FALSE, echo=FALSE>>=
-body$gender <- factor(body$gender, levels=c(0,1), labels=c("female", "male"))
+body_dat$gender <- factor(body_dat$gender, levels=c(0,1), labels=c("female", "male"))
 @
 
 
@@ -70,10 +70,10 @@ It seems intuitive that most of these meaurements will be associated with a pers
 
 <<scatter-plots,eval=FALSE>>=
 library(ggplot2)
-qplot(hip, weight, data=body)
-qplot(chest, weight, data=body)
-qplot(wrist.diam, weight, data=body)
-qplot(thigh, weight, data=body, color=gender)
+qplot(hip, weight, data=body_dat)
+qplot(chest, weight, data=body_dat)
+qplot(wrist.diam, weight, data=body_dat)
+qplot(thigh, weight, data=body_dat)
 @
 
 \begin{exercise}
@@ -95,7 +95,7 @@ As you probably noticed in plots made above, there are more than 1 possible pred
 Let's start slow by adding one possible predictor to \hlkwd{lm\_chest}. In order to see if chest is still a significant predictor of weight after we've accounted for the height of the person, we can add the \hlkwd{height} term into the model.
 
 <<lm-chest-height, eval = FALSE>>=
-lm_chest_height <- lm(weight ~ chest + height, data = body)
+lm_chest_height <- lm(weight ~ chest + height, data = body_dat)
 summary(lm_chest_height)
 @
 
@@ -110,7 +110,7 @@ Is \hlkwd{chest} still a significant predictor of \hlkwd{weight}?  Has the addit
 Let's try out a new model with a categorical variable. For starters, let's fit a model that uses \hlkwd{gender} and \hlkwd{thigh} to predict a person's weight.
 
 <<lm-gender-thigh,eval=FALSE>>=
-lm_gender_thigh <- lm(weight ~ gender + thigh, data=body)
+lm_gender_thigh <- lm(weight ~ gender + thigh, data=body_dat)
 summary(lm_gender_thigh)
 @
 
@@ -139,7 +139,7 @@ Which variable would you expect to have the highest p-value in this model? Why? 
 Let's run the model...
 
 <<lm_full, eval = FALSE, tidy = TRUE>>=
-lm_full <- lm(weight ~ shoulder + chest + waist + navel + hip + thigh + bicep + forearm + knee + calf, data = body)
+lm_full <- lm(weight ~ shoulder + chest + waist + navel + hip + thigh + bicep + forearm + knee + calf, data = body_dat)
 summary(lm_full)
 @
 
