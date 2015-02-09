@@ -246,7 +246,7 @@ If both of the following conditions are met, then  $\beta^{*}_1 = \beta_1$:
 \ei
 \end{block}
 
-Note: A Simpson's paradox can be explained by ommited variable bias.
+Note: A Simpson's paradox can be explained by omitted variable bias.
 
 \end{frame}
 
