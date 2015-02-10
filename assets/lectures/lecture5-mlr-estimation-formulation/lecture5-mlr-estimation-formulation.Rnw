@@ -565,6 +565,20 @@ Turns out there's a lot of work on estimating smooth $E(y | x) = f(x)$
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Lab}
+
+Analyze the NHANES dataset. Create a model with the outcome variable of cholesterol ({\tt chol}) that estimates relationships with other variables in the dataset.
+
+<<nhanes, warning=FALSE, eval=FALSE>>=
+library(NHANES)
+data(NHANES)
+?NHANES
+@
+
+
+\end{frame}
 
 
 

@@ -43,7 +43,10 @@ Week |       |     | Topic   | In-class resources | Reading
  Thursday: show new reading section on website, Review HW problems 1: simpson's paradox, 2: including inline results in RMarkdown, Lecture 4: MLR intro, MLR lab2
  
  Week 4:
-Tuesday: brainstorm: what are inputs/outputs for backwards selection function?, 
+Tuesday: Lecture 5, NHANES analysis
+Thursday: quiz, NHANES analysis, Lecture 6
+
+brainstorm: what are inputs/outputs for backwards selection function?, 
  
  exercise: run a simulation studying the method of backwards selection based on p-value (step 1: write a function to perform backwards selection, step 2: simulate data, step 3: run backwards selection on simulated data)
  
