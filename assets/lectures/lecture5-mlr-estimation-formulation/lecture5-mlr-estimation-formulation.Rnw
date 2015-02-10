@@ -78,10 +78,7 @@ Holding off on inference/diagnostics for another week...
 \bi
 	\myitem Observe data $(y_i, x_{i1}, \ldots, x_{ip})$ for subjects $1, \ldots, n$. Want to estimate $\beta_0, \beta_1, \ldots, \beta_p$ in the model
 	$$ y_i = \beta_0 + \beta_1x_{i1} + \ldots + \beta_1x_{ip} + \epsilon_i; \mbox{ } \epsilon_i \stackrel{iid}{\sim} (0,\sigma^2)$$
-	\myitem Assumptions (residuals have mean zero, constant variance, are independent) are as in SLR
-	\myitem Impose linearity which (as in the SLR) is a big assumption
-	\myitem Our primary interest will be $E(y | \bx)$
-	\myitem Eventually estimate model parameters using least squares
+	
 \ei
 
 \end{frame}
@@ -191,7 +188,21 @@ The hat matrix projects $\by$ onto the column space of $\bX$. Alternatively, min
 
 \end{frame}
 
+\begin{frame}[t]{Lung Data Example}
 
+99 observations on patients who have sought treatment for the relief of respiratory disease symptoms. The dependent variable, 
+
+The variables are:
+\bi
+    \myitem {\tt disease} measure of disease severity (larger values indicates more serious condition).
+    \myitem {\tt education} highest grade completed
+    \myitem {\tt crowding} measure of crowding of living quarters (larger values indicate more crowding)
+    \myitem {\tt airqual} measure of air quality at place of residence (larger number indicates poorer quality)
+    \myitem {\tt nutrition} nutritional status (larger number indicates better nutrition)
+    \myitem {\tt smoking} smoking status (1 if smoker, 0 if non-smoker)
+\ei
+
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -206,30 +217,59 @@ options(width=60)
 @
 
 
-<<lungMLR, tidy=FALSE>>=
-mlr2 <- lm(disease ~ crowding + education + airqual, 
-           data=dat, x=TRUE, y=TRUE)
-X = mlr2$x
-y = mlr2$y
-(betaHat = solve( t(X) %*% X) %*% t(X) %*% y )
-coef(mlr2)
+<<lung-plots, tidy=FALSE, fig.height=4>>=
+qplot(crowding, disease, data=dat)
 @
 
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Lung Data Example}
+
+<<lung-plots1, tidy=FALSE, fig.height=4>>=
+qplot(education, disease, data=dat)
+@
+
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Lung Data Example}
+
+<<lung-plots2, tidy=FALSE, fig.height=4>>=
+qplot(airqual, disease, data=dat)
+@
+
+
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{Lung Data Example}
+
+<<lungMLR, tidy=FALSE>>=
+mlr1 <- lm(disease ~ crowding + education + airqual, 
+           data=dat, x=TRUE, y=TRUE)
+coef(mlr1)
+X = mlr1$x
+y = mlr1$y
+(beta_hat = solve(t(X)%*%X) %*% t(X) %*% y )
+@
+
+
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Least squares estimates}
+\begin{frame}{Least squares estimates: identifiability}
 
 $$\hat{\bbeta} = \left( \bX^{T} \bX \right)^{-1} \bX^{T} \by$$
 
-\begin{block}{A condition on $\left( \bX^{T} \bX \right)$}
+\begin{block}{A condition on $\left( \bX^{T} \bX \right)$: must be invertible}
 \bi
     \myitem If $\left( \bX^{T} \bX \right)$ is singular, there are infinitely many least squares solutions, making $\hat{\bbeta}$ non-identifiable (can't choose between different solutions)
+    \myitem In practice, true {\bf non-identifiability} (there really are infinite solutions) is rare.
+    \myitem More common, and perhaps more dangerous, is {\bf collinearity}.
 \ei
 \end{block}
 
@@ -238,7 +278,7 @@ $$\hat{\bbeta} = \left( \bX^{T} \bX \right)^{-1} \bX^{T} \by$$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Non-identifiability}
+\begin{frame}{Causes of non-identifiability}
 
 \bi
 	\myitem Can happen if $\bX$ is not of full rank, i.e. the columns of $\bX$ are linearly dependent (for example, including weight in Kg and lb as predictors)
@@ -270,10 +310,26 @@ Suppose I fit a model $y_i = \beta_0 + \beta_1 x_{i1} + \epsilon_i$.
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Non-identifiability example: lung data}
+
+<<lungMLRNonIdent, tidy=FALSE>>=
+mlr3 <- lm(disease ~ airqual, data=dat)
+coef(mlr3)
+dat$x2 <- dat$airqual/100
+mlr4 <- lm(disease ~ airqual + x2, data=dat, x=TRUE)
+coef(mlr4)
+X = mlr4$x
+solve( t(X) %*% X)
+@
+ 
+ 
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Non-identifiablity}
+\begin{frame}{Non-identifiablity: causes and solutions}
 
 \bi
 	\myitem Often due to data coding errors (variable duplication, scale changes)
@@ -287,7 +343,7 @@ Suppose I fit a model $y_i = \beta_0 + \beta_1 x_{i1} + \epsilon_i$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Causes of collinearity}
+\begin{frame}{Diagnosing collinearity}
 
 \bi
 	\myitem Arises when variables are highly correlated, but not exact duplicates
@@ -333,22 +389,7 @@ Suppose I fit a model $y_i = \beta_0 + \beta_1 x_{i1} + \epsilon_i$.
 
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Non-identifiability example: lung data}
-
-<<lungMLRNonIdent, tidy=FALSE>>=
-mlr3 <- lm(disease ~ airqual, data=dat)
-coef(mlr3)
-dat$x2 <- dat$airqual/100
-mlr4 <- lm(disease ~ airqual + x2, data=dat, x=TRUE)
-coef(mlr4)
-X = mlr4$x
-solve( t(X) %*% X)
-@
- 
- 
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -381,9 +422,9 @@ summary(mlr6)$coef
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Non-linear relationships}
+\begin{frame}{Non-linear relationships: polynomial regression}
 
-A quick way to get multiple linear regressions is to account for nonlinearity
+Many relationships between X and Y are non-linear. A simple (not necessarily the best) way to account for this is using polynomial forms of X.
 
 \bi
     \myitem Model of the form
@@ -404,7 +445,7 @@ A quick way to get multiple linear regressions is to account for nonlinearity
 Some tips on non-linear relationships
 
 \bi
-	\myitem You can go as high as $p = n$, but don't do it
+	\myitem You can go as high as $p = n$, but don't do it! ``Overfitting'' data is common practice (unfortunately).
 	\myitem Coefficients become harder to interpret -- you can't increase $x_2$ without changing every other $x_p$
 	\myitem Better (maybe) to think of the model as an estimated curve, whose interpretation is related to the derivative
 	\myitem The literal formulation above is numerically unstable. Better to use orthogonal polynomials (R's \texttt{poly} function)
@@ -517,7 +558,9 @@ Turns out there's a lot of work on estimating smooth $E(y | x) = f(x)$
 \begin{frame}{Today's big ideas}
 
 \bi
-        \myitem Multiple linear regression 
+    \myitem least squares geometry, ``hat matrix''
+    \myitem dangers of collinearity and non-identifiability
+    \myitem polynomial regression to model non-linear relationships
 \ei
 
 \end{frame}
