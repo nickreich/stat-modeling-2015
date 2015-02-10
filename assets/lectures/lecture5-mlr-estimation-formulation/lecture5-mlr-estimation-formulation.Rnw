@@ -56,6 +56,19 @@
 
 
 
+\begin{frame}{Today's topics}
+
+\bi
+    \myitem least squares for MLR: geometry, ``hat matrix''
+    \myitem collinearity and non-identifiability
+    \myitem introduction to modeling non-linear relationships
+\ei
+
+{\bf Example} predicting respiratory disease severity (``lung'' dataset)
+
+\end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Multiple linear regression model}
@@ -73,11 +86,26 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{D\'ej\`a vu: MLR assumptions}
+
+\begin{block}{Assumptions}
+\bi
+	\myitem Residuals have mean zero, constant variance, are independent
+	\myitem Often assuming linearity
+	\myitem Our primary interest will be $E(y | \bx)$
+	\myitem Estimation using least squares
+\ei
+\end{block}
+
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Least squares}
+\begin{frame}{D\'ej\`a vu: Least squares}
 
 As in simple linear regression, we want to find the $\bbeta$ that minimizes the residual sum of squares.
 $$RSS(\bbeta) = \sum_i \epsilon_i ^2 = \epsilon ^T \epsilon$$
@@ -95,7 +123,7 @@ $$\hat \bbeta = (\bX^{T}\bX)^{-1}\bX ^T \by$$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Sampling distribution of $\hat{\bbeta}$}
+\begin{frame}{D\'ej\`a vu: Sampling distribution of $\hat{\bbeta}$}
 
 If our usual assumptions are satisfied and $\epsilon \stackrel{iid}{\sim} \N{0}{\sigma^2}$ then 
 $$\hat{\bbeta} \sim \N{\bbeta}{\sigma^2 (\bX^{T}\bX)^{-1}}.$$
@@ -110,7 +138,7 @@ $$\hat{\bbeta} \sim \N{\bbeta}{\sigma^2 (\bX^{T}\bX)^{-1}}.$$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Definitions}
+\begin{frame}{D\'ej\`a vu: Definitions}
 
 \bi
 	\myitem {\it Fitted values}: $\hat{\by} = \bX \hat{\bbeta} = \bX(\bX^{T}\bX)^{-1}\bX^T \by = \bH \by$
@@ -125,7 +153,7 @@ $$\hat{\bbeta} \sim \N{\bbeta}{\sigma^2 (\bX^{T}\bX)^{-1}}.$$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{$R^2$ and sums of squares}
+\begin{frame}{D\'ej\`a vu: $R^2$ and sums of squares}
 
 \bi
 	\myitem Regression sum of squares $SS_{reg} = \sum (\hat{y}_i -\bar{y})^2$
@@ -140,7 +168,7 @@ $$\hat{\bbeta} \sim \N{\bbeta}{\sigma^2 (\bX^{T}\bX)^{-1}}.$$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Hat matrix}
+\begin{frame}{Not so D\'ej\`a vu: the ``Hat matrix''}
 
 Some properties of the hat matrix:
 \bi
@@ -161,12 +189,18 @@ The hat matrix projects $\by$ onto the column space of $\bX$. Alternatively, min
 
 \end{frame}
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Lung Data Example (con't from last clas)}
+\begin{frame}[fragile]{Lung Data Example}
 
 <<loadData, echo=FALSE>>=
-dat <- read.table("../class10_MLRDetails/lungc.txt", header=TRUE)
+library(ggplot2)
+theme_set(theme_bw())
+dat <- read.table("lungc.txt", header=TRUE)
+opts_chunk$set(size = 'footnotesize')
+options(width=60)
 @
 
 
@@ -185,6 +219,295 @@ coef(mlr2)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Least squares estimates}
+
+$$\hat{\bbeta} = \left( \bX^{T} \bX \right)^{-1} \bX^{T} \by$$
+
+\begin{block}{A condition on $\left( \bX^{T} \bX \right)$}
+\bi
+    \myitem If $\left( \bX^{T} \bX \right)$ is singular, there are infinitely many least squares solutions, making $\hat{\bbeta}$ non-identifiable (can't choose between different solutions)
+\ei
+\end{block}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Non-identifiability}
+
+\bi
+	\myitem Can happen if $\bX$ is not of full rank, i.e. the columns of $\bX$ are linearly dependent (for example, including weight in Kg and lb as predictors)
+	\myitem Can happen if there are fewer data points than terms in $\bX$: $n < p$ (having 100 predictors and only 50 observations)
+	\myitem Generally, the $p \times p$ matrix $\left( \bX^{T} \bX \right)$ is invertible if and only if it has rank $p$.
+
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Infinite solutions}
+
+Suppose I fit a model $y_i = \beta_0 + \beta_1 x_{i1} + \epsilon_i$.
+\bi
+	\myitem I have estimates $\hat{\beta}_0 = 1, \hat{\beta}_1= 2$
+	\myitem I put in a new variable $x_2 = x_1$
+	\myitem My new model is $y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \epsilon_i$
+	\myitem Possible least squares estimates that are equivalent to my first model:
+	\bi
+		\item $\hat{\beta}_0 = 1, \hat{\beta}_1= 2, \hat{\beta}_2 = 0$
+		\item $\hat{\beta}_0 = 1, \hat{\beta}_1= 0, \hat{\beta}_2 = 2$
+		\item $\hat{\beta}_0 = 1, \hat{\beta}_1= 1002, \hat{\beta}_2 = -1000$
+		\item $\ldots$
+	\ei
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Non-identifiablity}
+
+\bi
+	\myitem Often due to data coding errors (variable duplication, scale changes)
+	\myitem Pretty easy to detect and resolve
+	\myitem Can be addressed using {\it penalties} (might come up much later)
+	\myitem A bigger problem is near-unidentifiability (collinearity)
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Causes of collinearity}
+
+\bi
+	\myitem Arises when variables are highly correlated, but not exact duplicates
+	\myitem Commonly arises in data (perfect correlation is usually there by mistake)
+	\myitem Might exist between several variables, i.e. a linear combination of several variables exists in the data
+	\myitem A variety of tools exist (correlation analyses, multiple $R^2$, eigen decompositions)
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Effects of collinearity}
+
+Suppose I fit a model $y_i = \beta_0 + \beta_1 x_{i1} + \epsilon_i$.
+\bi
+	\myitem I have estimates $\hat{\beta}_0 = 1, \hat{\beta}_1= 2$
+	\myitem I put in a new variable $x_2 = x_1 + error$, where $error$ is pretty small
+	\myitem My new model is $y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \epsilon_i$
+	\myitem Possible least squares estimates that are nearly equivalent to my first model:
+	\bi
+		\item $\hat{\beta}_0 = 1, \hat{\beta}_1= 2, \hat{\beta}_2 = 0$
+		\item $\hat{\beta}_0 = 1, \hat{\beta}_1= 0, \hat{\beta}_2 = 2$
+		\item $\hat{\beta}_0 = 1, \hat{\beta}_1= 1002, \hat{\beta}_2 = -1000$
+		\item $\ldots$
+	\ei
+	\myitem A unique solution exists, but it is hard to find
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Effects of collinearity}
+
+\bi
+	\myitem Collinearity results in a ``flat" RSS
+	\myitem Makes identifying a unique solution difficult
+	\myitem Dramatically inflates the variance of LSEs
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Non-identifiability example: lung data}
+
+<<lungMLRNonIdent, tidy=FALSE>>=
+mlr3 <- lm(disease ~ airqual, data=dat)
+coef(mlr3)
+dat$x2 <- dat$airqual/100
+mlr4 <- lm(disease ~ airqual + x2, data=dat, x=TRUE)
+coef(mlr4)
+X = mlr4$x
+solve( t(X) %*% X)
+@
+ 
+ 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Collinearity example: lung data}
+
+<<lungMLRCollinearity, tidy=FALSE>>=
+dat$crowd2 <- dat$crowding + rnorm(nrow(dat), sd=.1)
+mlr5 <- lm(disease ~ crowding, data=dat)
+summary(mlr5)$coef
+mlr6 <- lm(disease ~ crowding + crowd2, data=dat)
+summary(mlr6)$coef
+@
+ 
+ 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Some take away messages}
+
+\bi
+        \myitem Collinearity can (and does) happen, so be careful
+	\myitem Often contributes to the problem of variable selection, which we'll touch on later
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Non-linear relationships}
+
+A quick way to get multiple linear regressions is to account for nonlinearity
+
+\bi
+    \myitem Model of the form
+	$$ y_i = \beta_0 + \beta_1x_{i} + \beta_2 x^{2}_{i} + \ldots + \beta_p x^{p}_{i} + \epsilon_i; \mbox{ } \epsilon_i \stackrel{iid}{\sim} (0,\sigma^2)$$
+	\myitem $p$ is the polynomial order
+	\myitem More polynomial terms can lead to a better approximation of $E(y | x)$, but also higher variability in the fit
+	\myitem Conversely, smaller $p$ can lead to inability to capture $E(y | x)$, but is often more stable
+	\myitem Quadratic and cubic fits are relatively common
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Non-linear relationships}
+
+Some tips on non-linear relationships
+
+\bi
+	\myitem You can go as high as $p = n$, but don't do it
+	\myitem Coefficients become harder to interpret -- you can't increase $x_2$ without changing every other $x_p$
+	\myitem Better (maybe) to think of the model as an estimated curve, whose interpretation is related to the derivative
+	\myitem The literal formulation above is numerically unstable. Better to use orthogonal polynomials (R's \texttt{poly} function)
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Non-linear relationships}
+
+\begin{figure}[t]
+    \includegraphics[width=.8\textwidth]{./Figs/Fig04.pdf}  
+\end{figure}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Non-linear relationships}
+
+\begin{figure}[t]
+    \includegraphics[width=.8\textwidth]{./Figs/Fig05.pdf}  
+\end{figure}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Non-linear relationships}
+
+\begin{figure}[t]
+    \includegraphics[width=.8\textwidth]{./Figs/Fig06.pdf}  
+\end{figure}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Non-linear relationships}
+
+\begin{figure}[t]
+    \includegraphics[width=.8\textwidth]{./Figs/Fig07.pdf}  
+\end{figure}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Non-linear relationships}
+
+\tiny
+<<lung-poly1, tidy=FALSE, fig.height=3>>=
+(p <- ggplot(dat, aes(x=education, y=disease)) + geom_point() + 
+    geom_smooth(method="lm", se=FALSE) )
+@
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Non-linear relationships}
+
+<<lung-poly2, tidy=FALSE, fig.height=3>>=
+mlr3 <- lm(disease ~ poly(education, 2), data=dat)
+coef(mlr3)
+(p <- p + geom_line(aes(y=predict(mlr3)), color="red") )
+@
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Non-linear relationships}
+
+<<lung-poly3, tidy=FALSE, fig.height=3>>=
+mlr4 <- lm(disease ~ poly(education, 5), data=dat)
+coef(mlr4)
+(p <- p + geom_line(aes(y=predict(mlr4)), color="green"))
+@
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Smoothing and splines}
+
+Turns out there's a lot of work on estimating smooth $E(y | x) = f(x)$
+\bi
+	\myitem Rather than polynomials, use smooth spline basis functions with nice properties (stable, smooth, flexible, smooth derivatives)
+	\myitem These are piecewise polynomials
+	\myitem How many to use governs how smooth or wiggly the final fit is
+	\myitem Can introduce explicit penalties for smoothness, which gets you into semi-parametric regression ...
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -192,7 +515,7 @@ coef(mlr2)
 \begin{frame}{Today's big ideas}
 
 \bi
-        \myitem Multiple linear regression models, interpretation, notation, biases
+        \myitem Multiple linear regression 
 \ei
 
 \end{frame}
