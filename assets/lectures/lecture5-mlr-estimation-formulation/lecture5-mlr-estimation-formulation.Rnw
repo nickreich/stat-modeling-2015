@@ -66,6 +66,8 @@
 
 {\bf Example} predicting respiratory disease severity (``lung'' dataset)
 
+Holding off on inference/diagnostics for another week...
+
 \end{frame}
 
 
