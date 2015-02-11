@@ -190,7 +190,7 @@ The hat matrix projects $\by$ onto the column space of $\bX$. Alternatively, min
 
 \begin{frame}[t]{Lung Data Example}
 
-99 observations on patients who have sought treatment for the relief of respiratory disease symptoms. The dependent variable, 
+99 observations on patients who have sought treatment for the relief of respiratory disease symptoms. 
 
 The variables are:
 \bi
