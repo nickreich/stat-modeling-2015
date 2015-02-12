@@ -13,12 +13,13 @@ Some lectures from the course will be available as [video lectures](https://umas
 * Lecture 2: Simple Linear Regression and Least Squares \[  [S](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics.pdf) \| [A](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics-annotated.pdf)  \]
 * Lecture 3: Simple Linear Regression and ANOVA \[ [S](../assets/lectures/lecture3-slr-anova/lecture3-SLR-anova.pdf) \|  [A](../assets/lectures/lecture3-slr-anova/lecture3-SLR-anova-annotated.pdf) \]
 * Lecture 4: Introduction to Multiple Linear Regression \[ [S](../assets/lectures/lecture4-mlr-intro/lecture4-mlr-intro.pdf) \|  [A](../assets/lectures/lecture4-mlr-intro/lecture4-mlr-intro-annotated.pdf) \]
-* Lecture 5: Multiple Linear Regression: Least Squares Estimation and Polynomial Regression \[ [S](../assets/lectures/lecture5-mlr-estimation-formulation/lecture5-mlr-estimation-formulation.pdf) \|  A  \]
+* Lecture 5: Multiple Linear Regression: Least Squares Estimation and Polynomial Regression \[ [S](../assets/lectures/lecture5-mlr-estimation-formulation/lecture5-mlr-estimation-formulation.pdf) \|  [A](../assets/lectures/lecture5-mlr-estimation-formulation/lecture5-mlr-estimation-formulation-annotated.pdf)  \]
+* Lecture 6: Multiple Linear Regression: Categorical Predictors \[ [S](../assets/lectures/lecture6-mlr-categorical/lecture6-mlr-categorical.pdf) \|  A  \]
 
 
 
 <!--
-(../assets/lectures/lecture5-mlr-estimation-formulation/lecture5-mlr-estimation-formulation-annotated.pdf)
+(../assets/lectures/lecture6-mlr-categorical/lecture6-mlr-categorical-annotated.pdf)
 
  * Class 3: Geometry of regression and least squares \[  [S](../assets/lectures/class3_SLRBasics.pdf) \| [A](../assets/lectures/class3_SLRBasics_annotated.pdf) \]
  * Class 4: Hands-on SLR practice 

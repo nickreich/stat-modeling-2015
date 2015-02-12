@@ -8,6 +8,10 @@ Homework assignments will be posted here, in general organized by due date. Unle
 
 **Collaboration on homework is expected and encouraged, although you must write up your own assignment. No copying or cutting and pasting.**
 
+_Due Tuesday 2/17/2015, 5pm_ 
+
+* (20 points) Revise and resubmit the report on the dataset that you handed in on 2/3/2015. The new report should include some of the information that you had written previously, should make improvements suggested from the earlier version, and have 1 or 2 additional multiple linear regression models. If appropriate, fit a polynomial term to capture non-linear relationships or use dummy variables to model categorical predictors. Interpret some of the MLR model model coefficients in the context of your particular dataset. The report should be less than 6 pages, including all figures, and should be submitted as both PDF and Rmd formats.
+
 _Due Tuesday 2/10/2015, 5pm_ 
 
 * (30 points) Complete [Lab 2](../assets/labs/lab2-intro-mlr.pdf). Hand in a PDF and Rmd file via Google Drive. The final PDF file should be no more than 6 pages, including graphs.
