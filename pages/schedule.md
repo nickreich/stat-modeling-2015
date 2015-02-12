@@ -44,7 +44,7 @@ Week |       |     | Topic   | In-class resources | Reading
  
  Week 4:
 Tuesday: Lecture 5, NHANES analysis
-Thursday: quiz, NHANES analysis, Lecture 6
+Thursday: quiz, NHANES analysis,  Lecture 6
 
 brainstorm: what are inputs/outputs for backwards selection function?, 
  
