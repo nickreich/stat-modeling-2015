@@ -8,6 +8,8 @@
 # R data files from past sessions
 .Rdata
 
+*lungc.txt
+
 # RStudio files
 *.Rproj
 .Rproj.user/
