@@ -11,7 +11,7 @@
 %        The following variables are assumed by the standard preamble:
 %        Global variable containing module name:
 
-\title{Multiple Linear Regression: \\ Inference for multiple linear regression}
+\title{Multiple Linear Regression: \\ Parameter Inference}
 %	Global variable containing module shortname:
 %		(Currently unused, may be used in future.)
 \newcommand{\ModuleShortname}{multRegression}
