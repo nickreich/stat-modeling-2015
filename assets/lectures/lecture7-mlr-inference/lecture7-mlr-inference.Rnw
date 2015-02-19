@@ -1,0 +1,314 @@
+%% beamer/knitr slides 
+%% for Statistical Modeling and Data Visualization course @ UMass
+%% Nicholas Reich: nick [at] schoolph.umass.edu
+
+
+\documentclass[table]{beamer}
+
+
+\input{../../slide-includes/standard-knitr-beamer-preamble}
+
+%        The following variables are assumed by the standard preamble:
+%        Global variable containing module name:
+
+\title{Multiple Linear Regression: \\ Inference for multiple linear regression}
+%	Global variable containing module shortname:
+%		(Currently unused, may be used in future.)
+\newcommand{\ModuleShortname}{multRegression}
+%	Global variable containing author name:
+\author{Nicholas G Reich, Jeff Goldsmith}
+%	Global variable containing text of license terms:
+\newcommand{\LicenseText}{Made available under the Creative Commons Attribution-ShareAlike 3.0 Unported License: http://creativecommons.org/licenses/by-sa/3.0/deed.en\textunderscore US }
+%	Instructor: optional, can leave blank.
+%		Recommended format: {Instructor: Jane Doe}
+\newcommand{\Instructor}{}
+%	Course: optional, can leave blank.
+%		Recommended format: {Course: Biostatistics 101}
+\newcommand{\Course}{}
+
+
+\input{../../slide-includes/shortcuts}
+\usepackage{bbm}
+
+\hypersetup{colorlinks,linkcolor=,urlcolor=MainColor}
+
+
+%	******	Document body begins here	**********************
+
+\begin{document}
+
+%	Title page
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+%	******	Everything through the above line must be placed at
+%		the top of any TeX file using the statsTeachR standard
+%		beamer preamble. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% acutal slides
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Today's Lecture}
+
+\bi
+        \myitem Sampling distribution of $\hat{\bbeta}$
+	\myitem Confidence intervals
+	\myitem Hypothesis tests for individual coefficients
+	\myitem Global tests (next week!)
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Circle of Life}
+
+\begin{figure}[t]
+    \includegraphics[width=.8\textwidth]{../../slide-includes/CircleOfLife.pdf}  
+\end{figure}
+
+\end{frame} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Statistical inference}
+
+\bi
+	\myitem We have LSEs $\hat{\beta}_0, \hat{\beta}_1, \ldots$; we want to know what this tells us about $\beta_0, \beta_1, \ldots$.
+	\myitem Two basic tools are confidence intervals and hypothesis tests
+	\bi
+		\item Confidence intervals provide a plausible range of values for the parameter of interest based on the observed data
+		\item Hypothesis tests ask how probable are the data we gathered under a null hypothesis about the data generating distribution
+	\ei
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Motivation}
+
+<<loadData, echo=FALSE, message=FALSE>>=
+dat <- read.table("../lecture5-mlr-estimation-formulation/lungc.txt", header=TRUE)
+require(ggplot2)
+theme_set(theme_bw())
+opts_chunk$set(size = 'footnotesize')
+options(width=60)
+@
+
+
+How can we draw {\em \bf inference} about each of these parameters and relationships that our model is encoding?
+
+\small
+<<lungMLRCategorical, tidy=FALSE>>=
+mlr1 <- lm(disease ~ airqual + crowding + nutrition + smoking, 
+           data=dat)
+summary(mlr1)$coef
+@
+ 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Motivation}
+
+\bi
+        \myitem Can we say anything about whether the effect of \texttt{airquality} is ``significant" after adjusting for other variables?
+        \myitem Can we say whether adding \texttt{airquality} improves the fit of our model?
+	\myitem Can we compare this model to a model with \texttt{crowding}, \texttt{nutrition} and \texttt{smoking}?
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Sampling distribution}
+
+If our usual assumptions are satisfied and $\epsilon \stackrel{iid}{\sim} \N{0}{\sigma^2}$ then 
+$$\hat{\bbeta} \sim \N{\bbeta}{\sigma^2 (\bX^{T}\bX)^{-1}}.$$
+$$\hat{\beta}_j \sim \N{\bbeta}{\sigma^2 (\bX^{T}\bX)_{jj}^{-1}}.$$
+
+\bi
+        \myitem This will be used later for inference.
+	\myitem Even without Normal errors, asymptotic Normality of LSEs is possible under reasonable assumptions.
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Sampling distribution}
+
+For real data we have to estimate $\sigma^2$ as well as $\bbeta$.
+\bi
+	\myitem Recall our estimate of the error variance is 
+		$$\hat{\sigma^2} = \frac{RSS}{n-p-1} = \frac{\sum_i (y_i - \hat{y}_i)^2}{n-p-1}$$
+	\myitem With Normally distributed errors, it can be shown that 
+		$$(n-p-1)\frac{\hat{\sigma^2}}{\sigma^2} \sim \chi^{2}_{n-p-1}$$
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Testing procedure}
+
+Calculate the probability of the observed data (or more extreme data) under a null hypothesis.
+\bi
+	\myitem Often $H_{0}: \beta_j = 0$ and $H_{a}:\beta_j \neq 0$
+	\myitem Set type I error rate $\alpha = P(\mbox{falsely rejecting a true null hypothesis})$ 
+	\myitem Calculate a test statistic assuming the null hypothesis is true
+	\myitem Compute a p-value = 
+		$$P(\beta_j \mbox{as or more extreme test statistic}|H_{0})$$
+	\myitem Reject or fail to reject $H_0$
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Individual coefficients}
+
+For individual coefficients
+\bi
+	\myitem We can use the test statistic 
+		$$T = \frac{\hat{\beta}_j - \beta_j}{\widehat{se}(\hat{\beta}_j)}
+		  = \frac{\hat{\beta}_j - \beta_j}{\sqrt{ \hat{\sigma}^2 (\bX^{T}\bX)_{jj}^{-1} }} \sim t_{n-p-1}$$
+	\myitem For a two-sided test of size $\alpha$, we reject if 
+		$$ |T| > t_{1-\alpha/2, n-p-1}$$
+	\myitem The p-value gives $P(t_{n-p-1} > T_{obs} | H_{0})$
+\ei
+Note that $t$ is a symmetric distribution that converges to a Normal as $n-p-1$ increses.
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Back to the example}
+
+\scriptsize
+<<lungMLRTesting, tidy=FALSE>>=
+summary(mlr1)
+@
+ 
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Individual coefficients: CIs}
+
+Alternatively, we can construct a confidence interval for $\beta_j$
+\bi
+        \myitem A confidence interval with coverage $(1-\alpha)$ is given by
+		$$\beta_j \pm t_{1-\alpha/2, n-p-1} \widehat{se}(\hat{\beta}_j)$$
+	\myitem Assuming all the standard assumptions hold, 
+		$$(1-\alpha) = P(LB < \beta_j < UB)$$
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Detour: confidence interval interpretations}
+
+The semantics of confidence intervals are tricky!
+
+\vspace{2em}
+
+The technically correct interpretation of a (frequentist) confidence interval is: \\ {\em if the current experiment were repeated under similar conditions, we expect that $1-\alpha$\% of the time the confidence interval for a parameter would cover the true value of the parameter.}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Detour: confidence interval interpretations}
+
+\begin{block}{Possible interpretations}
+\bi
+    \myitem ``There is a 95\% probability that this confidence interval contains the true value of the parameter.'' \\ WRONG! 
+    \myitem ``We are 95\% confident that this interval contains the truth.'' \\ NOT VERY TECHNICALLY SPECIFIC, BUT NOT INCORRECT EITHER.
+    \myitem ``The 95\% confidence interval for this parameter is (a, b).'' \\ COMMONLY USED, ASSUMES THE READER KNOWS HOW TO INTERPRET.
+    \myitem ``With confidence coefficient .95, we estimate that the average change in Y per 1 unit increase of X lies somewhere between (a and b).'' \\ TECHNICALLY CORRECT, BUT NOT CLEAR WHAT CONF COEF IS.
+\ei
+\end{block}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Back to the example}
+
+<<lungMLRConfInt, tidy=FALSE>>=
+cbind(coef(mlr1), confint(mlr1))
+@
+ 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Confidence regions for multiple parameters}
+
+It is better to 
+ 
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Plotting 2D confidence regions}
+
+<<lungMLRConfIntEllipse, tidy=FALSE, fig.height=4, warning=FALSE>>=
+library(ellipse)
+plot(ellipse(mlr1,c(2,3)),type="l")
+points(coef(mlr1)[2],coef(mlr1)[3], pch=18)
+abline(v=c(confint(mlr1)[2,1], confint(mlr1)[2,2]), lty=2)
+abline(h=c(confint(mlr1)[3,1], confint(mlr1)[3,2]), lty=2)
+@
+ 
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Today's Big Ideas}
+
+\bi
+        \myitem Basic parameter inference for multiple linear regression models
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Lab on regression inference}
+
+Run the code for today's class (on the website), and modify it to answer the following questions:
+\bi
+    \myitem Compute the 95\% confidence interval coverage for $\beta_1$. What is it and is it what you would expect?
+    \myitem Given the constant values defined at the top of the file, determine what the sampling distribution for $\beta_1$ should be. Using the estimated values of the $\hat\beta_1$, calulate summary metrics and or use appropriate visualizations to determine whether these your simulated distribution of $\hat\beta_1$ matches with the theoretical distribution.
+    \myitem Adapt the simulation to simulate data for two covariates, $x_1$ and $x_2$, using {\tt mvrnorm()}. Define $x_1$ and $x_2$ so that you may modify the degree of correlation between them. Run the simulation again for two scenarios, one with low and one with high correlation. For each of these scenarios, does the 95\% confidence interval coverage change?
+\ei
+
+\end{frame}
+
+\end{document}
