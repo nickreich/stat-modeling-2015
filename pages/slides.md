@@ -15,7 +15,7 @@ Some lectures from the course will be available as [video lectures](https://umas
 * Lecture 4: Introduction to Multiple Linear Regression \[ [S](../assets/lectures/lecture4-mlr-intro/lecture4-mlr-intro.pdf) \|  [A](../assets/lectures/lecture4-mlr-intro/lecture4-mlr-intro-annotated.pdf) \]
 * Lecture 5: Multiple Linear Regression: Least Squares Estimation and Polynomial Regression \[ [S](../assets/lectures/lecture5-mlr-estimation-formulation/lecture5-mlr-estimation-formulation.pdf) \|  [A](../assets/lectures/lecture5-mlr-estimation-formulation/lecture5-mlr-estimation-formulation-annotated.pdf)  \]
 * Lecture 6: Multiple Linear Regression: Categorical Predictors \[ [S](../assets/lectures/lecture6-mlr-categorical/lecture6-mlr-categorical.pdf) \|  A  \]
-
+* Lecture 7: Multiple Linear Regression: Parameter Inference \[ [S](../assets/lectures/lecture7-mlr-inference/lecture7-mlr-inference.pdf) \|  [A](../assets/lectures/lecture7-mlr-inference/lecture7-mlr-inference-annotated.pdf)  \]
 
 
 <!--
