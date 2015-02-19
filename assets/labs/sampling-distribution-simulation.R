@@ -28,6 +28,3 @@ var(b1_ests)
 hist(b1_ests)
 sum(b1_H0_reject)
 
-## compare observed to expected variance of bs, conditional on xs
-x_var <- sum( (x-mean(x))^2 )
-b1_expected_var <- s2/x_var
