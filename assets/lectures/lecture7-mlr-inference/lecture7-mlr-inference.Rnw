@@ -173,7 +173,7 @@ Calculate the probability of the observed data (or more extreme data) under a nu
 	\myitem Set type I error rate $\alpha = P(\mbox{falsely rejecting a true null hypothesis})$ 
 	\myitem Calculate a test statistic assuming the null hypothesis is true
 	\myitem Compute a p-value = 
-		$$P(\beta_j \mbox{as or more extreme test statistic}|H_{0})$$
+		$$P(\hat\beta_j \mbox{ as or more extreme as observed}|H_{0})$$
 	\myitem Reject or fail to reject $H_0$
 \ei
 
@@ -267,7 +267,7 @@ cbind(coef(mlr1), confint(mlr1))
 
 \begin{frame}[fragile]{Confidence regions for multiple parameters}
 
-It is better to 
+If you want to draw inference about multiple parameters, it is better to look at them simultaneously.
  
 \end{frame}
 
