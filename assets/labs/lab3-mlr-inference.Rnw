@@ -12,18 +12,52 @@ knit_hooks$set(source = function(x, options) {
 })
 @
 
-\license{This is a product of \href{http://statsteachr.org}{statsTeachR} that is released under a \href{http://creativecommons.org/licenses/by-sa/3.0}{Creative Commons Attribution-ShareAlike 3.0 Unported}. This lab was adapted for \href{http://statsteachr.org}{statsTeachR} by Sara Nu\~nez, Nicholas Reich and Andrea Foulkes from an \href{http://www.openintro.org/stat/}{OpenIntro Statistics} lab written by Andrew Bray and Mine \c{C}etinkaya-Rundel.}
+\license{This is a product of \href{http://statsteachr.org}{statsTeachR} that is released under a \href{http://creativecommons.org/licenses/by-sa/3.0}{Creative Commons Attribution-ShareAlike 3.0 Unported}. This lab was created by Nicholas Reich.}
 
 \section*{Lab 3: Parameter inference in multiple linear regression}
 
-To better understand the sampling distribution of our the fitted $\beta$ regression coefficients, you will perform several small simulation studies. The basic code for the simulation study can be found in the \href{}{sampling-distribution-simulation.R} file. 
+To better understand the sampling distribution of our the fitted $\beta$ regression coefficients, you will perform several small simulation studies. The basic code for the simulation study can be found in the \href{https://raw.githubusercontent.com/nickreich/stat-modeling-2015/gh-pages/assets/labs/sampling-distribution-simulation.R}{sampling-distribution-simulation.R} file. 
+Open this code file and read it carefully. In all, this code is running a small simulation study to generate a ``sampling distribution'' of the regression coefficients for a simple linear regression model
+$ {\mathbb E}[y|x] = \beta_0 + \beta_1\cdot x $
+where both $x$ and $y$ are simulated data. Try to understand what each line of code is doing before you run the file, and then run it all the way through.
 
-\subsection*{Basic simulation study}
-Open sampling-distribution-simulation.R and read the code carefully. Try to understand what the code is doing before you run the file 
+\begin{exercise}
+In a few sentences, describe in your own words the procedure followed by the simulation study.
+\end{exercise}
 
-Compute the 95\% confidence interval coverage for $\beta_1$. What is it and is it what you would expect?
-    \myitem Given the constant values defined at the top of the file, determine what the sampling distribution for $\beta_1$ should be. Using the estimated values of the $\hat\beta_1$, calulate summary metrics and or use appropriate visualizations to determine whether these your simulated distribution of $\hat\beta_1$ matches with the theoretical distribution.
-    \myitem Adapt the simulation to simulate data for two covariates, $x_1$ and $x_2$, using {\tt mvrnorm()}. Define $x_1$ and $x_2$ so that you may modify the degree of correlation between them. Run the simulation again for two scenarios, one with low and one with high correlation. For each of these scenarios, does the 95\% confidence interval coverage change?
+In a simulation study like this, we might be interested in several different characteristics of our fitted models. We may be interested in how often we reject the null hypothesis that $\beta_1$=0; in how wide the confidence intervals are on average; how accurate the $\hat\beta_1$ are on average; how much variability do we see in the $\hat\beta_1$ estimates; etc...
+
+\begin{exercise}
+Compute the 95\% confidence interval coverage for $\beta_1$. That is, calculate the 95\% confidence interval for each estimated $\beta_1$ and compute the percentage of times that the confidence interval covered the true value of $\beta_1$.
+\end{exercise}
+
+\begin{exercise}
+Also, compute the mean squared error of your estimates of $\beta_1$. This can be computed as $MSE=\sum_{i=1}^{M}(\hat\beta_{1,i} - \beta_1)^2/M$, where $M$ is the number of simulations that you ran.
+\end{exercise}
+
+\begin{exercise}
+Given the parameters defined at the top of the file, determine what the sampling distribution for $\beta_1$ should be. That is, determine analytically what ${\mathbb E}[\hat\beta_1]$ and $Var[\hat\beta_1]$ are. Hint: use the formulae provided in the slides.
+\end{exercise}
+
+
+\begin{exercise}
+Using the estimated values of the $\hat\beta_1$, calulate summary metrics and or use appropriate visualizations to determine whether these your simulated distribution of $\hat\beta_1$ match up with with the theoretical distribution (i.e. with ${\mathbb E}[\hat\beta_1]$ and $Var[\hat\beta_1]$).
+\end{exercise}
+
+The top rows of the code file define a set of parameters that are used by the simulation study. Experiment with modifying them, and observe how the results change. 
+
+\begin{exercise}
+For three new combinations of parameters, calculate the 95\% CI coverage and the MSE. Report the results for these three new sets of parameters and the original set of parameters in a table, with one row for each parameter set, and a column for each metric, including the expected value and variance of $\hat\beta_1$. Hint: it may be easier to make vectors of the parameters, and then lop through each combination and for each set of paramters, run the full simulation $M$ times.
+\end{exercise}
+
+
+Adapt the simulation to simulate data for two covariates, $x_1$ and $x_2$, using {\tt mvrnorm()}. To start, assume that both $x_1$ and $x_2$ have mean 0 and variance 1. However, define $x_1$ and $x_2$ so that you may modify the degree of correlation between them, using a correlation parameter $\rho$.
+
+\begin{exercise}
+ Run the original simulation again for two scenarios, one with low and one with high correlation. Add a row to your table above reporting the results from this simulation
+\end{exercise}
+
+For this lab, you should submit a modified version of the original code file, embedded into an RMarkdown document, with any figures used and a single table showing your results. 
 
 \end{document}
 
