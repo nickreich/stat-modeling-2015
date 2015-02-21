@@ -9,6 +9,7 @@ Homework assignments will be posted here, in general organized by due date. Unle
 **Collaboration on homework is expected and encouraged, although you must write up your own assignment. No copying or cutting and pasting.**
 
 _Due Thursday 2/26/2015, 11:30am_ 
+
 * (30 pts) [Lab 3](../assets/labs/lab3-mlr-inference.pdf).
 
 _Due Tuesday 2/17/2015, 5pm_ 
