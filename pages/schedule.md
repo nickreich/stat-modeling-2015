@@ -14,10 +14,10 @@ Week |       |     | Topic   | In-class resources | Reading
  2   |     | 27, 29  &nbsp;| Simple Linear Regression (con't) | [Lecture 2](../assets/lectures/lecture2-slr-basics/lecture2-slr-basics.pdf), [Lab 1](../assets/labs/lab1-intro-slr.pdf) | _ISL_ Ch 3.1; _PR_ Ch 2.
  3   | Feb | 3, 5   | Least squares, multiple linear regression | [Lec 3](../assets/lectures/lecture3-slr-anova/lecture3-SLR-anova.pdf), [Lec 4](../assets/lectures/lecture4-mlr-intro/lecture4-mlr-intro.pdf), [Lab 2](../assets/labs/lab2-intro-mlr.pdf) | _ISL_ Ch 3.2-3.3; _PR_ Ch 2.
  4   |     | 10, 12 | MLR: estimation, model formulation | [Lec 5](../assets/lectures/lecture5-mlr-estimation-formulation/lecture5-mlr-estimation-formulation.pdf), [Lec 6](../assets/lectures/lecture6-mlr-categorical/lecture6-mlr-categorical.pdf) | _ISL_ Ch 3.2-3.3; _PR_ Ch 2.
- 5   |     | 19     | MLR: inference, multiple testing | [Lec 7](../assets/lectures/lecture7-mlr-inference/lecture7-mlr-inference.pdf), [R code](../assets/labs/sampling-distribution-simulation.R), [Lab 3](../assets/labs/lab3-mlr-inference.pdf) |
- 6   |     | 24, 26 | MLR: model checking and diagnostics | |
- 7   | Mar | 3, 5   | MLR: model selection |  |
- 8   |     | 10, 12 | MLR: modeling interactions | |
+ 5   |     | 19     | MLR: inference, multiple testing | [Lec 7](../assets/lectures/lecture7-mlr-inference/lecture7-mlr-inference.pdf), [R code](../assets/labs/sampling-distribution-simulation.R), [Lab 3](../assets/labs/lab3-mlr-inference.pdf) | _PR_ Ch. 3
+ 6   |     | 24, 26 | MLR: inference, multiple testing | | _PR_ Ch. 3
+ 7   | Mar | 3, 5   | MLR: model checking and diagnostics |  |
+ 8   |     | 10, 12 | MLR: model selection, interactions | |
      |     | 17, 19 | Spring Break! | |
  9   |     | 24, 26 | Splines in regression | |
  10  | Apr | 31, 2  | Missing data | |
