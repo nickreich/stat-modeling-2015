@@ -44,7 +44,16 @@ Week |       |     | Topic   | In-class resources | Reading
  
  Week 4:
 Tuesday: Lecture 5, NHANES analysis
-Thursday: (Lab 3) NHANES analysis, Lecture 6
+Thursday: NHANES analysis, Lecture 6
+
+Week 5: 
+Thursday: Lecture 7, review of NHANES analyses 
+
+Week 6:
+Tuesday: MAP evaluation, Review of Lab 3 questions
+Thursday: Lab 3 go over of tables, 
+
+
 
 brainstorm: what are inputs/outputs for backwards selection function?, 
  
