@@ -82,7 +82,7 @@ options(width=60)
 
 \begin{frame}{Inference about multiple coefficients}
 
-Our model contains multiple parameters; often we want to perform multiple tests:
+Our model contains multiple parameters; often we want ask a question about multiple coefficients simultaneously. I.e. ``are any of these $k$ coefficients significantly different from 0?'' This is equivalent to performing multiple tests (or looking at confidence ellipses):
 \beqa
 	H_{01} : \beta_1 & = & 0\\
 	H_{02} : \beta_2 & = & 0\\
@@ -104,8 +104,10 @@ where each test has a size of $\alpha$
 
 For any individual test, $P(\mbox{reject } H_{0i} | H_{0i}) = \alpha$.
 
-But this DOES NOT MEAN that 
-$$P(\mbox{reject at least one } H_{0i} | \mbox{all } H_{0i} \mbox{are true}) = \alpha$$.
+\vspace{2em}
+
+But it DOES NOT FOLLOW that 
+$$P(\mbox{reject \underline{at least one} } H_{0i} | \mbox{all } H_{0i} \mbox{are true}) = \alpha.$$
 This is called the Family-wise error rate (FWER). Ignore it at your own peril!
 
 \end{frame}
@@ -252,6 +254,8 @@ mlr_null <- lm(disease ~ nutrition, data=dat)
 mlr1 <- lm(disease ~ nutrition+ airqual + crowding + smoking, data=dat)
 anova(mlr_null, mlr1)
 @
+
+This test shows that airqual, crowding, and smoking together significantly improve the fit of our model (assuming model diagnostics look good). Further analyses may be warranted to determine which, if any, coefficients are not different from 0.
 
 \end{frame}
 

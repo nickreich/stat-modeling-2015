@@ -85,7 +85,7 @@ fmla</code></pre>
 <pre class="r"><code>mlr1 &lt;- lm(fmla, data=x)
 coefs &lt;- summary(mlr1)$coef
 sum(coefs[,&quot;Pr(&gt;|t|)&quot;]&lt;.05)</code></pre>
-<pre><code>## [1] 5</code></pre>
+<pre><code>## [1] 2</code></pre>
 <p>Alternatively, we could use a Global <span class="math">\(F\)</span>-test to test whether any of the <span class="math">\(x\)</span> variables add significant explanatory power to our model. We do this by fitting a “null” model that just includes an intercept. What conclusion do we draw from this test?</p>
 <pre class="r"><code>mlr0 &lt;- lm(y ~ 1, data=x)
 anova(mlr0, mlr1)</code></pre>
@@ -103,8 +103,8 @@ anova(mlr0, mlr1)</code></pre>
 ##     x82 + x83 + x84 + x85 + x86 + x87 + x88 + x89 + x90 + x91 + 
 ##     x92 + x93 + x94 + x95 + x96 + x97 + x98 + x99 + x100
 ##   Res.Df    RSS  Df Sum of Sq      F Pr(&gt;F)
-## 1    999 995.18                            
-## 2    899 898.88 100    96.294 0.9631 0.5836</code></pre>
+## 1    999 1111.0                            
+## 2    899 1018.6 100    92.415 0.8156 0.9014</code></pre>
 <p>Do the results about the significance of the model coefficients from the Global <span class="math">\(F\)</span>-test and the individual <span class="math">\(\beta\)</span> <span class="math">\(t\)</span>-tests agree? Why or why not?</p>
 </div>
 </div>
