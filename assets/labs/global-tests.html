@@ -68,29 +68,31 @@ img {
 </div>
 <div id="by-nicholas-reich" class="section level3">
 <h3>by <a href="http://nickreich.github.io">Nicholas Reich</a></h3>
-<p>If you have a lot of predictor variables, you should consider using global F tests. Here is a toy example that shows why.</p>
-<p>We start by picking a number of observations and the number of parameters in our model, <span class="math">\(p\)</span>. We then generate <span class="math">\(p-1\)</span> independent covariates, plus a column of 1s for the design matrix.</p>
+<p>If you include a lot of predictor variables in a regression and are looking to evaluate the significance of many of them, you should consider using global F tests. Here is a simple example that illustrates why this test is important.</p>
+<p>We start by picking a number of observations (<span class="math">\(nObs\)</span>) and the number of parameters in our model, <span class="math">\(p\)</span>. We then generate <span class="math">\(p-1\)</span> independent covariates, plus a column of 1s for the design matrix.</p>
 <pre class="r"><code>nObs &lt;- 1000
 p &lt;- 100
 x &lt;- matrix(rnorm(nObs*p), nrow=nObs)
-x &lt;- data.frame(1, x)
+x &lt;- data.frame(x)
 colNames &lt;- paste0(&quot;x&quot;, 1:p)
 colnames(x) &lt;- colNames</code></pre>
 <p>Now we will generate our <span class="math">\(y\)</span>s completely independently of all of our covariates. None of our <span class="math">\(x\)</span> variables are associated with our outcome!</p>
 <pre class="r"><code>y &lt;- rnorm(nObs)</code></pre>
-<p>But if we fit a linear model that assumes that there ARE relationships bewteen our outcome and all of our <span class="math">\(x\)</span> variables, do we see any individually significant <span class="math">\(\beta\)</span>s? If so, how many are significant and are these indiciative of real associations?</p>
-<pre class="r"><code>fmla &lt;- formula(paste0(&quot;y ~ 0 +&quot;, paste(colNames, collapse=&quot;+&quot;)))
-mlr1 &lt;- lm(fmla, data=x)
+<p>But if we fit a linear model that assumes that there ARE relationships bewteen our outcome and all of our <span class="math">\(x\)</span> variables, do we see any individually significant <span class="math">\(\beta\)</span>s? If so, how many are significant and are these indiciative of real associations? Let’s start by constructing a linear model formula that includes each of our <span class="math">\(x\)</span> variables. We have suppressed the printing out of this formula in this write-up but if you run these two command below, you will see the formula that is created.</p>
+<pre class="r"><code>fmla &lt;- formula(paste0(&quot;y ~ &quot;, paste(colNames, collapse=&quot;+&quot;)))
+fmla</code></pre>
+<p>Now we fit the model and evaluate how many of the individual <span class="math">\(\beta\)</span> coefficients are significant at the <span class="math">\(\alpha=0.05\)</span> level.</p>
+<pre class="r"><code>mlr1 &lt;- lm(fmla, data=x)
 coefs &lt;- summary(mlr1)$coef
 sum(coefs[,&quot;Pr(&gt;|t|)&quot;]&lt;.05)</code></pre>
-<pre><code>## [1] 3</code></pre>
-<p>Alternatively, we could use a Global <span class="math">\(F\)</span>-test to test whether any of the <span class="math">\(x\)</span> variables add significant explanatory power to our model. What conclusion do we draw from this test?</p>
-<pre class="r"><code>mlr0 &lt;- lm(y ~ x1, data=x)
+<pre><code>## [1] 5</code></pre>
+<p>Alternatively, we could use a Global <span class="math">\(F\)</span>-test to test whether any of the <span class="math">\(x\)</span> variables add significant explanatory power to our model. We do this by fitting a “null” model that just includes an intercept. What conclusion do we draw from this test?</p>
+<pre class="r"><code>mlr0 &lt;- lm(y ~ 1, data=x)
 anova(mlr0, mlr1)</code></pre>
 <pre><code>## Analysis of Variance Table
 ## 
-## Model 1: y ~ x1
-## Model 2: y ~ 0 + x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10 + x11 + 
+## Model 1: y ~ 1
+## Model 2: y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10 + x11 + 
 ##     x12 + x13 + x14 + x15 + x16 + x17 + x18 + x19 + x20 + x21 + 
 ##     x22 + x23 + x24 + x25 + x26 + x27 + x28 + x29 + x30 + x31 + 
 ##     x32 + x33 + x34 + x35 + x36 + x37 + x38 + x39 + x40 + x41 + 
@@ -100,10 +102,10 @@ anova(mlr0, mlr1)</code></pre>
 ##     x72 + x73 + x74 + x75 + x76 + x77 + x78 + x79 + x80 + x81 + 
 ##     x82 + x83 + x84 + x85 + x86 + x87 + x88 + x89 + x90 + x91 + 
 ##     x92 + x93 + x94 + x95 + x96 + x97 + x98 + x99 + x100
-##   Res.Df     RSS Df Sum of Sq      F Pr(&gt;F)
-## 1    999 1016.17                           
-## 2    900  925.58 99    90.596 0.8898 0.7663</code></pre>
-<p>Do the results from the Global <span class="math">\(F\)</span>-test and the individual <span class="math">\(\beta\)</span> <span class="math">\(t\)</span>-tests agree? Why?</p>
+##   Res.Df    RSS  Df Sum of Sq      F Pr(&gt;F)
+## 1    999 995.18                            
+## 2    899 898.88 100    96.294 0.9631 0.5836</code></pre>
+<p>Do the results about the significance of the model coefficients from the Global <span class="math">\(F\)</span>-test and the individual <span class="math">\(\beta\)</span> <span class="math">\(t\)</span>-tests agree? Why or why not?</p>
 </div>
 </div>
 
