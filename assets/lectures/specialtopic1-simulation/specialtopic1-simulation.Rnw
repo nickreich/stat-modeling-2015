@@ -1,0 +1,130 @@
+%% beamer/knitr slides 
+%% for Statistical Modeling and Data Visualization course @ UMass
+%% Nicholas Reich: nick [at] schoolph.umass.edu
+
+
+\documentclass[table]{beamer}
+
+
+\input{../../slide-includes/standard-knitr-beamer-preamble}
+
+%        The following variables are assumed by the standard preamble:
+%        Global variable containing module name:
+
+\title{Special Topic Lecture: \\ Implementing simulation studies}
+%	Global variable containing module shortname:
+%		(Currently unused, may be used in future.)
+\newcommand{\ModuleShortname}{multRegression}
+%	Global variable containing author name:
+\author{Nicholas G Reich, Jeff Goldsmith}
+%	Global variable containing text of license terms:
+\newcommand{\LicenseText}{Made available under the Creative Commons Attribution-ShareAlike 3.0 Unported License: http://creativecommons.org/licenses/by-sa/3.0/deed.en\textunderscore US }
+%	Instructor: optional, can leave blank.
+%		Recommended format: {Instructor: Jane Doe}
+\newcommand{\Instructor}{}
+%	Course: optional, can leave blank.
+%		Recommended format: {Course: Biostatistics 101}
+\newcommand{\Course}{}
+
+
+\input{../../slide-includes/shortcuts}
+\usepackage{bbm}
+
+\hypersetup{colorlinks,linkcolor=,urlcolor=MainColor}
+
+
+%	******	Document body begins here	**********************
+
+\begin{document}
+
+%	Title page
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+%	******	Everything through the above line must be placed at
+%		the top of any TeX file using the statsTeachR standard
+%		beamer preamble. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% acutal slides
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{What is a simulation study?}
+
+\begin{block}{Why run a simulation study?}
+\bi
+    \myitem to evaluate whether your statistical method works!
+    \myitem to determine how much variability you might reasonably expect from your estimates
+    \myitem to calculate power for a study
+\ei
+\end{block}
+
+Especially useful when data model and/or statistical method are complex, and do not have tidy theoretical results.
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{What is a simulation study?}
+
+\begin{block}{A statistician's laboratory}
+\bi
+    \myitem tight control over the parameters of your data generating model
+    \myitem systematic exploration of possible parameters
+    \myitem careful evaluation of how one or more methods perform
+\ei
+\end{block}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{How to run a simulation study}
+
+\begin{block}{Key steps}
+\bi
+    \myitem Identify a data generating model and its associated parameters
+    \myitem Define the question and scope: which parameters do you want to investigate? what ranges?
+    \myitem Write code to run the analysis that is easily replicated (maybe write a function?)
+    \myitem For each distinct set of parameters, generate and analyze data, storing the results. (Note: try to minimize operations within your loops!)
+    \myitem Summarize the results.
+\ei
+\end{block}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Circle of Life}
+
+\begin{figure}[t]
+    \includegraphics[width=.8\textwidth]{../../slide-includes/CircleOfLife.pdf}  
+\end{figure}
+
+\end{frame} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Circle of Life: a simulation study perspective}
+
+\end{frame} 
+
+
+\begin{frame}{}
+
+\end{frame} 
+
+
+
+\end{document}
