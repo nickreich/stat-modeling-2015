@@ -8,6 +8,14 @@ Homework assignments will be posted here, in general organized by due date. Unle
 
 **Collaboration on homework is expected and encouraged, although you must write up your own assignment. No copying or cutting and pasting.**
 
+_Due Thursday 3/5/2015, 11am_ 
+
+* (30 pts) Conduct a simulation study that evaluates the inferential properties of least square estimates, using a simple or multiple linear regression data generation model. Your final write-up should define a linear regression data generation model (i.e. write down the formula for the model, and define all parameters). You should explicitly choose one or two parameters that you will systematically vary to and the quantitative metric that you will use to evaluate the estimates. (See examples below.) Your write-up should state the hypothesis that you had before running the simulation, present results from the simulation study, and evaluate whether your hypothesis was correct or not. You do not need to run a formal hypothesis test, just evaluate quantitatively and/or qualitatively how the performance varied across the parameterizations that you simulated. You should simulate from at least 10 different parameter sets (and probably at least 25 if you have two parameters). Here are some examples of possible topics
+   + Examine the impact of the number of covariates on the MSE (or 95% confidence interval coverage) of a regression coefficient for one predictor variable.
+   + In an SLR setting, evaluate the degree to which the MSE or confidence interval coverage is impacted by non-constant variance of the residuals.
+   + Show how the power to detect a non-zero regression coefficient changes as a function of the sample size and/or the residual variance. 
+   + Examine the average bias or MSE in estimating a regression coefficient if the residuals are drawn from a symmetric distribution with mean zero, but with increasing variance (e.g. a Cauchy or Student's T distribution). 
+
 _Due Thursday 2/26/2015, 11:30am_ 
 
 * (30 pts) [Lab 3](../assets/labs/lab3-mlr-inference.pdf).
