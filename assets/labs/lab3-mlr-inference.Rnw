@@ -41,7 +41,7 @@ Given the parameters defined at the top of the file, determine what the sampling
 
 
 \begin{exercise}
-Using the estimated values of the $\hat\beta_1$, calulate summary metrics and or use appropriate visualizations to determine whether these your simulated distribution of $\hat\beta_1$ match up with with the theoretical distribution (i.e. with ${\mathbb E}[\hat\beta_1]$ and $Var[\hat\beta_1]$).
+Using the estimated values of the $\hat\beta_1$, calculate summary metrics and or use appropriate visualizations to determine whether your simulated distribution of $\hat\beta_1$ match up with with the theoretical distribution (i.e. with ${\mathbb E}[\hat\beta_1]$ and $Var[\hat\beta_1]$).
 \end{exercise}
 
 The top rows of the code file define a set of parameters that are used by the simulation study. Experiment with modifying them, and observe how the results change. 
