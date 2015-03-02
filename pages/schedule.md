@@ -53,6 +53,9 @@ Week 6:
 Tuesday: MAP evaluation, Review of Lab 3 questions, Lecture 8, FWER in-class exercise
 Thursday: WW, Lab 3/HW5 go over of tables, special topics lecture on simulations
 
+Week 7:
+Tues: review simulation homework ideas, model checking lecture
+Thurs: review simulation homework results, model selection lecture
 
 
 brainstorm: what are inputs/outputs for backwards selection function?, 
