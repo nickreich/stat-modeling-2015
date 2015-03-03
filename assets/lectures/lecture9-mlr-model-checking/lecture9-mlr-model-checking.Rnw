@@ -353,7 +353,7 @@ Intuitively, ``influence'' is a combination of outlying-ness and leverage. More 
 	\beqa
 		D_i &=& \frac{(\hat\bbeta - \hat\bbeta_{(i)})^T(\bX^T\bX)(\hat\bbeta - \hat\bbeta_{(i)})}{p\hat\sigma^2} \\
 			&=& \frac{(\hat \by - \hat \by_{(-i)})^T(\hat \by - \hat \by_{(-i)})}{p\hat\sigma^2} \\
-			&=& \frac{1}{p}\hat{\epsilon}_i^2\frac{h_{ii}}{(1-h_{ii})^2}
+			&=& \frac{1}{p}\hat{\epsilon}_i^2\frac{h_{ii}}{1-h_{ii}}
 	\eeqa
 \ei
 
