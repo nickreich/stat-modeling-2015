@@ -17,7 +17,8 @@ Some lectures from the course will be available as [video lectures](https://umas
 * Lecture 6: Multiple Linear Regression: Categorical Predictors \[ [S](../assets/lectures/lecture6-mlr-categorical/lecture6-mlr-categorical.pdf) \|  [A](../assets/lectures/lecture6-mlr-categorical/lecture6-mlr-categorical-annotated.pdf)  \]
 * Lecture 7: Multiple Linear Regression: Parameter Inference \[ [S](../assets/lectures/lecture7-mlr-inference/lecture7-mlr-inference.pdf) \|  [A](../assets/lectures/lecture7-mlr-inference/lecture7-mlr-inference-annotated.pdf)  \]
 * Lecture 8: Multiple Linear Regression: Multiple testing \[ [S](../assets/lectures/lecture8-mlr-multiple-testing/lecture8-mlr-multiple-testing.pdf) \| [A](../assets/lectures/lecture8-mlr-multiple-testing/lecture8-mlr-multiple-testing-annotated.pdf) \]
-* Lecture 9: Multiple Linear Regression: Model checking \[ [S](../assets/lectures/lecture9-mlr-model-checking/lecture9-mlr-model-checking.pdf) \| A \]
+* Lecture 9: Multiple Linear Regression: Model checking \[ [S](../assets/lectures/lecture9-mlr-model-checking/lecture9-mlr-model-checking.pdf) \| [A](../assets/lectures/lecture9-mlr-model-checking/lecture9-mlr-model-checking-annotated.pdf) \]
+* Lecture 10: Multiple Linear Regression: Model selection \[ [S](../assets/lectures/lecture9-mlr-model-checking/lecture10-mlr-model-selection.pdf) \| A \]
 * Special Topic 1: Implementing Simulation Studies \[ [S](../assets/lectures/specialtopic1-simulation/specialtopic1-simulation.pdf) \| [A](../assets/lectures/specialtopic1-simulation/specialtopic1-simulation-annotated.pdf) \]
 
 <!--
