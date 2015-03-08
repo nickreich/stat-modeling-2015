@@ -59,8 +59,6 @@ theme_set(theme_bw())
 
 \vskip2em
 
-Model checking and selection: KNN, Chapters 9 and 10.
-
 \end{frame}
 
 
@@ -227,7 +225,7 @@ In these slides, $p$ is the former: the number of covariates.
 
 \begin{frame}{AIC}
 
-AIC (``An Information Criterion") measures goodness-of-fit through RSS (equivalently, log likelihood) and penalizes model size:
+AIC (``Akaike Information Criterion") measures goodness-of-fit through RSS (equivalently, log likelihood) and penalizes model size:
 $$ AIC = n \log(RSS/n) + 2(p+1) $$
 \bi
         \myitem Small AIC's are better, but scores are not directly interpretable
@@ -404,6 +402,21 @@ and find the quadratic term is significant but the linear term is not...
         \myitem You should still keep the linear term in the model
 	\myitem Otherwise, your model is sensitive to centering -- shifting $x$ will change your model
 	\myitem Using orthogonal polynomials helps with this
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Variable selection: the intercept}
+
+A quick note about the intercept in MLR. If you fit a model of the form
+$$ y_i = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \epsilon_i$$
+and find the intercept term is not significant ...
+\bi
+    \myitem in general, you should still keep the intercept in the model
+    \myitem Otherwise, your model is very strongly restricted in the linear form it can take!
 \ei
 
 \end{frame}
