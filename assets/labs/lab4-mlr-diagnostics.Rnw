@@ -53,7 +53,7 @@ For the chosen model, calculate Cook's distance without using the {\tt cooks.dis
 \end{exercise}
 
 \begin{exercise}
-Add a new, synthetic observation to the dataset that has influence on the fit. Try to balance making a datapoint that isn't {\em too} unrealistic (i.e. isn't too much of an oulier in either y or x directions) given all of the other observations, but that has a Cook's Distance value at least twice as much as the highest value of the original datapoints. Experiment a little bit with making new data points. How much of an outlier would a datapoint have to be to have a Cook's Distance value greater than 1?
+Add a new, synthetic observation to the dataset that has influence on the fit. Try to balance making a datapoint that isn't {\em too} unrealistic (i.e. isn't too much of an outlier in either y or x directions) given all of the other observations, but that has a Cook's Distance value at least twice as much as the highest value of the original datapoints. Experiment a little bit with making new data points. How much of an outlier would a datapoint have to be to have a Cook's Distance value greater than 1?
 \end{exercise}
 
 For this lab, you should submit a single PDF file that summarizes your findings and answers to these questions.
