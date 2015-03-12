@@ -18,7 +18,8 @@ Some lectures from the course will be available as [video lectures](https://umas
 * Lecture 7: Multiple Linear Regression: Parameter Inference \[ [S](../assets/lectures/lecture7-mlr-inference/lecture7-mlr-inference.pdf) \|  [A](../assets/lectures/lecture7-mlr-inference/lecture7-mlr-inference-annotated.pdf)  \]
 * Lecture 8: Multiple Linear Regression: Multiple testing \[ [S](../assets/lectures/lecture8-mlr-multiple-testing/lecture8-mlr-multiple-testing.pdf) \| [A](../assets/lectures/lecture8-mlr-multiple-testing/lecture8-mlr-multiple-testing-annotated.pdf) \]
 * Lecture 9: Multiple Linear Regression: Model checking \[ [S](../assets/lectures/lecture9-mlr-model-checking/lecture9-mlr-model-checking.pdf) \| [A](../assets/lectures/lecture9-mlr-model-checking/lecture9-mlr-model-checking-annotated.pdf) \]
-* Lecture 10: Multiple Linear Regression: Model selection \[ [S](../assets/lectures/lecture10-mlr-model-selection/lecture10-mlr-model-selection.pdf) \| A \]
+* Lecture 10: Multiple Linear Regression: Model selection \[ [S](../assets/lectures/lecture10-mlr-model-selection/lecture10-mlr-model-selection.pdf) \| [A](../assets/lectures/lecture10-mlr-model-selection/lecture10-mlr-model-selection-annotated.pdf) \]
+* Lecture 11: Multiple Linear Regression: Practical miscellany (added variable plots, interactions, predictor transformations) \[ [S](../assets/lectures/lecture11-mlr-interaction-transformation/lecture11-mlr-interactions-transformations.pdf) \]
 * Special Topic 1: Implementing Simulation Studies \[ [S](../assets/lectures/specialtopic1-simulation/specialtopic1-simulation.pdf) \| [A](../assets/lectures/specialtopic1-simulation/specialtopic1-simulation-annotated.pdf) \]
 
 <!--

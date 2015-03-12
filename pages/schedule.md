@@ -17,7 +17,7 @@ Week |       |     | Topic   | In-class resources | Reading
  5   |     | 19     | MLR: inference, multiple testing | [Lec 7](../assets/lectures/lecture7-mlr-inference/lecture7-mlr-inference.pdf), [R code](../assets/labs/sampling-distribution-simulation.R), [Lab 3](../assets/labs/lab3-mlr-inference.pdf) | _PR_ Ch. 3
  6   |     | 24, 26 | MLR: inference, multiple testing | [Lec 8](../assets/lectures/lecture8-mlr-multiple-testing/lecture8-mlr-multiple-testing.pdf), [R code](../assets/labs/global-tests.Rmd), [ST 1](../assets/lectures/specialtopic1-simulation/specialtopic1-simulation.pdf) | _PR_ Ch. 3
  7   | Mar | 3, 5   | MLR: model checking and diagnostics | [Lec 9](../assets/lectures/lecture9-mlr-model-checking/lecture9-mlr-model-checking.pdf), [Lec 10](../assets/lectures/lecture10-mlr-model-selection/lecture10-mlr-model-selection.pdf) | _ISL_ Ch. 6.1, _PR_ Ch. 7
- 8   |     | 10, 12 | MLR: model selection, interactions | [Lab 4](../assets/labs/lab4-mlr-diagnostics.pdf) | _PR_ Ch. 10
+ 8   |     | 10, 12 | MLR: model selection, interactions | [Lab 4](../assets/labs/lab4-mlr-diagnostics.pdf), [Lec 11](../assets/lectures/lecture11-mlr-interaction-transformation/lecture11-mlr-interactions-transformations.pdf) | _PR_ Ch. 10
      |     | 17, 19 | Spring Break! | |
  9   |     | 24, 26 | Splines in regression | |
  10  | Apr | 31, 2  | Missing data | |
