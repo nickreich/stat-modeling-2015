@@ -305,7 +305,7 @@ abline(h=c(confint(mlr1)[3,1], confint(mlr1)[3,2]), lty=2)
 Run the code for today's class (on the website), and modify it to answer the following questions:
 \bi
     \myitem Compute the 95\% confidence interval coverage for $\beta_1$. What is it and is it what you would expect?
-    \myitem Given the constant values defined at the top of the file, determine what the sampling distribution for $\beta_1$ should be. Using the estimated values of the $\hat\beta_1$, calulate summary metrics and or use appropriate visualizations to determine whether these your simulated distribution of $\hat\beta_1$ matches with the theoretical distribution.
+    \myitem Given the constant values defined at the top of the file, determine what the sampling distribution for $\beta_1$ should be. Using the estimated values of the $\hat\beta_1$, calculate summary metrics and or use appropriate visualizations to determine whether these your simulated distribution of $\hat\beta_1$ matches with the theoretical distribution.
     \myitem Adapt the simulation to simulate data for two covariates, $x_1$ and $x_2$, using {\tt mvrnorm()}. Define $x_1$ and $x_2$ so that you may modify the degree of correlation between them. Run the simulation again for two scenarios, one with low and one with high correlation. For each of these scenarios, does the 95\% confidence interval coverage change?
 \ei
 
