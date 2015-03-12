@@ -22,7 +22,7 @@ _Due Thursday 2/26/2015, 11:30am_
 
 _Due Tuesday 2/17/2015, 5pm_ 
 
-* (20 points) Revise and resubmit the report on the dataset that you handed in on 2/3/2015. The new report should include some of the information that you had written previously, should make improvements suggested from the earlier version, and have 1 or 2 additional multiple linear regression models. If appropriate, fit a polynomial term to capture non-linear relationships or use dummy variables to model categorical predictors. Interpret some of the MLR model model coefficients in the context of your particular dataset. The report should be less than 6 pages, including all figures, and should be submitted as both PDF and Rmd formats.
+* (20 points) Revise and resubmit the report on the dataset that you handed in on 2/3/2015. The new report should include some of the information that you had written previously, should make improvements suggested from the earlier version, and have 1 or 2 additional multiple linear regression models. If appropriate, fit a polynomial term to capture non-linear relationships or use dummy variables to model categorical predictors. Interpret some of the MLR model coefficients in the context of your particular dataset. The report should be less than 6 pages, including all figures, and should be submitted as both PDF and Rmd formats.
 
 _Due Tuesday 2/10/2015, 5pm_ 
 
