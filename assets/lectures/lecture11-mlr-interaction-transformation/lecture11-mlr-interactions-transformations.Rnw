@@ -10,7 +10,7 @@
 
 %        The following variables are assumed by the standard preamble:
 %	Global variable containing module name:
-\title{MLR Interactions and variable transformations}
+\title{MLR: miscellaneous practical tools}
 %	Global variable containing module shortname:
 %		(Currently unused, may be used in future.)
 \newcommand{\ModuleShortname}{MLR}
@@ -46,19 +46,110 @@ opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size
 <<ggplot2, echo=FALSE, message=FALSE>>=
 require(ggplot2)
 theme_set(theme_bw())
+par(mar=c(5,4,2,2))
 @
 
 
 \begin{frame}{Today's Lecture}
 
-\begin{block}{A few important building blocks for regression}
+\begin{block}{A few miscellaneous but important building blocks for regression}
 \bi
+        \myitem Advanced residual plots
         \myitem Interaction models
         \myitem Transformations of predictors
 \ei
 \end{block}
 
 \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Typical regression plot: fitted line}
+
+<<lungData, echo=FALSE>>=
+data <- read.table("../lecture5-mlr-estimation-formulation/lungc.txt",header=TRUE)
+@
+
+%\scriptsize
+<<rplot1, fig.height=3, tidy=FALSE, fig.height=4>>=
+qplot(crowding, disease, geom=c("point", "smooth"), 
+      method="lm", data=data)
+@
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Typical residual plot: fitted vs. residuals}
+
+\scriptsize
+<<rplot2, fig.height=3, tidy=FALSE, fig.height=4>>=
+slr1 <- lm(disease ~ crowding, data=data)
+plot(slr1, which=1)
+@
+
+But this is more complicated with MLR: how do we visualize adjusted multivariable relationships?
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Predictor vs. residual plots}
+
+<<rplots3, fig.height=4>>=
+library(car)
+mlr1 <- lm(disease ~ crowding + education + airqual, data=data)
+residualPlots(mlr1, tests=FALSE)
+@
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Checking model structure: adjusted variable plots!}
+
+\bi
+    \myitem You can plot residuals against each of the predictors, or plot outcomes against predictors, BUT...
+    \myitem Keep in mind the MLR uses adjusted relationships; scatterplots don't show that adjustment!
+\ei
+
+\vspace{1.5em}
+
+Adjusted variable plots (partial regression plots, added variable plots) can be useful.
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Adjusted (or added) variable plots}
+
+\bi
+	\myitem Regress $y$ on everything but $x_{j}$; take residuals $r_{y | -x_{j}}$
+	\myitem Regress $x_{j}$ on everything but $x_{j}$; take residuals $r_{x_{j} | -x_{j}}$
+	\myitem Regress $r_{y | -x_{j}}$ on $r_{x_{j} | -x_{j}}$; slope of this line will match $\beta_{j}$ in the full MLR
+	\myitem Plot of $r_{y | -x_{j}}$ against $r_{x_{j} | -x_{j}}$ shows the ``adjusted" relationship
+    \myitem This figure can be used to diagnose violations of linearity in MLR models.
+\ei
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{AV plots}
+
+<<rplots4, fig.height=4>>=
+library(visreg)
+avPlot(mlr1, variable="airqual")
+@
+
+\end{frame}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,7 +168,7 @@ qplot(x1, y, color=factor(x2), geom=c("point", "smooth"), method="lm", sd=FALSE)
 @
 
 
-[Good overview: KNN pp. 306--313]
+%[Good overview: KNN pp. 306--313]
 
 \end{frame}
 
@@ -124,30 +215,49 @@ Model B: $ y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \beta_3 x_{i1}\cdot
 
 \end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{How to interpret an interaction model}
+
+For now, assume $x_1$ is continuous, $x_2$ is 0/1 binary.
+
+Model A: $ y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \epsilon_i$
+
+Model B: $ y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \beta_3 x_{i1}\cdot x_{i2} + \epsilon_i$
+
+\vspace{1em}
+
+$\beta_3$ is the change in the slope of the line that describes the relationship of $y \sim x_1$ comparing the groups defined by $x_2=0$ and $x_2=1$.
+
+$\beta_1 + \beta_3$ is the expected change in $y$ for a one-unit increase in $x_1$ in the group $x_2=1$.
+
+$\beta_0 + \beta_2$ is the expected value of $y$ in the group $x_2=1$ when $x_1=0$ .
+
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{Example interaction model with FEV data}
 
-<<fevData, echo=FALSE>>=
-#dat <- read.table("~/Google Drive/teaching/methods2/datasets/FEV/fev.dat.txt")
-dat <- read.table("~/UMass Google Drive/teaching/methods2/datasets/FEV/fev.dat.txt")
-colnames(dat) <- c("age", "fev", "ht", "sex", "smoke")
-
-dat$sex <- factor(dat$sex, levels=0:1, labels=c("female", "male"))
-dat$smoke <- factor(dat$smoke, levels=0:1, labels=c("nonsmoker", "smoker"))
-
+<<fevData, echo=FALSE, message=FALSE, warning=FALSE>>=
+library(Hmisc)
+getHdata(FEV)
 @
 
 
 $$ fev_i = \beta_0 + \beta_1 age_{i} + \beta_2 ht_{i} + \beta_3 sex_{i2} + \beta_4 smoke_{i} + \beta_5 ht\cdot smoke_{i} + \epsilon_i$$
 
-<<intModels>>=
-mi1 <- lm(fev ~ age + ht + sex + smoke, data=dat)
-mi3 <- lm(fev ~ age + ht*smoke + sex, data=dat)
-c(AIC(mi1), AIC(mi3))
-round(summary(mi3)$coef,2)
+<<intModels, results='hold'>>=
+mi1 <- lm(fev ~ age + height + smoke + sex, data=FEV)
+mi2 <- lm(fev ~ age + height*smoke + sex, data=FEV)
+c(AIC(mi1), AIC(mi2))
+round(summary(mi2)$coef,2)
 @
 
+\scriptsize
+For current smokers, the relationship between height and FEV is stronger than in non-current smokers. In non-current smokers, we observe that a one-unit increase in height is associated with a 0.10 increase in expected FEV. In current smokers, this changes to a 0.14 increase in expected FEV.
 
 \end{frame}
 
@@ -157,7 +267,7 @@ round(summary(mi3)$coef,2)
 \begin{frame}[fragile]{Example interaction model with FEV data}
 
 <<fevPlot1, fig.height=4, tidy=FALSE>>=
-qplot(ht, fev, data=dat, color=smoke, 
+qplot(height, fev, data=FEV, color=smoke, 
       geom=c("point", "smooth"), method="lm")
 @
 
@@ -169,8 +279,7 @@ qplot(ht, fev, data=dat, color=smoke,
 The {\tt visreg} package plots not the data but the partial residuals (a.k.a. the adjusted variable) plot.
 
 <<fevPlot2, fig.height=4, message=FALSE>>=
-require(visreg)
-visreg(mi3, "ht", by="smoke")
+visreg(mi2, "height", by="smoke")
 @
 
 \end{frame}
@@ -180,7 +289,7 @@ visreg(mi3, "ht", by="smoke")
 \begin{frame}[fragile]{Example interaction model with FEV data}
 
 <<fevPlot3, fig.height=4>>=
-visreg(mi3, "ht", by="smoke", overlay=TRUE)
+visreg(mi2, "height", by="smoke", overlay=TRUE)
 @
 
 \end{frame}
@@ -199,7 +308,7 @@ visreg(mi3, "ht", by="smoke", overlay=TRUE)
 \ei
 \end{block}
 
-[More info: KNN Ch 3.9, pp. 129--137]
+%[More info: KNN Ch 3.9, pp. 129--137]
 
 
 \end{frame}
@@ -292,36 +401,10 @@ $$ y^\lambda_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \epsilon_i$$
         \myitem By definition, when $\lambda=0$, we specify $y^\lambda_i= \log_e y_i$
 \ei
 
-[More detailed info: KNN Ch 3.9, pp. 134--137]
+% [More detailed info: KNN Ch 3.9, pp. 134--137]
 
 \end{frame}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Checking model structure}
-
-\bi
-    \myitem You can plot residuals against each of the predictors, or plot outcomes against predictors
-	\myitem Keep in mind the MLR uses adjusted relationships; scatterplots don't show that adjustment
-	\myitem Adjusted variable plots (partial regression plots, added variable plots) can be useful
-\ei
-
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Adjusted variable plots}
-
-\bi
-	\myitem Regress $y$ on everything but $x_{j}$; take residuals $r_{y | -x_{j}}$
-	\myitem Regress $x_{j}$ on everything but $x_{j}$; take residuals $r_{x_{j} | -x_{j}}$
-	\myitem Regress $r_{y | -x_{j}}$ on $r_{x_{j} | -x_{j}}$; slope of this line will match $\beta_{j}$ in the full MLR
-	\myitem Plot of $r_{y | -x_{j}}$ against $r_{x_{j} | -x_{j}}$ shows the ``adjusted" relationship
-\ei
-
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
