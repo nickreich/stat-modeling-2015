@@ -18,7 +18,7 @@ knit_hooks$set(source = function(x, options) {
 
 \subsection*{Relationships of Body Dimensions}
 
-The data set we will utilize in this lab contains 21 body dimension measurements, age, weight, height, and gender of 507 individuals mostly in their twenties and thirties. All individuals exercise regularly and are considered physically active. The data was submitted to the Journal of Statistical Education by Grete Heinz and Louis J. Peterson, who took measurements at San Jose State University, the U.S. Naval Postgraduate School in Monterey, California, and dozens of California health and fitness clubs. The data set itself is available through the American Statiscial Association, and a description of the variables is provided here \web{http://www.amstat.org/publications/jse/datasets/body.txt}.
+The data set we will utilize in this lab contains 21 body dimension measurements, age, weight, height, and gender of 507 individuals mostly in their twenties and thirties. All individuals exercise regularly and are considered physically active. The data was submitted to the Journal of Statistical Education by Grete Heinz and Louis J. Peterson, who took measurements at San Jose State University, the U.S. Naval Postgraduate School in Monterey, California, and dozens of California health and fitness clubs. The data set itself is available through the American Statistical Association, and a description of the variables is provided here \web{http://www.amstat.org/publications/jse/datasets/body.txt}.
 
 First, we will load the data and give the columns their respective names, found at the link above.
 
