@@ -47,7 +47,7 @@ Using the estimated values of the $\hat\beta_1$, calculate summary metrics and o
 The top rows of the code file define a set of parameters that are used by the simulation study. Experiment with modifying them, and observe how the results change. 
 
 \begin{exercise}
-For three new combinations of parameters, calculate the 95\% CI coverage and the MSE. Report the results for these three new sets of parameters and the original set of parameters in a table, with one row for each parameter set, and a column for each metric, including the expected value and variance of $\hat\beta_1$. Hint: it may be easier to make vectors of the parameters, and then lop through each combination and for each set of paramters, run the full simulation $M$ times.
+For three new combinations of parameters, calculate the 95\% CI coverage and the MSE. Report the results for these three new sets of parameters and the original set of parameters in a table, with one row for each parameter set, and a column for each metric, including the expected value and variance of $\hat\beta_1$. Hint: it may be easier to make vectors of the parameters, and then lop through each combination and for each set of parameters, run the full simulation $M$ times.
 \end{exercise}
 
 
