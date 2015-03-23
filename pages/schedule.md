@@ -19,12 +19,12 @@ Week |       |     | Topic   | In-class resources | Reading
  7   | Mar | 3, 5   | MLR: model checking and diagnostics | [Lec 9](../assets/lectures/lecture9-mlr-model-checking/lecture9-mlr-model-checking.pdf), [Lec 10](../assets/lectures/lecture10-mlr-model-selection/lecture10-mlr-model-selection.pdf) | _ISL_ Ch. 6.1, _PR_ Ch. 7
  8   |     | 10, 12 | MLR: model selection, interactions | [Lab 4](../assets/labs/lab4-mlr-diagnostics.pdf), [Lec 11](../assets/lectures/lecture11-mlr-interaction-transformation/lecture11-mlr-interactions-transformations.pdf) | _PR_ Ch. 10
      |     | 17, 19 | Spring Break! | |
- 9   |     | 24, 26 | Splines in regression | |
+ 9   |     | 24, 26 | Splines in regression, data visualization | |
  10  | Apr | 31, 2  | Missing data | |
  11  |     | 7, 9   | Logistic regression | |
  12  |     | 14, 19 | Longitudinal data analysis | |
- 13  |     | 21, 23 | Poisson regression | |
- 14  |     | 28     | Course wrap-up | |
+ 13  |     | 21, 23 | Project prep, presentations | |
+ 14  |     | 28     | Project presentations | |
 
 
 
