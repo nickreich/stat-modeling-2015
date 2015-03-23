@@ -20,8 +20,8 @@ Week |       |     | Topic   | In-class resources | Reading
  8   |     | 10, 12 | MLR: model selection, interactions | [Lab 4](../assets/labs/lab4-mlr-diagnostics.pdf), [Lec 11](../assets/lectures/lecture11-mlr-interaction-transformation/lecture11-mlr-interactions-transformations.pdf) | _PR_ Ch. 10
      |     | 17, 19 | Spring Break! | |
  9   |     | 24, 26 | Splines in regression, data visualization | |
- 10  | Apr | 31, 2  | Missing data | |
- 11  |     | 7, 9   | Logistic regression | |
+ 10  | Apr | 31, 2  | Missing data, logistic regression | |
+ 11  |     | 7, 9   | Missing data, logistic regression | |
  12  |     | 14, 19 | Longitudinal data analysis | |
  13  |     | 21, 23 | Project prep, presentations | |
  14  |     | 28     | Project presentations | |
@@ -61,6 +61,23 @@ Week 8:
 Tues: Quiz, W&W, open lab time
 Thurs: Lecture on interactions
 
+--- SPRING BREAK -- 
+
+Week 9: 
+Tues: WW, splines lecture, project overview
+Thurs: Data visualization, covariate resampling(?)
+
+Week 10: 
+Tues: WW, missing data lecture
+Thurs: Logistic regression
+
+Week 11: 
+Tues: Project workday (no professor)
+Thurs: Missing data and logistic regression lab
+
+Week 12: 
+Tues: Longitudinal data
+Thurs: Longitudinal data lab, project work
 
 brainstorm: what are inputs/outputs for backwards selection function?, 
  

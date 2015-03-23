@@ -4,9 +4,14 @@ title: Project Description
 ---
 
 #### Project Assignment
-For the project you will create, in small groups, a thorough analysis of a particular dataset. Each group will be expected to hand in a PDF file containing the data analysis write-up that has been typeset using RMarkdown/knitr. 
+For the project you will create, in small groups, a thorough analysis of a particular dataset. The analysis project will have components completed by the group and by each individual student. Each group will prepare a formal written report and will present their project to the class in a ~30-minute presentation. In this presentation, each group member will have 5 minutes to present his/her topic. Additionally, each group will create a 1 page handout (two-sided, if desired) to accompany the group presentation. The handout provides an opportunity to summarize key findings, show central figures, and/or provide greater detail or explanation about pieces of the project.
 
-Each group will present their project to the class in a ~30-minute presentation. In this presentation, each group member will have 5 minutes to present his/her topic. Additionally, each group will create a 1 page handout (two-sided, if desired) to accompany the group presentation. The handout provides an opportunity to summarize key findings, show central figures, and/or provide greater detail or explanation about pieces of the project.
+Each group will be expected to hand in the following items
+
+1. a PDF file containing the data analysis write-up that has been typeset using RMarkdown/knitr,
+2. a single paper copy of the final report,
+3. a PDF file containing the presentation handout, and
+4. a single paper copy of the presentation handout.
 
 Choice of a good dataset will be particularly important. Each group should consider multiple datasets as possibilities and will need to have their final choice approved by the instructor.
 
@@ -15,6 +20,7 @@ Choice of a good dataset will be particularly important. Each group should consi
 Overall, the project write-up should be written in clear, concise prose, suitable for publication in a scientific journal. No code should be shown in the write-up, although it is expected that results provided in the write-up will be dynamically generated (i.e. if you report the results from a regression, you are calling the results directly from R and not inputting the numbers directly into the .Rmd file). You will need to be very judicious in your choices of what to include in the write-up, only leaving the items most central to the write-up's overall goals and theses. The topics chosen by individual group members should complement each other, i.e. there should be no major topic overlap, not everyone should do a power simulation, etc... 
 
 Please follow the structure and page limits given below:
+
 * cover page (title, names, table of contents): 1 page
 * group data analysis (including tables/figures): 2 pages
 * each individual data analysis (including tables/figures): 3 pages
@@ -37,7 +43,7 @@ For this independent data analysis portion of the project, the two major paths t
   - For example, you could use a covariate resampling approach (to be described in class) to simulate new versions of your dataset that retain the covariate correlation structures present in your data, simulate new outcomes with known association(s), and fit a model to try and identify those association(s). This could be particularly compelling if you worked with a teammate who ran an analysis using one particular method and you calculated the power for their analytic method. 
   - As another example, you could run a simulation that tries to replicate the results of previous studies that show the pitfalls of backwards or forwards selection. You could design a simulation to evaluate the effectiveness of forward and/or backward selection methods for identifying associated predictor variables.
 
-Examples of topics (for either of the categories above...)
+Examples of topics
 
 * regression trees
 * natural or B-splines
@@ -49,6 +55,7 @@ Examples of topics (for either of the categories above...)
 The data analysis write-up will contain a section for each group member's analysis and a conclusion that summarizes the results. 
 
 _Missing Data_
+
 Many datasets will have missing data in them. Your group will be expected to come up with an justifiable approach for dealing with any missingness in the data (i.e. multiple imputation, sensitivity analyses). Within a group, the approaches taken to deal with missing data should be consistent.
 
 #### Project grading
@@ -71,9 +78,8 @@ As an example: Your group receives 40/50 points for the "final product produced 
 #### Deadlines
 * Fri Mar 27: Groups propose a dataset
 * Fri Apr 3: Individual topics proposed (1 paragraph summary, submitted to instructor on Google Drive)
-* Mon Apr 13: Draft of group data description write-up due
-* Mon Apr 20: Draft of individual data analysis due
-* Tue Apr 21: Group-based project critiques (??)
-* Thu Apr 23: Group 1 (and Group 2?) present
-* Tue Apr 28: Group 3 (and Group 2?) presents
+* Mon Apr 13: Draft of group data description write-up due, 5pm
+* Mon Apr 20: Draft of individual data analysis due, 5pm
+* Thu Apr 23: Group 1 (and Group 2?) present, project handed in on Fri 4/24 by 5pm
+* Tue Apr 28: Group 3 (and Group 2?) presents, project handed in on Wed 4/29 by 5pm
 
