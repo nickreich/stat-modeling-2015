@@ -35,7 +35,7 @@
 
 <<setup, include=FALSE>>=
 library(knitr)
-opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size='footnotesize')
+opts_chunk$set(fig.path='figs/beamer-',fig.align='center',fig.show='hold',size='footnotesize')
 @
 
 
