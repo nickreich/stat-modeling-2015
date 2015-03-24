@@ -320,7 +320,7 @@ points(range, lm.bs5$fitted.values, type = 'l', col = "red", lwd = 2)
 
 \begin{frame}{Take-home points for spline approaches (1)}
 
-\begin{block}{Spines can flexibly model non-linear relationships}
+\begin{block}{Splines can flexibly model non-linear relationships}
 \bi
     \myitem Can improve model fit because of relaxed linearity assumptions.
     \myitem Caveat: spline models require careful graphical interpretation, slopes may not be easily available/interpretable 
