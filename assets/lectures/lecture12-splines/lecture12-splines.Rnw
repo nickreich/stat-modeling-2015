@@ -58,6 +58,8 @@ theme_set(theme_bw())
 	\myitem Penalized spline regression
 \ei
 
+\vspace{2em}
+
 More info: 
 \bi
     \myitem Harrel, {\em Regression Modeling Strategies}, Chapter 2, PDF handout
@@ -108,16 +110,18 @@ $$\ev(y | x) = \beta_0 + \beta_1 x + \beta_2 (x - \kappa)_{+}$$
 
 \bi
 
-\myitem $\beta_0 =$
+\myitem $\beta_0 = {\mathbb E}[y | x=0]$ (assuming $\kappa<0$)  
 
 \vspace{2em}
 
 \myitem $\beta_1$ = 
+\uncover<2->{Expected change in $y$ for a 1-unit increase in $x$, when $x < \kappa$}
 \vspace{2em}
 \myitem $\beta_2$ = 
+\uncover<3->{Change in slope between $x < \kappa$ and $x > \kappa$}
 \vspace{2em}
 \myitem $\beta_1+\beta_2$ = 
-
+\uncover<4>{Expected change in $y$ for a 1-unit increase in $x$, when $x \geq \kappa$}
 \ei
 
 
@@ -208,21 +212,25 @@ Suppose we want to estimate $\ev(y | x) = f(x)$ using a piecewise quadratic mode
 	where $\{\kappa_{k}\}_{k = 1}^{K}$ are the locations of the change points
 	\myitem Similar extension for cubics
 	\myitem Piecewise quadratic models are smooth and have continuous first derivatives
-        \myitem Often, knots taken as quintiles of the data.
 \ei
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Advantages of piecewise models}
+\begin{frame}{Pros and cons of piecewise models}
 
 Piecewise (linear, quadratic, etc) models have several advantages
 \bi
-        \myitem Easy construction of basis functions
-        \myitem Flexible, and don't rely on determining an appropriate form for $f(x)$ using standard functions
+    \myitem Easy construction of basis functions
+    \myitem Flexible, and don't rely on determining an appropriate form for $f(x)$ using standard functions
 	\myitem Allow for significance testing on change point slopes
 	\myitem Fairly direct interpretations
+\ei
+
+Disadvantages
+\bi
+    \myitem knot specification is often arbitrary
 \ei
 
 \end{frame}
@@ -293,7 +301,50 @@ points(range, lm.bs5$fitted.values, type = 'l', col = "red", lwd = 2)
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{Example: lidar data}
+
+<<modelSpl6, fig.height=4, message=FALSE>>=
+lm.bs5 = lm(y ~ bs(range, df=10))
+plot(range, y, xlab = "Range", ylab = "log ratio", pch = 18)
+points(range, lm.bs5$fitted.values, type = 'l', col = "red", lwd = 2)
+@
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Take-home points for spline approaches (1)}
+
+\begin{block}{Spines can flexibly model non-linear relationships}
+\bi
+    \myitem Can improve model fit because of relaxed linearity assumptions.
+    \myitem Caveat: spline models require careful graphical interpretation, slopes may not be easily available/interpretable 
+\ei
+\end{block}
+
+\includegraphics[width=.7\linewidth]{figs/pediatrics-example.png}
+
+
+\end{frame}
+
+
+
+\begin{frame}{Take-home points for spline approaches (2)}
+
+\begin{block}{Do you want control over your knots?}
+\bi
+    \myitem Your application may have explicit ``change-points'' (i.e. interrupted time-series)
+    \myitem In most cases, you do not want your spline model to be sensitive to user input (i.e. knot placement)
+    \myitem ``Penalized splines'' can reduce this sensitivity at the cost of more complex model and estimation (More in {\em ISL} Chapter 7, Biostat Methods 3, anything about Generalized Additive Models (e.g. {\tt mgcv} package and {\tt gam() function}), one of your projects?).
+\ei
+\end{block}
+
+\end{frame}
 
 
 
