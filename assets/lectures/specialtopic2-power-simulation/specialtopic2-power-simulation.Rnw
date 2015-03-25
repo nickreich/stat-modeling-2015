@@ -1,0 +1,173 @@
+%% Module 2 beamer/knitr slides
+%% Biostatistics in Practice workshop, January 2014
+%% Nicholas Reich: nick [at] schoolph.umass.edu
+
+
+\documentclass[table]{beamer}
+
+
+\input{../../slide-includes/standard-knitr-beamer-preamble}
+
+%        The following variables are assumed by the standard preamble:
+%	Global variable containing module name:
+\title{Simulating power in practice}
+%	Global variable containing module shortname:
+%		(Currently unused, may be used in future.)
+\newcommand{\ModuleShortname}{simPar}
+%	Global variable containing author name:
+\author{Nicholas G Reich, Jeff Goldsmith}
+%	Global variable containing text of license terms:
+\newcommand{\LicenseText}{Made available under the Creative Commons Attribution-ShareAlike 3.0 Unported License: http://creativecommons.org/licenses/by-sa/3.0/deed.en\_US }
+%	Instructor: optional, can leave blank.
+%		Recommended format: {Instructor: Jane Doe}
+\newcommand{\Instructor}{}
+%	Course: optional, can leave blank.
+%		Recommended format: {Course: Biostatistics 101}
+\newcommand{\Course}{}
+
+\input{../../slide-includes/shortcuts}
+\usepackage{bbm}
+\hypersetup{colorlinks=TRUE, urlcolor=blue}
+
+%%%%%%%% IMPORTANT -- MUST HAVE [fragile] for some/all frames chunks to have output work correctly. 
+
+\begin{document}
+
+<<setup, include=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size='footnotesize')
+@
+
+
+\begin{frame}[plain]
+        \titlepage
+\end{frame}
+
+<<ggplot2, echo=FALSE, message=FALSE>>=
+require(ggplot2)
+theme_set(theme_bw())
+@
+
+
+\begin{frame}{Today's Lecture}
+
+\bi
+    \myitem What is statistical power?
+    \myitem Why/how might we want to simulate it?
+    \myitem An example
+\ei
+
+\vskip2em
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Refresher: statistical power}
+
+\begin{block}{Definition of statistical power}
+
+\bi
+    \myitem The ability of a method/test to detect an effect, conditional on that effect actually existing.
+    \myitem The probability that our test rejects the null hypothesis when the null hypothesis is not true.
+\ei
+
+\end{block}
+
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Characteristics that impact power}
+
+\begin{block}{What imapct do increases in these features have on power?}
+\bi
+    \myitem sample size
+    \myitem effect size
+    \myitem variance of outcome
+    \myitem variance of predictors
+    \myitem number of predictors
+    \myitem grouped/clustered observations
+\ei
+\end{block}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Typical power curve}
+
+\includegraphics[width=.8\linewidth]{clusterPower-fig3.pdf}
+
+\tiny{Reich NG, Myers JA, Obeng D, Milstone AM, Perl TM. Empirical power and sample size calculations for cluster-randomized and cluster-randomized crossover studies. PLoS ONE. 2012. 7(4): e35564.}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{``Post-hoc'' power calculations are controversial}
+
+It is {\em always} preferable to calculate power prior to running your analysis.
+
+
+
+
+\href{http://www.vims.edu/people/hoenig_jm/pubs/hoenig2.pdf}{The Abuse of Power}
+
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Power calculation: formulas vs simulation}
+
+\begin{block}{Many simple tests have formulas for power, these ...}
+\bi
+    \myitem are easy to use
+    \myitem may require you to estimate parameters from existing data (or make up justifiable numbers to plug in)
+    \myitem are often appropriate for simple tests
+    \myitem assume all standard assumptions are met
+    \myitem are only available for simple/standard tests
+\ei
+\end{block}
+
+Calculating power via simulation is a tradeoff: computational complexity for customization and flexibility.
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Warnings about simulation}
+
+\begin{block}{Many simple tests have formulas for power, these ...}
+\bi
+    \myitem simulations are not assumption- or parameter-free
+    \myitem 
+    \myitem are often appropriate for simple tests
+    \myitem assume all standard assumptions are met
+    \myitem are only available for simple/standard tests
+\ei
+\end{block}
+
+Calculating power via simulation is a tradeoff: computational complexity for customization and flexibility.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
