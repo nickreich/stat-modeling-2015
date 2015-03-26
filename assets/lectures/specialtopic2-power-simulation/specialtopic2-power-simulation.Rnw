@@ -15,7 +15,7 @@
 %		(Currently unused, may be used in future.)
 \newcommand{\ModuleShortname}{simPar}
 %	Global variable containing author name:
-\author{Nicholas G Reich, Jeff Goldsmith}
+\author{Nicholas G Reich}
 %	Global variable containing text of license terms:
 \newcommand{\LicenseText}{Made available under the Creative Commons Attribution-ShareAlike 3.0 Unported License: http://creativecommons.org/licenses/by-sa/3.0/deed.en\_US }
 %	Instructor: optional, can leave blank.
@@ -132,7 +132,7 @@ It is {\em always} preferable to calculate power prior to running your analysis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}{Power calculation: formulas vs simulation}
+\begin{frame}{Formula-based power calculation}
 
 \begin{block}{Many simple tests have formulas for power, these ...}
 \bi
@@ -144,7 +144,6 @@ It is {\em always} preferable to calculate power prior to running your analysis.
 \ei
 \end{block}
 
-Calculating power via simulation is a tradeoff: computational complexity for customization and flexibility.
 
 \end{frame}
 
@@ -152,22 +151,146 @@ Calculating power via simulation is a tradeoff: computational complexity for cus
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}{Warnings about simulation}
+\begin{frame}{Simulation-based power calculation}
 
-\begin{block}{Many simple tests have formulas for power, these ...}
+Calculating power via simulation is a tradeoff: computational complexity for customization and flexibility.
+
+\begin{block}{Power simulations...}
 \bi
-    \myitem simulations are not assumption- or parameter-free
-    \myitem 
-    \myitem are often appropriate for simple tests
-    \myitem assume all standard assumptions are met
-    \myitem are only available for simple/standard tests
+    \myitem are available for any setting where you can simulate data (not limited to simple scenarios)
+    \myitem can be used to preserve complex correlation sturctures in predictors (resample your $X$'x)
+    \myitem are not assumption- or parameter-free
+    \myitem often require more complicated coding 
+    \myitem may be computationally intensive (i.e. need a long time to run)
 \ei
 \end{block}
 
-Calculating power via simulation is a tradeoff: computational complexity for customization and flexibility.
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Example: t-test power calculation ``by hand''}
+
+\begin{block}{T-test: comparing mean between two groups}
+\bi
+    \myitem $\mu_1=5, \mu_2=7$
+    \myitem $\sigma^2_1=\sigma^2_2=5$ (assume known)
+    \myitem $n_1=n_2=20$
+    \myitem Type I error rate = $\alpha$ = 0.05 
+    \myitem $H_0$: $\mu_1-\mu_2=0$
+\ei
+\end{block}
+
+$$Power = 1-\beta = Pr\left (Z > 1.96 - \frac{|\mu_1-\mu_2|}{\sqrt{2\sigma^2/n}}\right)$$
+
+<<ttest-by-hand>>=
+pnorm(1.96 - 2/sqrt(2*5/20), lower.tail = FALSE)
+@
+
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Example: t-test power calculation ``black box''}
+
+Compare to another method, which uses numerical optimization
+<<ttest-func>>=
+pnorm(1.96 - 2/sqrt(2*5/20), lower.tail = FALSE)
+power.t.test(n = 20, delta = 2, sd = sqrt(5), sig.level=0.05)
+@
+
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Example: t-test power calculation (graph)}
+
+Evaluate power across sample sizes
+<<ttest-ss, fig.height=4>>=
+curve(pnorm(1.96 - 2/sqrt(2*5/x), lower.tail = FALSE), 
+      from=5, to=40, ylab="power", xlab="n (per group)")
+abline(h=.8, lty=2)
+@
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Example: t-test power calculation ``simulated''}
+
+<<ttest-sim>>=
+nsim <- 1000
+n <- 20
+mu1 <- 5
+mu2 <- 7
+s2 <- 5
+reject <- rep(0, nsim)
+for(i in 1:nsim){
+    x <- rnorm(20, mean=mu1, sd=sqrt(s2))
+    y <- rnorm(20, mean=mu2, sd=sqrt(s2))
+    tt <- t.test(x, y)
+    reject[i] <- tt$p.value<.05
+}
+mean(reject)
+@
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Power by simulation: different flavors}
+
+
+\begin{block}{Option 1: generate all data from scratch}
+\bi
+    \myitem will generate ``clean'' data
+    \myitem hard to insert authentic noise: outliers, missingness, correlated predictor structure    
+\ei
+\end{block}
+
+\begin{block}{Option 2: resample predictors from a {\em training} dataset, simulate outcome}
+\bi
+    \myitem preserves structure of real predictor data
+    \myitem requires a large dataset similar to the one you will be analyzing
+    \myitem you should not, in general, do this type of computation on the actual dataset that you are analyzing -- best to have a ``training'' dataset, similar to but independent from the one you will be analyzing
+\ei
+\end{block}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Power by simulation: resampling algorithm}
+
+\begin{block}{Resampled power algorithm}
+\begin{enumerate}
+    \item Fix $nsim$.
+    \item resample (with replacement) rows of design matrix
+    \item
+\end{enumerate}
+\end{block}
+
+\tiny{Adapted from \href{http://arxiv.org/abs/1410.3515}{Kleinman and Huang (2014)}, and \href{http://www.sciencedirect.com/science/article/pii/S0167947313003721}{Meyers et al. (2014)}}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \end{document}
