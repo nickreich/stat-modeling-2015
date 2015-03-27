@@ -20,8 +20,8 @@ Week |       |     | Topic   | In-class resources | Reading
  8   |     | 10, 12 | MLR: model selection, interactions | [Lab 4](../assets/labs/lab4-mlr-diagnostics.pdf), [Lec 11](../assets/lectures/lecture11-mlr-interaction-transformation/lecture11-mlr-interactions-transformations.pdf) | _PR_ Ch. 10
      |     | 17, 19 | Spring Break! | |
  9   |     | 24, 26 | Splines in regression, power simulations | [Lec 12](../assets/lectures/lecture12-splines/lecture12-splines.pdf), [ST 2](../assets/lectures/specialtopic2-power-simulation/specialtopic2-power-simulation.pdf) | _ISL_ Ch 7
- 10  | Apr | 31, 2  | Missing data, data visualization, logistic regression | | [List](missing-data-reading-list.html)
- 11  |     | 7, 9   | Missing data, logistic regression | |
+ 10  | Apr | 31, 2  | Missing data, logistic regression | | [List](missing-data-reading-list.html)
+ 11  |     | 7, 9   | data visualization | |
  12  |     | 14, 19 | Longitudinal data analysis | |
  13  |     | 21, 23 | Project prep, presentations | |
  14  |     | 28     | Project presentations | |
