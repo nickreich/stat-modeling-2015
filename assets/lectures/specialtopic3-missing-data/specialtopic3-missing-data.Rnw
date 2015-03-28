@@ -1,0 +1,119 @@
+%% Module 2 beamer/knitr slides
+%% Biostatistics in Practice workshop, January 2014
+%% Nicholas Reich: nick [at] schoolph.umass.edu
+
+
+\documentclass[table]{beamer}
+
+
+\input{../../slide-includes/standard-knitr-beamer-preamble}
+
+%        The following variables are assumed by the standard preamble:
+%	Global variable containing module name:
+\title{Missing Data}
+%	Global variable containing module shortname:
+%		(Currently unused, may be used in future.)
+\newcommand{\ModuleShortname}{simPar}
+%	Global variable containing author name:
+\author{Nicholas G Reich}
+%	Global variable containing text of license terms:
+\newcommand{\LicenseText}{Made available under the Creative Commons Attribution-ShareAlike 3.0 Unported License: http://creativecommons.org/licenses/by-sa/3.0/deed.en\_US }
+%	Instructor: optional, can leave blank.
+%		Recommended format: {Instructor: Jane Doe}
+\newcommand{\Instructor}{}
+%	Course: optional, can leave blank.
+%		Recommended format: {Course: Biostatistics 101}
+\newcommand{\Course}{}
+
+\input{../../slide-includes/shortcuts}
+\usepackage{bbm}
+\hypersetup{colorlinks=TRUE, urlcolor=blue}
+
+%%%%%%%% IMPORTANT -- MUST HAVE [fragile] for some/all frames chunks to have output work correctly. 
+
+\begin{document}
+
+<<setup, include=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size='scriptsize')
+@
+
+
+\begin{frame}[plain]
+        \titlepage
+\end{frame}
+
+<<ggplot2, echo=FALSE, message=FALSE>>=
+require(ggplot2)
+theme_set(theme_bw())
+@
+
+
+\begin{frame}{Today's Lecture}
+
+\bi
+    \myitem Types of missing data
+    \myitem Describing your missing data
+    \myitem Multiple imputation
+\ei
+
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Types of Missing Data}
+
+\begin{block}{Missing Completely at Random (MCAR)}
+\bi
+    \myitem 
+\ei
+\end{block}
+
+
+\begin{block}{Missing at Random (MAR)}
+\bi
+    \myitem 
+\ei
+\end{block}
+
+\begin{block}{Missing Not at Random (MNAR)}
+\bi
+    \myitem 
+\ei
+\end{block}
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Multiple imputation results}
+
+\includegraphics[width=.9\linewidth]{mitable.jpg}
+
+\tiny{DC Howell, \href{https://www.uvm.edu/~dhowell/StatPages/More_Stuff/Missing_Data/Missing-Part-Two.html}{Treatment of Missing Data -- Part II}.}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Multiple imputation results}
+
+\includegraphics[width=.9\linewidth]{mitable.jpg}
+
+\tiny{DC Howell, \href{https://www.uvm.edu/~dhowell/StatPages/More_Stuff/Missing_Data/Missing-Part-Two.html}{Treatment of Missing Data -- Part II}.}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
