@@ -31,7 +31,7 @@ library(ggplot2)
 You can find out more information about the ncbirths dataset by typing \hlkwd{?ncbirths}.
 
 \begin{exercise}
-Begin by loading the data and looking at patterns of missingness. How many variables have missing data? Which have the most missing data?
+Begin by loading the data and looking at patterns of missingness. How many variables have missing data? Which have the most missing data? How many of the 1000 observations have at least one missing datapoint? 
 \end{exercise}
 <<load-data, fig.show='hide'>>=
 data(ncbirths)
