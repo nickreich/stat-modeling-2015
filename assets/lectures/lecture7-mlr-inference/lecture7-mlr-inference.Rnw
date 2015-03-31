@@ -218,7 +218,7 @@ summary(mlr1)
 Alternatively, we can construct a confidence interval for $\beta_j$
 \bi
         \myitem A confidence interval with coverage $(1-\alpha)$ is given by
-		$$\beta_j \pm t_{1-\alpha/2, n-p-1} \widehat{se}(\hat{\beta}_j)$$
+		$$\hat{\beta}_j\pm t_{1-\alpha/2, n-p-1} \widehat{se}(\hat{\beta}_j)$$
 	\myitem Assuming all the standard assumptions hold, 
 		$$(1-\alpha) = P(LB < \beta_j < UB)$$
 \ei
