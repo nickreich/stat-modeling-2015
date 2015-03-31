@@ -352,7 +352,7 @@ rej <- rep(0, nsim)
 for(i in 1:nsim) {
     tmp_idx <- sample(1:nrow(data), replace=TRUE, size=nobs)
     new_data <- data[tmp_idx,]
-    err <- rnorm(nobs, 0, s=summary(mlr)$sigma)
+    err <- rnorm(nobs, 0, sd=summary(mlr)$sigma)
     new_data$dis <- with(new_data, b0 + b1*nutrition + b2*airqual + 
                                       b3*crowding + b4*smoking + err)
     fm <- lm(dis ~ nutrition + airqual + crowding + smoking, data=new_data)
