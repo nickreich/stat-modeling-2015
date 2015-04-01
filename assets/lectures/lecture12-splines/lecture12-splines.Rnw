@@ -110,7 +110,7 @@ $$\ev(y | x) = \beta_0 + \beta_1 x + \beta_2 (x - \kappa)_{+}$$
 
 \bi
 
-\myitem $\beta_0 = {\mathbb E}[y | x=0]$ (assuming $\kappa<0$)  
+\myitem $\beta_0 = {\mathbb E}[y | x=0]$ (assuming $\kappa>0$)  
 
 \vspace{2em}
 
