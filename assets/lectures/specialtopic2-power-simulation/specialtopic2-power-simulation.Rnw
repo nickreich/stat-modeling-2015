@@ -356,7 +356,7 @@ for(i in 1:nsim) {
     new_data$dis <- with(new_data, b0 + b1*nutrition + b2*airqual + 
                                       b3*crowding + b4*smoking + err)
     fm <- lm(dis ~ nutrition + airqual + crowding + smoking, data=new_data)
-    rej[i] <- summary(fm)$coef["smoking", "Pr(>|t|)"] > 0.05
+    rej[i] <- summary(fm)$coef["smoking", "Pr(>|t|)"] < 0.05
     }
 (pwr <- sum(rej)/nsim)
 @
