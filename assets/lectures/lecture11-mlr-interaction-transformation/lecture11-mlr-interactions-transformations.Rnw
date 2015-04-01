@@ -352,7 +352,7 @@ Transforming predictor variables can help with non-linearities, but can make coe
 
 \begin{block}{Possible solutions}
 \bi
-        \myitem Interpret $\beta$s qualitatively across a region of interest: ``We found strong evidence for a inverse association, where values of $Y$ decreased inversely proportional to $X$ across the observed range $(a, b)$.
+        \myitem Interpret $\beta$s qualitatively across a region of interest: ``We found strong evidence for an inverse association, where values of $Y$ decreased inversely proportional to $X$ across the observed range $(a, b)$.
         \myitem Occasionally, a ``one unit change in $X$'' can be meaningful: e.g. $\log_a X$. A one unit change in $\log_a X$ indicates a $a$-fold increase in $X$.
 \ei
 \end{block}
