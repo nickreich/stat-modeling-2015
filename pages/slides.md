@@ -21,6 +21,7 @@ Some lectures from the course will be available as [video lectures](https://umas
 * Lecture 10: Multiple Linear Regression: Model selection \[ [S](../assets/lectures/lecture10-mlr-model-selection/lecture10-mlr-model-selection.pdf) \| [A](../assets/lectures/lecture10-mlr-model-selection/lecture10-mlr-model-selection-annotated.pdf) \]
 * Lecture 11: Multiple Linear Regression: Practical miscellany (added variable plots, interactions, predictor transformations) \[ [S](../assets/lectures/lecture11-mlr-interaction-transformation/lecture11-mlr-interactions-transformations.pdf) \| [A](../assets/lectures/lecture11-mlr-interaction-transformation/lecture11-mlr-interactions-transformations-annotated.pdf) \]
 * Lecture 12: Using splines in regression \[ [S](../assets/lectures/lecture12-splines/lecture12-splines.pdf) \| [A](../assets/lectures/lecture12-splines/lecture12-splines-annotated.pdf) \]
+* Lecture 13: Logistic Regression \[ [S](../assets/lectures/lecture13-logistic-regression/lecture13-logistic-regression.pdf) \| A \]
 * Special Topic 1: Implementing Simulation Studies \[ [S](../assets/lectures/specialtopic1-simulation/specialtopic1-simulation.pdf) \| [A](../assets/lectures/specialtopic1-simulation/specialtopic1-simulation-annotated.pdf) \]
 * Special Topic 2: Simulating Power \[ [S](../assets/lectures/specialtopic2-power-simulation/specialtopic2-power-simulation.pdf) \| [A](../assets/lectures/specialtopic2-power-simulation/specialtopic2-power-simulation-annotated.pdf) \]
 
