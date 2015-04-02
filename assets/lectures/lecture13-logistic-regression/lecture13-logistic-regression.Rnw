@@ -59,7 +59,7 @@ theme_set(theme_bw())
 	\myitem Logistic regression
 \ei
 
-[Note: more on logistic regression can be found in the OpenIntro textbook, Chapter 8. These slides are based, in part, on the slides from OpenIntro.]
+[Note: more on logistic regression can be found in {\em ISL}, Chapter 4.1-4.3, and the OpenIntro Statistics textbook, Chapter 8. These slides are based, in part, on the slides from OpenIntro.]
 
 \end{frame}
 
