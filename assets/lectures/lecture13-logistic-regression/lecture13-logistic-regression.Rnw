@@ -414,8 +414,8 @@ This is the difference between relative risk and an odds ratio.
 
 \begin{block}{Conditional logistic regression}
 \bi
-    \myitem Accounts for the fact that you have ``adjusted'' for some variables in the design.
-    \myitem Calculates an OR for each matched-set/pair, then ``averages'' across sets
+    \myitem Accounts for the fact that you have ''adjusted" for some variables in the design.
+    \myitem Calculates an OR for each matched-set/pair, then ''averages" across sets
     \myitem Forfeits ability to estimate effects of matched variables, but design can substantially improve power. 
     \myitem Implemented in R with {\tt clogit()}.
 \ei
