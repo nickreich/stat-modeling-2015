@@ -281,7 +281,7 @@ mean(reject)
 \begin{block}{Resampled power algorithm for regression-style models}
 
 \scriptsize
-Inputs: $nsim$; $nobs$, $X$, a $n$x$p$ design matrix; a simulation model $y \sim f(X|\theta)$, with associated paramters; $H_0$ to test; Type I error rate, $\alpha$.
+Inputs: $nsim$; $nobs$, $X$, a $n$x$p$ design matrix; a simulation model $y \sim f(X|\theta)$, with associated parameters; $H_0$ to test; Type I error rate, $\alpha$.
 \begin{enumerate}
     \item Define a zero vector $r$ of length $nsim$.
     \item {\bf for} $i$ in $1:nsim$ {\bf do}
