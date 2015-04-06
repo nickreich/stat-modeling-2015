@@ -432,7 +432,7 @@ This is the difference between relative risk and an odds ratio.
 \begin{block}{On logistic regression in particular...}
 \bi
         \myitem There are other link functions for binary data (e.g. probit, cloglog).
-        \myitem Other, less parameteric methods may be appropriate here too -- e.g. CART, random forests, classification algorithms.
+        \myitem Other, less parametric methods may be appropriate here too -- e.g. CART, random forests, classification algorithms.
 \ei
 \end{block}
 
