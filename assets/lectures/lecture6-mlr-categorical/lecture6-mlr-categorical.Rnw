@@ -219,7 +219,7 @@ qplot(factor(education), disease, geom="boxplot", data=dat)
 
 \begin{frame}[fragile]{Categorical predictor example: lung data}
 
-$$ dis_i = \beta_0 + \beta_1 educ_{6,i} + \beta_2 educ_{7,i} + \dots + \beta_{14} educ_{14,i} $$
+$$ dis_i = \beta_0 + \beta_1 educ_{6,i} + \beta_2 educ_{7,i} + \dots + \beta_{9} educ_{14,i} $$
 
 \small
 <<lungMLRCategorical, tidy=FALSE>>=

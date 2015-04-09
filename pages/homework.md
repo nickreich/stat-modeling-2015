@@ -8,6 +8,11 @@ Homework assignments will be posted here, in general organized by due date. Unle
 
 **Collaboration on homework is expected and encouraged, although you must write up your own assignment. No copying or cutting and pasting.**
 
+_Due Wednesday 4/8/2015, 5pm_ 
+
+* (30 pts) [Lab 5](../assets/labs/lab5-amelia-missing-data.pdf).
+
+
 _Due Thursday 3/26/2015, 11am_ 
 
 * (20 pts) [Lab 4](../assets/labs/lab4-mlr-diagnostics.pdf).
