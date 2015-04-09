@@ -65,7 +65,7 @@ Thurs: Lecture on interactions
 
 Week 9: 
 Tues: WW, splines lecture, project overview
-Thurs: Data visualization, covariate resampling(?)
+Thurs: covariate resampling(?)
 
 Week 10: 
 Tues: WW, missing data lecture
@@ -73,10 +73,10 @@ Thurs: Logistic regression
 
 Week 11: 
 Tues: Project workday (no professor)
-Thurs: Missing data and logistic regression lab
+Thurs: Longitudinal data, assign data visualization reading and finding an example
 
 Week 12: 
-Tues: Longitudinal data
+Tues: Data visualization go-through and discussion.
 Thurs: Longitudinal data lab, project work
 
 brainstorm: what are inputs/outputs for backwards selection function?, 
