@@ -21,7 +21,7 @@ Week |       |     | Topic   | In-class resources | Reading
      |     | 17, 19 | Spring Break! | |
  9   |     | 24, 26 | Splines in regression, power simulations | [Lec 12](../assets/lectures/lecture12-splines/lecture12-splines.pdf), [ST 2](../assets/lectures/specialtopic2-power-simulation/specialtopic2-power-simulation.pdf) | _ISL_ Ch 7
  10  | Apr | 31, 2  | Missing data, logistic regression | [Lab 5](../assets/labs/lab5-amelia-missing-data.pdf) | [List](missing-data-reading-list.html)
- 11  |     | 7, 9   | data visualization | |
+ 11  |     | 7, 9   | data visualization | | [List](data-viz-reading-list.html)
  12  |     | 14, 19 | Longitudinal data analysis | |
  13  |     | 21, 23 | Project prep, presentations | |
  14  |     | 28     | Project presentations | |
