@@ -236,7 +236,7 @@ We'll consider two main approaches to LDA
 \bi
         \myitem Marginal models, which focus on estimating the main effects and variance matrices but don't introduce subject effects
         \bi
-                \myitem ``Simplest'' LDA model, just like cross-sectinal data
+                \myitem ``Simplest'' LDA model, just like cross-sectional data
                 \myitem Requires new methods, like GEE, to control for variance structure 
                 \myitem Arguably easier incorporation of different variance structures
         \ei
