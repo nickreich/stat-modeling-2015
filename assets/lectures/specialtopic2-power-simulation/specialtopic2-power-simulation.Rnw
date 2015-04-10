@@ -89,7 +89,7 @@ theme_set(theme_bw())
 
 \begin{frame}{Characteristics that impact power}
 
-\begin{block}{What imapct do increases in these features have on power?}
+\begin{block}{What impact do increases in these features have on power?}
 \bi
     \myitem sample size
     \myitem effect size
@@ -267,7 +267,7 @@ mean(reject)
 \bi
     \myitem preserves structure of real predictor data
     \myitem requires a large dataset similar to the one you will be analyzing
-    \myitem you should not, in general, do this type of computation on the actual dataset that you are analyzing -- best to have a ``training'' dataset, similar to but independent from the one you will be analyzing
+    \myitem you should not, in general, do this type of computation on the actual dataset that you are analyzing -- best to have a "training" dataset, similar to but independent from the one you will be analyzing
 \ei
 \end{block}
 
