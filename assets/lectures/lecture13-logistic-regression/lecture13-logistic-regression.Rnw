@@ -438,7 +438,7 @@ This is the difference between relative risk and an odds ratio.
 
 \begin{block}{Beyond the scope of this course, but interesting topics...}
 \bi
-        \myitem How are logistic models (and other GLMS) fitted?
+        \myitem How are logistic models (and other GLMs) fitted?
         \myitem Can we perform the same kind of model diagnostics to determine whether a model provides a good fit to data?
         \myitem ROC curves and classification rules
         \ei
