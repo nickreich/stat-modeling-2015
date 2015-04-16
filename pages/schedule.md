@@ -22,7 +22,7 @@ Week |       |     | Topic   | In-class resources | Reading
  9   |     | 24, 26 | Splines in regression, power simulations | [Lec 12](../assets/lectures/lecture12-splines/lecture12-splines.pdf), [ST 2](../assets/lectures/specialtopic2-power-simulation/specialtopic2-power-simulation.pdf) | _ISL_ Ch 7
  10  | Apr | 31, 2  | Missing data, logistic regression | [Lec 13](../assets/lectures/lecture13-logistic-regression/lecture13-logistic-regression.pdf), [Lab 5](../assets/labs/lab5-amelia-missing-data.pdf) | [List](missing-data-reading-list.html), _ISL_ 4.1-4.3, _OI_ 8
  11  |     | 7, 9   | data visualization | | [List](data-viz-reading-list.html)
- 12  |     | 14, 19 | Longitudinal data analysis | [Lec 14](../assets/lectures/lecture14-longitudinal-data/lecture14-longitudinal-data.pdf) |
+ 12  |     | 14, 19 | Longitudinal data analysis | [Lec 14](../assets/lectures/lecture14-longitudinal-data/lecture14-longitudinal-data.pdf), [R](../assets/labs/wits-and-wagers-analysis.R) |
  13  |     | 21, 23 | Project prep, presentations | |
  14  |     | 28     | Project presentations | |
 
