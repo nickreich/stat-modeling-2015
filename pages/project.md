@@ -80,6 +80,6 @@ As an example: Your group receives 40/50 points for the "final product produced 
 * Fri Apr 3: Individual topics proposed (1 paragraph summary, submitted to instructor on Google Drive)
 * Mon Apr 13: Draft of group data description write-up due, 5pm
 * Mon Apr 20: Draft of individual data analysis due, 5pm
-* Thu Apr 23: Group 1 (and Group 2?) present, project handed in on Fri 4/24 by 5pm
-* Tue Apr 28: Group 3 (and Group 2?) presents, project handed in on Wed 4/29 by 5pm
+* Thu Apr 23: Group 1 and Group 2 present, project emailed to professor by Wed 4/29 by 5pm
+* Tue Apr 28: Group 3 presents, project handed in on Wed 4/29 by 5pm
 
