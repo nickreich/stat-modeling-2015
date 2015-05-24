@@ -1,0 +1,8 @@
+- add exercise to understand overfitting where students are grouped, and each group is assigned a different model, of varying levels of complexity. The R^2 values are shown for each model. You explain that each team's model will be asked to predict K (=10?) values, and you want to know which ones will make better predictions. Have them guess. Then compute the predictions and see which team is best. Then show the PRESS statistics (or Mallows CP?) and see how they line up with the best model.
+- less emphasis on group presentation in grade (maybe 5 instead of 15 points for group grade)
+- cover cross-validation in class
+- do data visualization earlier (or not at all)
+- possible project topics: multinomial logistic regression, logistic regression diagnostics, poisson regression
+- do more cross-validation in class
+- consolidate some of the boring regression stuff and have more be done with reading
+- make things more participatory
